@@ -15,7 +15,7 @@ public class PrintVisitor implements Visitor {
     @Override
     public void visitClass(Class aClass) {
         String dependencies = aClass.getDependencies().stream()
-                .map(Element::getFullName)
+                .map(Element::getFullNameAsString)
                 .collect(Collectors.joining(", "));
         if (dependencies.length() == 0) {
             return;

@@ -7,7 +7,6 @@ import com.zuehlke.depanalyzer.graph.Package;
 import com.zuehlke.depanalyzer.graph.Visitor;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Set;
 import java.util.function.BiConsumer;
 
 @RequiredArgsConstructor
@@ -15,22 +14,23 @@ public class UpdateDependencyCopyVisitor implements Visitor {
     private final DependencyGraphBuilder resultBuilder;
     private final BiConsumer<Element, Element> addDependency;
 
+
+
     @Override
     public void visitPackage(Package aPackage) {
-        Package newPackage = resultBuilder.getOrAddPackage(aPackage.getFullName());
-        addDependencies(newPackage, aPackage.getDependencies());
+        visitElement(aPackage);
     }
 
     @Override
-    public void visitClass(com.zuehlke.depanalyzer.graph.Class aClass) {
-        Class newClass = resultBuilder.getOrAddClass(aClass.getFullName());
-        addDependencies(newClass, aClass.getDependencies());
+    public void visitClass(Class aClass) {
+        visitElement(aClass);
     }
 
-    private void addDependencies(Element from, Set<Element> to) {
-        to.stream()
+    private void visitElement(Element element){
+        Element newElement = resultBuilder.getOrAddElement(element.getFullName(), element.getClass());
+        element.getDependencies().stream()
                 .map(e -> resultBuilder.getOrAddElement(e.getFullName(), e.getClass()))
-                .forEach(e -> addDependency.accept(from, e));
+                .forEach(e -> addDependency.accept(newElement, e));
     }
 }
 

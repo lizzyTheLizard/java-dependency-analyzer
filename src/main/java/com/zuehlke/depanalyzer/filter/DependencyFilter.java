@@ -1,34 +1,44 @@
 package com.zuehlke.depanalyzer.filter;
 
 import com.zuehlke.depanalyzer.graph.*;
+import com.zuehlke.depanalyzer.graph.Class;
 import com.zuehlke.depanalyzer.visitor.UpdateDependencyCopyVisitor;
+import lombok.RequiredArgsConstructor;
 import lombok.experimental.UtilityClass;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.BiConsumer;
-import com.zuehlke.depanalyzer.writer.plantuml.PlantUMLWriter;
 
 @UtilityClass
+@SuppressWarnings("unused")
 public class DependencyFilter {
-    public static Filter usePackageDependencies(){
-        return input -> {
-            DependencyGraphBuilder resultBuilder = new DependencyGraphBuilder();
-            UsePackageDependencies addDependency = new UsePackageDependencies(resultBuilder);
-            UpdateDependencyCopyVisitor copyVisitor = new UpdateDependencyCopyVisitor(resultBuilder, addDependency);
-            input.visit(copyVisitor);
-            return resultBuilder.build();
-        };
+    public static Filter usePackageDependencies(boolean removeClasses){
+        return input -> filter(removeClasses, input);
     }
 
-    private record UsePackageDependencies(DependencyGraphBuilder resultBuilder) implements BiConsumer<Element, Element> {
+    private static DependencyGraph filter(boolean removeClasses, DependencyGraph input){
+        DependencyGraphBuilder resultBuilder = new DependencyGraphBuilder();
+        UsePackageDependencies addDependency = new UsePackageDependencies(resultBuilder);
+        UpdateDependencyCopyVisitor copyVisitor = new UpdateDependencyCopyVisitor(resultBuilder, addDependency);
+        input.visit(copyVisitor);
+        DependencyGraph result = resultBuilder.build();
+        if(removeClasses){
+            result = result.filter(RemoveElementsFilter.removeElements(Class.class::isInstance));
+        }
+        return result;
+    }
+
+    @RequiredArgsConstructor
+    private class UsePackageDependencies implements BiConsumer<Element, Element> {
+        private final DependencyGraphBuilder resultBuilder;
+
         @Override
         public void accept(Element from, Element to) {
             if (from.getParent() == to.getParent()) {
                 resultBuilder.addDependency(from, to);
                 return;
             }
-            new PlantUMLWriter(null);
             Element commonParent = findCommonParent(from, to);
             Element packageFrom = findParentWithParent(from, commonParent);
             Element packageTo = findParentWithParent(to, commonParent);

@@ -3,7 +3,7 @@ package com.zuehlke.depanalyzer.jdeps;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-public class JDepsErrorAnalyzer extends PrintWriter {
+class JDepsErrorAnalyzer extends PrintWriter {
 
     public JDepsErrorAnalyzer(){
         super(new StringWriter());

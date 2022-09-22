@@ -13,7 +13,7 @@ class PlantUMLComponentVisitor implements Visitor {
 
     @Override
     public void visitPackage(Package aPackage) {
-        printStream.printf("package %s {%n", aPackage.getName());
+        printStream.printf("package \"%s\" as %s { %n", aPackage.getName(), aPackage.hashCode());
     }
 
     @Override
@@ -23,6 +23,6 @@ class PlantUMLComponentVisitor implements Visitor {
 
     @Override
     public void visitClass(Class aClass) {
-        printStream.printf("class %s %n", aClass.getName());
+        printStream.printf("class \"%s\" as %s %n", aClass.getName(), aClass.hashCode());
     }
 }

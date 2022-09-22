@@ -4,9 +4,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class Element {
@@ -25,15 +23,16 @@ public abstract class Element {
         return Collections.unmodifiableSet(dependencies);
     }
 
-    public String getFullName() {
-        if(parent == null) {
-            return name;
+    public Stack<String> getFullName() {
+        Stack<String> result = parent == null ? new Stack<>() : parent.getFullName();
+        if(name != null){
+            result.push(name);
         }
-        String parentName = parent.getFullName();
-        if(parentName == null) {
-            return name;
-        }
-        return parentName + "." + name;
+        return result;
+    }
+
+    public String getFullNameAsString() {
+        return String.join(".", getFullName());
     }
 
     public void visit(Visitor v){
