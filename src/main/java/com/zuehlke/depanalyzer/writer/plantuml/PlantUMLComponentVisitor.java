@@ -1,28 +1,43 @@
 package com.zuehlke.depanalyzer.writer.plantuml;
 
-import com.zuehlke.depanalyzer.graph.Class;
-import com.zuehlke.depanalyzer.graph.Package;
-import com.zuehlke.depanalyzer.graph.Visitor;
+import com.zuehlke.depanalyzer.model.Element;
+import com.zuehlke.depanalyzer.model.Visitor;
 import lombok.RequiredArgsConstructor;
-
-import java.io.PrintStream;
 
 @RequiredArgsConstructor
 class PlantUMLComponentVisitor implements Visitor {
-    private final PrintStream printStream;
+    private final StringBuilder sb;
 
     @Override
-    public void visitPackage(Package aPackage) {
-        printStream.printf("package \"%s\" as %s { %n", aPackage.getName(), aPackage.hashCode());
+    public void visitElement(Element element) {
+        switch (element.getType()) {
+            case GRAPH:
+                break;
+            case CLASS:
+                sb.append(String.format("class \"%s\" as %s",
+                        element.getName().orElseThrow(),
+                        element.getFullName().orElseThrow()));
+                sb.append(System.lineSeparator());
+                break;
+            case PACKAGE:
+                sb.append(String.format("package \"%s\" as %s {",
+                        element.getName().orElseThrow(),
+                        element.getFullName().orElseThrow()));
+                sb.append(System.lineSeparator());
+                break;
+        }
     }
 
     @Override
-    public void exitPackage(Package aPackage) {
-        printStream.println("}");
-    }
-
-    @Override
-    public void visitClass(Class aClass) {
-        printStream.printf("class \"%s\" as %s %n", aClass.getName(), aClass.hashCode());
+    public void exitElement(Element element) {
+        switch (element.getType()) {
+            case GRAPH:
+            case CLASS:
+                break;
+            case PACKAGE:
+                sb.append("}");
+                sb.append(System.lineSeparator());
+                break;
+        }
     }
 }

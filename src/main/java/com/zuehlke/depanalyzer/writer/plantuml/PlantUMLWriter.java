@@ -1,26 +1,20 @@
 package com.zuehlke.depanalyzer.writer.plantuml;
 
-import com.zuehlke.depanalyzer.graph.*;
-import lombok.RequiredArgsConstructor;
+import com.zuehlke.depanalyzer.model.Element;
+import com.zuehlke.depanalyzer.model.ElementMapper;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
-
-@RequiredArgsConstructor
-public class PlantUMLWriter implements Writer {
-    private final File outFile;
+public class PlantUMLWriter implements ElementMapper<String> {
 
     @Override
-    public void write(DependencyGraph dependencyGraph){
-        try(PrintStream printStream = new PrintStream(outFile)){
-            printStream.println("@startuml");
-            printStream.println("skinparam linetype ortho");
-            dependencyGraph.visit(new PlantUMLComponentVisitor(printStream));
-            dependencyGraph.visit(new PlantUMLDependencyVisitor(printStream));
-            printStream.println("@enduml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public String map(Element input) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("@startuml");
+        sb.append(System.lineSeparator());
+        sb.append("skinparam linetype ortho");
+        sb.append(System.lineSeparator());
+        input.visit(new PlantUMLComponentVisitor(sb));
+        input.visit(new PlantUMLDependencyVisitor(sb));
+        sb.append("@enduml");
+        return sb.toString();
     }
 }

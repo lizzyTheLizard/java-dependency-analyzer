@@ -1,29 +1,18 @@
 package com.zuehlke.depanalyzer.writer.plantuml;
 
-import com.zuehlke.depanalyzer.graph.Class;
-import com.zuehlke.depanalyzer.graph.Element;
-import com.zuehlke.depanalyzer.graph.Package;
-import com.zuehlke.depanalyzer.graph.Visitor;
+import com.zuehlke.depanalyzer.model.Element;
+import com.zuehlke.depanalyzer.model.Visitor;
 import lombok.RequiredArgsConstructor;
-
-import java.io.PrintStream;
 
 @RequiredArgsConstructor
 class PlantUMLDependencyVisitor implements Visitor {
-    private final PrintStream printStream;
-    @Override
-    public void visitClass(Class aClass) {
-        visitElement(aClass);
-    }
+    private final StringBuilder sb;
 
     @Override
-    public void visitPackage(Package aPackage) {
-        visitElement(aPackage);
+    public void visitElement(Element element) {
+        element.getDependencies().forEach(d -> {
+            sb.append(String.format("%s --> %s", d.getFrom(), d.getTo()));
+            sb.append(System.lineSeparator());
+        });
     }
-
-    private void visitElement(Element element){
-        element.getDependencies().forEach(d -> printStream.printf("%s --> %s%n", element.hashCode(), d.hashCode()));
-
-    }
-
 }

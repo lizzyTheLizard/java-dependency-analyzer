@@ -1,61 +1,71 @@
 package com.zuehlke.depanalyzer.jdeps;
 
-import com.zuehlke.depanalyzer.graph.Class;
-import com.zuehlke.depanalyzer.graph.DependencyGraph;
-import com.zuehlke.depanalyzer.graph.DependencyGraphBuilder;
-import com.zuehlke.depanalyzer.graph.Element;
-import lombok.RequiredArgsConstructor;
+import com.zuehlke.depanalyzer.graph.Graph;
+import com.zuehlke.depanalyzer.model.ClassDetails;
+import com.zuehlke.depanalyzer.model.Dependency;
+import com.zuehlke.depanalyzer.model.DependencyDetails;
+import com.zuehlke.depanalyzer.model.Element;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.Stack;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class JDepsOutputAnalyzer extends PrintWriter {
 
-    public JDepsOutputAnalyzer(){
+    public JDepsOutputAnalyzer() {
         super(new StringWriter());
     }
 
-    public DependencyGraph toOutput(){
-        DependencyGraphBuilder resultBuilder = new DependencyGraphBuilder();
+    public Element toOutput() {
         String outputString = this.out.toString();
-        Arrays.stream(outputString.split(System.lineSeparator()))
+        List<DependencyDetails> detectedDependencies = getDetectedDependencies(outputString);
+        Set<ClassDetails> classes = detectedDependencies.stream()
+                .flatMap(d -> Stream.of(d.getFromClass(), d.getToClass()))
+                .distinct()
+                .map(ClassDetails::new)
+                .collect(Collectors.toSet());
+        Set<Dependency> dependencies = detectedDependencies.stream()
+                .map(d -> new Dependency(d.getFromClass(), d.getToClass(), d))
+                .collect(Collectors.toSet());
+        return Graph.create(dependencies, classes);
+    }
+
+    private List<DependencyDetails> getDetectedDependencies(String outputString) {
+        return Arrays.stream(outputString.split(System.lineSeparator()))
                 .filter(l -> l.length() > 0)
                 .map(this::splitDependencyLine)
                 .flatMap(Optional::stream)
-                .forEach(d -> {
-                    Element from = resultBuilder.getOrAddElement(getFullName(d.from), Class.class);
-                    Element to = resultBuilder.getOrAddElement(getFullName(d.to), Class.class);
-                    resultBuilder.addDependency(from,to);
-                });
-        return resultBuilder.build();
+                .toList();
     }
 
-    private Stack<String> getFullName(String name) {
-        String[] split = name.split("\\.");
-        Stack<String> result = new Stack<>();
-        result.addAll(List.of(split));
-        return result;
-    }
 
-    private Optional<DetectedDependency> splitDependencyLine(String line) {
-        //Lines do have the form "   com.zuehlke.depanlyzer.Main                        -> com.zuehlke.depanlyzer.analyze.JDepsRunner         target"
+    private Optional<DependencyDetails> splitDependencyLine(String line) {
+        if (line.startsWith("Error")) {
+            throw JDepsException.runtimeError(line);
+        }
+        if (!line.contains("->")) {
+            System.out.println("Ignored jdeps output line: " + line);
+            return Optional.empty();
+        }
+        if (line.contains("-> not found")) {
+            System.out.println("Ignored jdeps output line: " + line);
+            return Optional.empty();
+        }
         String[] parts = Arrays.stream(line.split(" "))
                 .filter(l -> l.length() > 0)
                 .toArray(String[]::new);
-        if(parts.length < 4){
+        if (parts[0].startsWith("not") || parts[2].startsWith("not")) {
+            System.out.println("OutputLine: " + line);
             return Optional.empty();
         }
-        return Optional.of(new DetectedDependency(parts[0], parts[2], parts[3]));
-   }
-
-   @RequiredArgsConstructor
-   private static class DetectedDependency{
-       private final String from;
-       private final String to;
-       private final String type;
-   }
+        if (parts.length < 4) {
+            return Optional.empty();
+        }
+        return Optional.of(new DependencyDetails(parts[0], parts[2]));
+    }
 }
