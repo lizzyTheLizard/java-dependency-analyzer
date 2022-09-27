@@ -17,6 +17,7 @@ target/
 
 # Package Files #
 *.jar
+!src/test/**/*.jar
 *.war
 *.nar
 *.ear
