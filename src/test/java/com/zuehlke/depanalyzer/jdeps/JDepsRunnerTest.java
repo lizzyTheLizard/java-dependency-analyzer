@@ -9,7 +9,7 @@ import java.util.Optional;
 public class JDepsRunnerTest {
     @Test
     public void run() {
-        String fatJarFileName = ".\\src\\test\\resources\\fat-jar-example.jar";
+        String fatJarFileName = "./src/test/resources/fat-jar-example.jar";
         Element graph = JDepsRunner.create()
                 .fatJar(fatJarFileName, f -> f.getName().startsWith("jackson-core"))
                 .multiRelease("17")

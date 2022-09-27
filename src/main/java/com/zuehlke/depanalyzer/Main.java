@@ -13,15 +13,29 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         String out = JDepsRunner.create()
-                .fatJar("./src/test/resources/fat-jar-example.jar", f -> f.getName().startsWith("jackson-annotations"))
-                //.fatJar("C:\\Users\\grma\\Downloads\\k-mis-ng-backend-6.0.52-SNAPSHOT.jar", f -> f.getName().startsWith("Mis"))
-                //.file("./target")
                 .multiRelease("9")
+                .ignoreMissingDeps(true)
+
+                /*
+                .file("./src/test/resources/fat-jar-example.jar")
                 .run()
+                .apply(new SelectPackageMapper("ch.baselone"))
+                 */
+
+                .file("./target")
+                .run()
+                .apply(new SelectPackageMapper("com.zuehlke"))
+                .apply(new PackageDependencyMapper(true))
+
+
+                /*
+                .fatJar("C:\\Users\\grma\\Downloads\\k-mis-ng-backend-6.0.52-SNAPSHOT.jar", f -> f.getName().startsWith("Mis"))
                 .apply(new SelectPackageMapper("ch.kessler"))
                 .apply(FilterPackageMapper.doesNotContain(".ko3"))
                 .apply(new SimplifyPackageMapper("ch.kessler.misng.core.biz.reports"))
                 .apply(new PackageDependencyMapper(true))
+                 */
+
                 .apply(new PlantUMLWriter());
 
         try (FileWriter writer = new FileWriter("./plantuml.txt")) {
