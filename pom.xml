@@ -16,7 +16,8 @@
 
     <modules>
         <module>frontend</module>
-        <module>plugin</module>
+        <module>document-maven-plugin</module>
+        <module>library</module>
     </modules>
 
 </project>

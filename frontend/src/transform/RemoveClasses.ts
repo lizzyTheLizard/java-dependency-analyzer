@@ -4,12 +4,12 @@ export type RemoveClassesSelection = 'HIDE_INNER' | 'HIDE_ALL' | 'SHOW_ALL';
 
 export function removeClasses(selection: RemoveClassesSelection): Filter {
 	switch (selection) {
-		case 'HIDE_INNER':
-			return graph => removeInternalClassesRecusive(graph);
-		case 'HIDE_ALL':
-			return graph => removeClassesRecusive(graph);
-		default:
-			return graph => graph;
+	case 'HIDE_INNER':
+		return graph => removeInternalClassesRecusive(graph);
+	case 'HIDE_ALL':
+		return graph => removeClassesRecusive(graph);
+	default:
+		return graph => graph;
 	}
 }
 

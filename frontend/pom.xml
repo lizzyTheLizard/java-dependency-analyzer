@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>site.gutschi.java-dependency</groupId>
-        <artifactId>java-document-plugin</artifactId>
+        <groupId>site.gutschi.dependency</groupId>
+        <artifactId>java-dependency-analyzer</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>frontend</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <build>
         <plugins>
@@ -78,5 +78,11 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>dist</directory>
+                <targetPath>nomnuml</targetPath>
+            </resource>
+        </resources>
     </build>
 </project>

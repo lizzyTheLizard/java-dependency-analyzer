@@ -6,10 +6,10 @@ export function nomnomlWriter(input: Graph): string {
 
 function nomnomlWriterNode(input: GraphNode): string {
 	switch (input.type) {
-		case 'PACKAGE':
-			return `[<package> ${input.name} | ${getChildren(input)}]`;
-		default:
-			return `[${input.name}]`;
+	case 'PACKAGE':
+		return `[<package> ${input.name} | ${getChildren(input)}]`;
+	default:
+		return `[${input.name}]`;
 	}
 }
 
