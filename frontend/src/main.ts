@@ -19,7 +19,7 @@ function update(): void {
 	const filters = generateFilters();
 	const graph = jDepsInput.filter(filters);
 	const output = nomnomlWriter(graph);
-	jquery('main').html(nomnoml.renderSvg(output));
+	jquery('#img').html(nomnoml.renderSvg(output));
 	jquery('svg').addClass('img-fluid');
 	jquery('g').on('click', (e) => selectElement(e));
 }
@@ -48,12 +48,23 @@ function generateFilters(): Filter[] {
 function selectElement(e: ClickEvent<HTMLElement, undefined, HTMLElement, HTMLElement>){
 	const name = getFullName(e.target);
 	const node = jDepsInput.findNode(name);
+	const sidebar = new Offcanvas(jquery('#sidebar').get(0)!);
 
 	jquery('#sidebarTitle').text(node.name);
-	jquery('#sidebarBody').text(name);
-	jquery('#sidebar')
-		.map((i,e) => new Offcanvas(e))
-		.each((i,e) => e.show());
+	jquery('#sidebarName').text(name);
+	jquery('#sidebarType').text(node.type);
+	jquery('#sidebarSetBase').on('click',() => {
+		jquery('#basePackage').val(name);
+		update();
+		sidebar.hide();
+	});
+	jquery('#sidebarIgnore').on('click',() => {
+		const oldIgnore = jquery('#ignorePackages').val();
+		jquery('#ignorePackages').val(oldIgnore ? oldIgnore + "," +name : name);
+		update();
+		sidebar.hide();
+	});
+	sidebar.show();
 	return false;
 }
 
