@@ -13,10 +13,12 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "file-saver": "^2.0.5",
     "jquery": "^3.6.1",
     "nomnoml": "^1.5.2"
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.5",
     "@types/jest": "^29.2.2",
     "@types/jquery": "^3.5.14",
     "@types/node": "^18.11.9",

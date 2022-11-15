@@ -8,6 +8,7 @@ import {basePackage} from './transform/BasePackage';
 import type {RemoveClassesSelection} from './transform/RemoveClasses';
 import {removeClasses} from './transform/RemoveClasses';
 import type {Filter} from './transform/Graph';
+import FileSaver from 'file-saver';
 
 function update(): void {
 	const filters: Filter[] = [];
@@ -34,7 +35,12 @@ function update(): void {
 	jquery('svg').addClass('img-fluid');
 }
 
+function save(){
+	const fileContend = jquery('svg').prop('outerHTML');
+	const file = new File([fileContend], 'image.svg', {type: 'image/svg+xml'});
+	FileSaver.saveAs(file);
+}
+
 update();
-jquery('#updateButton').on('click', () => {
-	update();
-});
+jquery('#updateButton').on('click', () => update());
+jquery('#saveButton').on('click', () => save());
