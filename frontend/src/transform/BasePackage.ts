@@ -1,16 +1,15 @@
 import type {Filter, Graph} from './Graph';
+import {GraphImpl} from './GraphImpl';
 
 export function basePackage(basePackage: string): Filter {
+
 	return graph => {
 		const node = findNode(basePackage, graph);
-		return {
-			dependencies: [],
-			nodes: [{
-				...node,
-				name: basePackage,
-				type: 'PACKAGE',
-			}],
-		};
+		return new GraphImpl([{
+			...node,
+			name: basePackage,
+			type: 'PACKAGE',
+		}],[]);
 	};
 }
 

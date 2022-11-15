@@ -1,12 +1,14 @@
-export type Graph = {
+export interface Graph {
 	readonly nodes: GraphNode[];
 	readonly dependencies: GraphDependency[];
-};
+	filter(filters: Filter[]): Graph;
+	findNode(fullName: string, createMissing?: (name: string, type: Type) => GraphNode): GraphNode;
+}
 
-export type GraphNode = {
+export interface GraphNode extends Graph {
 	readonly name: string;
 	readonly type: Type;
-} & Graph;
+}
 
 export type Type = 'CLASS' | 'PACKAGE';
 
@@ -14,7 +16,6 @@ export type GraphDependency = {
 	from: string;
 	to: string;
 	dependencies: Dependency[];
-
 };
 
 export type Dependency = {

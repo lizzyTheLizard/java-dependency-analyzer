@@ -1,4 +1,5 @@
-import type {Filter, Graph} from './Graph';
+import type {Filter, Graph, GraphNode} from './Graph';
+import {GraphNodeImpl} from './GraphImpl';
 
 export type RemoveClassesSelection = 'HIDE_INNER' | 'HIDE_ALL' | 'SHOW_ALL';
 
@@ -13,20 +14,20 @@ export function removeClasses(selection: RemoveClassesSelection): Filter {
 	}
 }
 
-function removeClassesRecusive<T extends Graph>(graph: T): T {
+function removeClassesRecusive(graph: Graph): GraphNode {
 	const classes = graph.nodes.filter(n => n.type === 'CLASS').map(n => n.name);
-	return {
-		...graph,
-		nodes: graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeClassesRecusive(n)),
-		dependencies: graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
-	};
+	return new GraphNodeImpl(
+		graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeClassesRecusive(n)),
+		graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
+		(graph as GraphNode)?.name ?? '', (graph as GraphNode)?.type ?? 'PACKAGE'
+	);
 }
 
-function removeInternalClassesRecusive<T extends Graph>(graph: T): T {
+function removeInternalClassesRecusive(graph: Graph): GraphNode {
 	const classes = graph.nodes.filter(n => n.type === 'CLASS' && n.name.indexOf('$') > 0).map(n => n.name);
-	return {
-		...graph,
-		nodes: graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeInternalClassesRecusive(n)),
-		dependencies: graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
-	};
+	return new GraphNodeImpl(
+		graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeInternalClassesRecusive(n)),
+		graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
+		(graph as GraphNode)?.name ?? '', (graph as GraphNode)?.type ?? 'PACKAGE'
+	);
 }

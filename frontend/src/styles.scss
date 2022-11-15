@@ -13,15 +13,11 @@ body {
     margin-bottom: 60px; /* Margin bottom by footer height */
 }
 
-.form-label {
-    color: white;
-}
-
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px; /* Set the fixed height of the footer here */
-    line-height: 60px; /* Vertically center the text there */
+    height: 90px; /* Set the fixed height of the footer here */
+    line-height: 40px; /* Vertically center the text there */
     background-color: #f5f5f5;
 }

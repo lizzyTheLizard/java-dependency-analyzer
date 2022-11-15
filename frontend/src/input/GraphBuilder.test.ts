@@ -1,7 +1,7 @@
-import {GraphImpl} from './GraphImpl';
+import {GraphBuilder} from './GraphBuilder';
 
 test('Constructor', () => {
-	const target = new GraphImpl();
+	const target = new GraphBuilder();
 	expect(target).toEqual({
 		dependencies: [],
 		nodes: [],
@@ -9,7 +9,7 @@ test('Constructor', () => {
 });
 
 test('Add Class', () => {
-	const target = new GraphImpl();
+	const target = new GraphBuilder();
 	target.addNode('test');
 	expect(target).toEqual({
 		dependencies: [],
@@ -25,7 +25,7 @@ test('Add Class', () => {
 });
 
 test('Add Package', () => {
-	const target = new GraphImpl();
+	const target = new GraphBuilder();
 	target.addNode('package.test');
 	expect(target).toEqual({
 		dependencies: [],
@@ -48,7 +48,7 @@ test('Add Package', () => {
 });
 
 test('Add Dependency', () => {
-	const target = new GraphImpl();
+	const target = new GraphBuilder();
 	target.addNode('test1');
 	target.addNode('test2');
 	target.addDependency({from: 'test1', to: 'test2'});
@@ -79,7 +79,7 @@ test('Add Dependency', () => {
 });
 
 test('Add Dependency In Packet', () => {
-	const target = new GraphImpl();
+	const target = new GraphBuilder();
 	target.addNode('package.test1');
 	target.addNode('package.test2');
 	target.addDependency({from: 'package.test1', to: 'package.test2'});
@@ -117,7 +117,7 @@ test('Add Dependency In Packet', () => {
 });
 
 test('Add Dependency Over Packet', () => {
-	const target = new GraphImpl();
+	const target = new GraphBuilder();
 	target.addNode('package1.test1');
 	target.addNode('package2.test2');
 	target.addDependency({from: 'package1.test1', to: 'package2.test2'});

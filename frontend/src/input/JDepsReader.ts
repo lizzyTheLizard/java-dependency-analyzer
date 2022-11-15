@@ -1,5 +1,5 @@
 import type {Dependency, Graph} from '../transform/Graph';
-import {GraphImpl} from './GraphImpl';
+import {GraphBuilder} from './GraphBuilder';
 
 export function jDepsReader(jdeps: string): Graph {
 	const dependencies: Dependency[] = [];
@@ -10,7 +10,7 @@ export function jDepsReader(jdeps: string): Graph {
 		}
 	});
 
-	const initial = new GraphImpl();
+	const initial = new GraphBuilder();
 	dependencies.forEach(d => {
 		initial.addNode(d.from);
 		initial.addNode(d.to);

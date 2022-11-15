@@ -18,6 +18,7 @@
     "nomnoml": "^1.5.2"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
     "@types/file-saver": "^2.0.5",
     "@types/jest": "^29.2.2",
     "@types/jquery": "^3.5.14",
