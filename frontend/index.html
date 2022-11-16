@@ -24,29 +24,33 @@
     <footer class="text-muted">
       <div class="container">
         <div class="row">
-          <div class="col">
-              <label for="showClasses" class="form-label">Show Classes</label>
-              <select id="showClasses" style="display: unset" class="form-select" aria-label="Show Classes">
+          <div class="col-3">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="basePackage" placeholder="com.example">
+              <label for="basePackage">Base Package</label>
+            </div>
+            <div class="form-floating">
+              <select id="showClasses" class="form-select" aria-label="Show Classes">
                 <option value="HIDE_INNER" selected>Hide Inner Classes</option>
                 <option value="HIDE_ALL">Hide All Classes</option>
                 <option value="SHOW_ALL">Show All Classes</option>
               </select>
+              <label for="showClasses">Show Classes</label>
             </div>
-          <div class="col">
-            <label for="basePackage" class="form-label">Base Package</label>
-            <input type="text" style="display: unset" class="form-control" id="basePackage" placeholder="com.example">
           </div>
-          <div class="col">
-            <label for="ignorePackages" class="form-label">Ignore Packages</label>
-            <input type="text" style="display: unset" class="form-control" id="ignorePackages" placeholder="com.example, java.lang">
+          <div class="col-6">
+            <div class="form-floating full-size">
+              <textarea class="form-control" placeholder="com.example, java.lang" id="ignorePackages"></textarea>
+              <label for="ignorePackages">Ignore Packages</label>
+            </div>
           </div>
-          <div class="col">
-              <button type="button" style="width: 100%" class="btn btn-primary" id="updateButton">Update</button>
-              <button type="button" style="width: 100%" class="btn btn-primary" id="saveButton">Save</button>
+          <div class="col-3">
+            <button type="button" class="btn btn-primary" id="updateButton">Update</button>
+            <button type="button" class="btn btn-primary" id="saveButton">Save</button>
           </div>
         </div>
       </div>
-    </footer>
+      </footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
