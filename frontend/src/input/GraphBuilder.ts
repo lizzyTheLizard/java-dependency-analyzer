@@ -7,7 +7,7 @@ export class GraphBuilder extends GraphImpl {
 	}
 
 	public addNode(name: string): void {
-		this.findNode(name, (n, type) => new GraphNodeImpl([],[], n, type));
+		this.findNode(name, (name, fullname, type) => new GraphNodeImpl([],[], name, fullname, type));
 	}
 
 	public addDependency(d: Dependency): void {

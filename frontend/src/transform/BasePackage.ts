@@ -8,6 +8,7 @@ export function basePackage(basePackage: string): Filter {
 		return new GraphImpl([{
 			...node,
 			name: basePackage,
+			fullName: basePackage,
 			type: 'PACKAGE',
 		}],[]);
 	};

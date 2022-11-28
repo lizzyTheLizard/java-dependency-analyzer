@@ -7,6 +7,7 @@ test('Simple', () => {
 		nodes: [
 			{
 				name: 'package',
+				fullName: 'package',
 				type: 'PACKAGE',
 				dependencies: [
 					{
@@ -20,11 +21,13 @@ test('Simple', () => {
 				nodes: [
 					{
 						name: 'test1',
+						fullName: 'package.test1',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
 					}, {
 						name: 'test2',
+						fullName: 'package.test2',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
@@ -42,6 +45,7 @@ test('Multiline', () => {
 		nodes: [
 			{
 				name: 'package',
+				fullName: 'package',
 				type: 'PACKAGE',
 				dependencies: [
 					{
@@ -61,16 +65,19 @@ test('Multiline', () => {
 				nodes: [
 					{
 						name: 'test1',
+						fullName: 'package.test1',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
 					}, {
 						name: 'test2',
+						fullName: 'package.test2',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
 					}, {
 						name: 'test3',
+						fullName: 'package.test3',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
@@ -88,6 +95,7 @@ test('Invalid Line', () => {
 		nodes: [
 			{
 				name: 'package',
+				fullName: 'package',
 				type: 'PACKAGE',
 				dependencies: [
 					{
@@ -101,11 +109,13 @@ test('Invalid Line', () => {
 				nodes: [
 					{
 						name: 'test1',
+						fullName: 'package.test1',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
 					}, {
 						name: 'test2',
+						fullName: 'package.test2',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],

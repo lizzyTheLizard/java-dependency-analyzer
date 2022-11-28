@@ -1,56 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="width:100%; height: 100%; padding: 0; margin: 0;">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap w/ Vite</title>
   </head>
-  <body>
-    <main>
-      <div id="img"></div>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="Sidebar">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="sidebarTitle">Title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body" id="sidebarBody">
-          <div id="sidebarName">Name</div>
-          <div id="sidebarType">Type</div>
-          <button type="button" style="width: 100%" class="btn btn-primary" id="sidebarSetBase">Base</button>
-          <button type="button" style="width: 100%" class="btn btn-danger" id="sidebarIgnore">Ignore</button>
-        </div>
-      </div>
-    </main>
-    <footer class="text-muted">
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <div class="form-floating">
-              <input type="text" class="form-control" id="basePackage" placeholder="com.example">
-              <label for="basePackage">Base Package</label>
-            </div>
-            <div class="form-floating">
-              <select id="showClasses" class="form-select" aria-label="Show Classes">
-                <option value="HIDE_INNER" selected>Hide Inner Classes</option>
-                <option value="HIDE_ALL">Hide All Classes</option>
-                <option value="SHOW_ALL">Show All Classes</option>
-              </select>
-              <label for="showClasses">Show Classes</label>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="form-floating full-size">
-              <textarea class="form-control" placeholder="com.example, java.lang" id="ignorePackages"></textarea>
-              <label for="ignorePackages">Ignore Packages</label>
-            </div>
-          </div>
-          <div class="col-3">
-            <button type="button" class="btn btn-primary" id="updateButton">Update</button>
-            <button type="button" class="btn btn-primary" id="saveButton">Save</button>
-          </div>
-        </div>
-      </div>
-      </footer>
+  <body style="width:100%; height: 100%; padding: 0; margin: 0;">
     <script type="module" src="/src/main.ts"></script>
+    <app-main></app-main>
+    </div>
   </body>
 </html>

@@ -19,7 +19,9 @@ function removeClassesRecusive(graph: Graph): GraphNode {
 	return new GraphNodeImpl(
 		graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeClassesRecusive(n)),
 		graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
-		(graph as GraphNode)?.name ?? '', (graph as GraphNode)?.type ?? 'PACKAGE'
+		(graph as GraphNode)?.name ?? '',
+		(graph as GraphNode)?.fullName ?? '',
+		(graph as GraphNode)?.type ?? 'PACKAGE'
 	);
 }
 
@@ -28,6 +30,8 @@ function removeInternalClassesRecusive(graph: Graph): GraphNode {
 	return new GraphNodeImpl(
 		graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeInternalClassesRecusive(n)),
 		graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
-		(graph as GraphNode)?.name ?? '', (graph as GraphNode)?.type ?? 'PACKAGE'
+		(graph as GraphNode)?.name ?? '',
+		(graph as GraphNode)?.fullName ?? '',
+		(graph as GraphNode)?.type ?? 'PACKAGE'
 	);
 }

@@ -16,6 +16,7 @@ test('Add Class', () => {
 		nodes: [
 			{
 				name: 'test',
+				fullName: 'test',
 				type: 'CLASS',
 				dependencies: [],
 				nodes: [],
@@ -32,11 +33,13 @@ test('Add Package', () => {
 		nodes: [
 			{
 				name: 'package',
+				fullName: 'package',
 				type: 'PACKAGE',
 				dependencies: [],
 				nodes: [
 					{
 						name: 'test',
+						fullName: 'package.test',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
@@ -65,11 +68,13 @@ test('Add Dependency', () => {
 		nodes: [
 			{
 				name: 'test1',
+				fullName: 'test1',
 				type: 'CLASS',
 				dependencies: [],
 				nodes: [],
 			}, {
 				name: 'test2',
+				fullName: 'test2',
 				type: 'CLASS',
 				dependencies: [],
 				nodes: [],
@@ -88,6 +93,7 @@ test('Add Dependency In Packet', () => {
 		nodes: [
 			{
 				name: 'package',
+				fullName: 'package',
 				type: 'PACKAGE',
 				dependencies: [
 					{
@@ -101,11 +107,13 @@ test('Add Dependency In Packet', () => {
 				nodes: [
 					{
 						name: 'test1',
+						fullName: 'package.test1',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
 					}, {
 						name: 'test2',
+						fullName: 'package.test2',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
@@ -134,11 +142,13 @@ test('Add Dependency Over Packet', () => {
 		nodes: [
 			{
 				name: 'package1',
+				fullName: 'package1',
 				type: 'PACKAGE',
 				dependencies: [],
 				nodes: [
 					{
 						name: 'test1',
+						fullName: 'package1.test1',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
@@ -146,11 +156,13 @@ test('Add Dependency Over Packet', () => {
 				],
 			}, {
 				name: 'package2',
+				fullName: 'package2',
 				type: 'PACKAGE',
 				dependencies: [],
 				nodes: [
 					{
 						name: 'test2',
+						fullName: 'package2.test2',
 						type: 'CLASS',
 						dependencies: [],
 						nodes: [],
