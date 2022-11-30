@@ -14,6 +14,7 @@ import { PaperInputElement } from '@polymer/paper-input/paper-input';
 import { PaperDropdownMenuElement } from '@polymer/paper-dropdown-menu/paper-dropdown-menu';
 import { PaperItemElement } from '@polymer/paper-item/paper-item';
 import FileSaver from 'file-saver';
+import { collapsePackages } from '../transform/CollapsePackages';
 
 export class FilterEvent extends Event {
 	constructor(type: string, public readonly filters: Filter[]) {
@@ -63,7 +64,7 @@ export class ImageSettings extends LitElement {
 				</paper-listbox>
 			</paper-dropdown-menu>
 			<list-selection id="ignored" label="Ignored" @changed="${this.ignoreChanged}"></list-selection>
-			<list-selection id="ignored" label="Collapsed" @changed="${this.collapsedChanged}"></list-selection>
+			<list-selection id="collapsed" label="Collapsed" @changed="${this.collapsedChanged}"></list-selection>
 			<div class="parent">
 				<paper-button class="custom pink" raised @click="${this.saveSVG}">Export SVG</paper-button>		
 				<paper-button class="custom pink" raised @click="${this.saveJPEG}">Export JPEG</paper-button>		
@@ -134,9 +135,7 @@ export class ImageSettings extends LitElement {
 		}
 
 		filters.push(...removePackages(this._ignored?.getValues() ?? []));
-		//TODO
-		//filters.push(...collapsePackages(this._collapsed.values));
-
+		filters.push(...collapsePackages(this._collapsed?.getValues() ?? []));
 		return filters;
 	}
 }

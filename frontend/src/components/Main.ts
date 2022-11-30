@@ -65,7 +65,7 @@ export class Main extends LitElement {
 					<image-settings @filterChanged="${this.filterChanged}"></image-settings>
 				</div>
 				<div class="sidebar details">
-					<node-details @base="${this.setBaseNode}" @ignore="${this.ignoreNode}"></node-details>
+					<node-details @base="${this.setBaseNode}" @ignore="${this.ignoreNode}" @collapse="${this.collapseNode}"></node-details>
 				</div>
 				<div class="image">
 					<image-viewer @selectNode="${this.selectNode}"></image-viewer>
@@ -80,15 +80,20 @@ export class Main extends LitElement {
 	}
 
 	private setBaseNode(e: NodeEvent): boolean{
-		this._imageSettings?.setBaseNode(e.node);
+		this._imageSettings!.setBaseNode(e.node);
 		return false;
 	}
 
 	private ignoreNode(e: NodeEvent): boolean{
-		this._imageSettings?.ignoreNode(e.node);
+		this._imageSettings!.ignoreNode(e.node);
 		return false;
 	}
 
+	private collapseNode(e: NodeEvent): boolean{
+		this._imageSettings!.collapseNode(e.node);
+		return false;
+	}
+		
 	private selectNode(e: NodeEvent): boolean {
 		this._nodeDetails!.node = e.node;
 		return false;
@@ -100,7 +105,6 @@ export class Main extends LitElement {
 	}
 
 	private setFilters(filters: Filter[]){
-		console.log('setting filters');
 		//TODO Set spinner...
 		setTimeout(() => {
 			const graph = this._input.filter(filters);

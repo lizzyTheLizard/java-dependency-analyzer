@@ -19,12 +19,12 @@ export class NodeDetails extends LitElement {
 			overflow-y: scroll;
 			overflow-x: hidden;
 		}
-		.twoButtons {
+		.threeButtons {
 			width: 100%;
 			display: flex;
 		}
 		paper-button {
-			flex: 50%;
+			flex: 33%;
 		}
 		paper-button.pink {
 			background-color: indigo;
@@ -57,13 +57,14 @@ export class NodeDetails extends LitElement {
 					</tr>
 				</table>
 			</div>
-			<div class="twoButtons">
-				<paper-button class="custom pink" raised @click="${this.base}" ${(this.node?.type == 'CLASS') ? 'disabled' : ''}>Set Base</paper-button>		
+			<div class="threeButtons">
+				<paper-button class="custom pink" raised @click="${this.base}" ${(this.node?.type == 'CLASS') ? 'disabled' : ''}>Base</paper-button>		
 				<paper-button class="custom pink" raised @click="${this.ignore}">Ignore</paper-button>		
+				<paper-button class="custom pink" raised @click="${this.collapse}">Collapse</paper-button>		
 			</div>
 		`;
 	}
-
+	
 	private base(){
 		this.dispatchEvent(new NodeEvent('base', this.node!));
 	}
@@ -71,4 +72,9 @@ export class NodeDetails extends LitElement {
 	private ignore(){
 		this.dispatchEvent(new NodeEvent('ignore', this.node!));
 	}
+
+	private collapse(){
+		this.dispatchEvent(new NodeEvent('collapse', this.node!));
+	}
+
 }

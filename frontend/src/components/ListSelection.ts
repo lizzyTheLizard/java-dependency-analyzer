@@ -9,7 +9,7 @@ export class ListSelection extends LitElement {
 	public label = '';
 	@property()
 	private _values: string[] = [];
-	@query('paper-input')
+	@query('paper-textarea')
 	private _input?: PaperTextareaElement;
 
 	public constructor() {
@@ -26,6 +26,7 @@ export class ListSelection extends LitElement {
 	private changed(){
 		const values = this._input!.value?.split(',');
 		this._values = [...new Set(values)];
+		this.dispatchEvent(new CustomEvent('changed'));
 	}
 
 	public addValue(value: string){
