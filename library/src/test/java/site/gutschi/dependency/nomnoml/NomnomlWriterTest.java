@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-class NomnomlWriterTest {
+public class NomnomlWriterTest {
     @Test
     void createSimpleFile(@TempDir Path tempDir) throws IOException {
         NomnomlWriter.create()

@@ -10,8 +10,8 @@ public class NomnumlException extends RuntimeException {
         super(message, e);
     }
 
-    static NomnumlException couldNotReadTemplate(String path) {
-        return new NomnumlException("Could not read template '" + path + "'", null);
+    static NomnumlException couldNotParseUrl(String path) {
+        return new NomnumlException("Could not parse URL '" + path + "'", null);
     }
 
     static NomnumlException couldNotReadTemplate(URL url, Throwable e) {

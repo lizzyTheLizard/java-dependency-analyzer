@@ -7,18 +7,19 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class JDepsRunnerTest {
-    @Test
+class JavadocRunnerTest {
+    //TODO Enable
+    //@Test
     void fileTest() throws URISyntaxException {
         URL url = getClass().getResource("/flatJarExample.jar");
         assert url != null;
-        String result = JDepsRunner.create()
+        String result = JavadocRunner.create()
                 .file(new File(url.toURI()))
                 .run();
         System.out.println(result);
-        assertTrue(result.lines().anyMatch(l -> l.startsWith("   site.gutschi.dependency.jdeps.FatJarUnzipper       -> java.util.zip.ZipEntry")));
+        assertTrue(result.lines().anyMatch(l -> l.startsWith("ABC")));
     }
 
     @Test
@@ -27,7 +28,7 @@ class JDepsRunnerTest {
         URL url = getClass().getResource("/flatJarExample.jar");
         assert url != null;
         File file = new File(url.toURI());
-        Assertions.assertThrows(JDepsException.class, () -> JDepsRunner.create()
+        Assertions.assertThrows(JDepsException.class, () -> JavadocRunner.create()
                 .fatJar(file.getAbsolutePath(), name -> true).file());
 
     }

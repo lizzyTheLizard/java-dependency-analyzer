@@ -20,6 +20,15 @@ public class JavaDocumentationMojo extends AbstractMojo {
     @Parameter(property = "outputFolder", defaultValue = "target/doc")
     String outputFolder;
 
+    public JavaDocumentationMojo(){
+
+    }
+
+    JavaDocumentationMojo(String input, String outputFolder){
+        this.input = input;
+        this.outputFolder = outputFolder;
+    }
+
     @Override
     public void execute() throws MojoExecutionException {
         try {

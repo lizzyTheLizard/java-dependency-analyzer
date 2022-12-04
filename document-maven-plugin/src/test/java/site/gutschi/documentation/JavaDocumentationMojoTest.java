@@ -1,20 +1,21 @@
 package site.gutschi.documentation;
 
-import junit.framework.Assert;
 import org.apache.commons.io.FileUtils;
-import org.apache.maven.plugin.testing.AbstractMojoTestCase;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-public class JavaDocumentationMojoTest extends AbstractMojoTestCase {
-    public void testSomething() throws Exception {
-        File target = new File("target/doc");
-        FileUtils.deleteDirectory(target);
+public class JavaDocumentationMojoTest {
+    @Test
+    public void defaultInputs() throws Exception {
+        String input = "src/test/resources/unit/document-maven-plugin-simple-tests/target/doc";
+        String output = "src/test/resources/unit/document-maven-plugin-simple-tests/target/classes";
+        FileUtils.deleteDirectory(new File(output));
 
-        File pom = getTestFile("src/test/resources/unit/document-maven-plugin-simple-tests/pom.xml");
-        JavaDocumentationMojo myMojo = (JavaDocumentationMojo) lookupMojo("create-documentation", pom);
+        JavaDocumentationMojo myMojo = new JavaDocumentationMojo(input, output);
         myMojo.execute();
 
-        Assert.assertTrue("Target folder has been created", target.exists() && target.isDirectory());
+        Assertions.assertTrue(new File(output).exists() && new File(output).isDirectory());
     }
 }

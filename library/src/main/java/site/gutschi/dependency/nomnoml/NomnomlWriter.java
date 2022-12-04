@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 
 public class NomnomlWriter {
     private final static String OUTPUT_FILE_NAME = "index.html";
-    private final static String TEMPLATE_PATH = "/nomnoml/index.html";
+    private final static String TEMPLATE_PATH = "/nomnuml/index.html";
     private File outputDir;
     private String jdepsOutput;
 
@@ -49,10 +49,10 @@ public class NomnomlWriter {
 
     private String getTemplate() {
         URL url = getClass().getResource(TEMPLATE_PATH);
+        if (url == null) {
+            throw NomnumlException.couldNotParseUrl(TEMPLATE_PATH);
+        }
         try {
-            if (url == null) {
-                throw NomnumlException.couldNotReadTemplate(TEMPLATE_PATH);
-            }
             return IOUtils.toString(url, StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw NomnumlException.couldNotReadTemplate(url, e);
