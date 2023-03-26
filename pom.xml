@@ -15,7 +15,6 @@
     </properties>
 
     <modules>
-        <module>frontend</module>
         <module>document-maven-plugin</module>
         <module>library</module>
     </modules>
@@ -42,11 +41,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.0.0-M7</version>
-                </plugin>
-                <plugin>
-                    <groupId>com.github.eirslett</groupId>
-                    <artifactId>frontend-maven-plugin</artifactId>
-                    <version>1.4</version>
                 </plugin>
             </plugins>
         </pluginManagement>
