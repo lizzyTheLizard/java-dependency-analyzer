@@ -32,9 +32,7 @@ function lineReader(line: string): Dependency | undefined {
 	}
 
 	const from = parts[0].trim();
-	parts[1] = parts[1].trim();
-	const lastSpace = parts[1].indexOf(' ');
-	const to = parts[1].substring(0, lastSpace).trim();
+	const to = parts[1].trim();
 	if (to.length === 0 || to === 'not') {
 		return undefined;
 	}

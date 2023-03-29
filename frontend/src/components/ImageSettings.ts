@@ -16,6 +16,7 @@ import { PaperItemElement } from '@polymer/paper-item/paper-item';
 import FileSaver from 'file-saver';
 import { collapsePackages } from '../transform/CollapsePackages';
 
+// noinspection TypeScriptValidateTypes
 export class FilterEvent extends Event {
 	constructor(type: string, public readonly filters: Filter[]) {
 		super(type);

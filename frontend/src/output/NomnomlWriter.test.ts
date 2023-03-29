@@ -1,4 +1,4 @@
-import {nomnomlWriter} from './NomnomlWriter';
+import {writeNomnoml} from './NomnomlWriter';
 import {Graph } from '../transform/Graph';
 import {GraphImpl, GraphNodeImpl} from '../transform/GraphImpl';
 
@@ -14,6 +14,6 @@ test('Invalid Line', () => {
 			]},
 		], 'package','package', 'PACKAGE')
 	],[]);
-	const output = nomnomlWriter(graph);
+	const output = writeNomnoml(graph);
 	expect(output).toEqual('[<package> package | [test1]\n[test2]\n[test1] --> [test2]]');
 });

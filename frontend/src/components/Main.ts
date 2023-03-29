@@ -1,10 +1,9 @@
 import { data } from '../dummyData';
 import { jDepsReader } from '../input/JDepsReader';
 import { Filter, Graph } from '../transform/Graph';
-import { nomnomlWriter } from '../output/NomnomlWriter';
+import { writeSvg } from '../output/NomnomlWriter';
 import {LitElement, html, TemplateResult, css} from 'lit';
 import {customElement, query} from 'lit/decorators.js';
-import * as nomnoml from 'nomnoml';
 import { NodeDetails, NodeEvent } from './NodeDetails';
 import { FilterEvent, ImageSettings } from './ImageSettings';
 import { ImageViewer } from './ImageViewer';
@@ -108,8 +107,7 @@ export class Main extends LitElement {
 		//TODO Set spinner...
 		setTimeout(() => {
 			const graph = this._input.filter(filters);
-			const output = nomnomlWriter(graph);
-			const image = nomnoml.renderSvg(output);		
+			const image = writeSvg(graph);
 			this._imageViewer!.image = image;
 			this._imageSettings!.image = image;
 		});

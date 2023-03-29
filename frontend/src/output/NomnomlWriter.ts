@@ -1,25 +1,28 @@
 import type {Graph, GraphNode} from '../transform/Graph';
+import * as nomnoml from 'nomnoml';
 
-export function nomnomlWriter(input: Graph): string {
-	return getChildren(input);
+export function writeSvg(input: Graph): string {
+	const nomnomlText = writeNomnoml(input);
+	return nomnoml.renderSvg(nomnomlText);
 }
 
-function nomnomlWriterNode(input: GraphNode): string {
+export function writeNomnoml(input: GraphNode | Graph): string {
+	return input.nodes
+		.map(n => writeNode(n))
+		.join('\n') + writeDependencies(input);
+}
+
+function writeNode(input: GraphNode): string {
 	switch (input.type) {
-	case 'PACKAGE':
-		return `[<package> ${input.name} | ${getChildren(input)}]`;
-	default:
-		return `[${input.name}]`;
+		case 'PACKAGE':
+			return `[<package> ${input.name} | ${writeNomnoml(input)}]`;
+		default:
+			return `[${input.name}]`;
 	}
 }
 
-function getChildren(input: GraphNode | Graph): string {
-	return input.nodes
-		.map(n => nomnomlWriterNode(n))
-		.join('\n') + getDependencies(input);
-}
 
-function getDependencies(input: GraphNode | Graph): string {
+function writeDependencies(input: GraphNode | Graph): string {
 	if (input.dependencies.length === 0) {
 		return '';
 	}
