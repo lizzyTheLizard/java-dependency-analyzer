@@ -1,0 +1,59 @@
+name: Build
+on: [push]
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'yarn'
+          cache-dependency-path: frontend/yarn.lock
+      - name: Install Frontend Dependencies
+        working-directory: frontend
+        run: yarn install
+      - name: Test Frontend
+        working-directory: frontend
+        run: yarn test
+      - name: Lint Frontend
+        working-directory: frontend
+        run: yarn lint
+      - name: Build Frontend
+        working-directory: frontend
+        run: yarn build
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Plugin Unit Tests
+        working-directory: java-dependency-analyzer
+        run: mvn --batch-mode surefire:test
+      - name: Install Plugin
+        working-directory: java-dependency-analyzer
+        run: mvn --batch-mode install
+      - name: Report Unit Tests
+        working-directory: java-dependency-analyzer
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Unit Tests Backend
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+          fail-on-error: true
+      - name: Integration Test
+        working-directory: maven-plugin-integration-test
+        run: mvn --batch-mode verify
+      - name: Report Integration Tests
+        working-directory: java-dependency-analyzer
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Unit Tests Backend
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+          fail-on-error: true
