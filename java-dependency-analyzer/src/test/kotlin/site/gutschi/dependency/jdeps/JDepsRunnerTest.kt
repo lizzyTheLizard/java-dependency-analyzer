@@ -13,7 +13,7 @@ internal class JDepsRunnerTest {
         val result: String = JDepsRunner()
             .file(TestFileHelpers.FLAT_JAR)
             .run()
-            .stream().map { x -> x.toString() }.collect(Collectors.joining("\n"))
+            .stream().map { x -> x.toString() }.collect(Collectors.joining(System.lineSeparator()))
         val expected = TestFileHelpers.getFileContent("/flat-demo-0.0.1-SNAPSHOT.jdeps")
         assertEquals(expected, result)
     }
@@ -24,7 +24,7 @@ internal class JDepsRunnerTest {
             .fatJarMatcher { false }
             .file(TestFileHelpers.FAT_JAR)
             .run()
-            .stream().map { x -> x.toString() }.collect(Collectors.joining("\n"))
+            .stream().map { x -> x.toString() }.collect(Collectors.joining(System.lineSeparator()))
         val expectedFlat = TestFileHelpers.getFileContent("/flat-demo-0.0.1-SNAPSHOT.jdeps")
         val expectedFat = TestFileHelpers.getFileContent("/fat-demo-0.0.1-SNAPSHOT.jdeps")
         val expected = "$expectedFlat${System.lineSeparator()}$expectedFat"
@@ -38,7 +38,7 @@ internal class JDepsRunnerTest {
             .file(TestFileHelpers.FAT_JAR)
             .multiRelease("11")
             .run()
-            .stream().map { x -> x.toString() }.collect(Collectors.joining("\n"))
+            .stream().map { x -> x.toString() }.collect(Collectors.joining(System.lineSeparator()))
         val expectedFlat = TestFileHelpers.getFileContent("/flat-demo-0.0.1-SNAPSHOT.jdeps")
         val expectedFat = TestFileHelpers.getFileContent("/fat-demo-0.0.1-SNAPSHOT.jdeps")
         val expectedJul= TestFileHelpers.getFileContent("/jul-to-slf4j-2.0.7.jdeps")
