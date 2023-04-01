@@ -1,7 +1,7 @@
 import {jDepsReader} from './JDepsReader';
 
 test('Simple', () => {
-    const target = jDepsReader('package.test1 -> package.test2 not found');
+    const target = jDepsReader('package.test1 -> package.test2');
     expect(target).toEqual({
         dependencies: [],
         nodes: [
@@ -39,7 +39,7 @@ test('Simple', () => {
 });
 
 test('Multiline', () => {
-    const target = jDepsReader('package.test1 -> package.test2 not found\n package.test1 -> package.test3 not found');
+    const target = jDepsReader('package.test1 -> package.test2\n package.test1 -> package.test3');
     expect(target).toEqual({
         dependencies: [],
         nodes: [
@@ -89,7 +89,7 @@ test('Multiline', () => {
 });
 
 test('Invalid Line', () => {
-    const target = jDepsReader('Garbage\n package.test1 -> package.test2 not found\n more Garbage');
+    const target = jDepsReader('Garbage\n package.test1 -> package.test2\n more Garbage');
     expect(target).toEqual({
         dependencies: [],
         nodes: [
