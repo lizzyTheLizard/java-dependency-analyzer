@@ -12,13 +12,13 @@ import java.util.stream.Collectors
 class JDepsRunner {
     private val jdepsTool = ToolProvider
         .findFirst("jdeps")
-        .orElseThrow {JDepsException.jdepsNotFound()}
+        .orElseThrow { JDepsException.jdepsNotFound() }
     private val files: MutableList<File> = LinkedList()
     private var fatJarMatcher: (File) -> Boolean = { true }
     private var multiRelease: String? = null
 
     fun fatJarMatcher(fatJarMatcher: (File) -> Boolean): JDepsRunner {
-        if(files.size > 0) {
+        if (files.size > 0) {
             throw JDepsException.matcherAfterFile()
         }
         this.fatJarMatcher = fatJarMatcher
@@ -33,7 +33,7 @@ class JDepsRunner {
     private fun singleFile(file: File) {
         ensureTargetFileValid(file)
         files.add(file)
-        if(file.isDirectory || !file.name.endsWith(".jar")) {
+        if (file.isDirectory || !file.name.endsWith(".jar")) {
             return
         }
         try {
@@ -59,11 +59,11 @@ class JDepsRunner {
         try {
             StringWriter().use { stringWriter ->
                 val result = jdepsTool.run(PrintWriter(stringWriter), PrintWriter(System.err), *args.toTypedArray())
-                if(result != 0) {
+                if (result != 0) {
                     throw JDepsException.nonZeroReturn(result, stringWriter.toString())
                 }
                 return stringWriter.toString().lines().stream()
-                    .filter {i -> isOutputLine(i)}
+                    .filter { i -> isOutputLine(i) }
                     .map { l -> JDepsResultLine.fromLine(l) }
                     .collect(Collectors.toList())
             }

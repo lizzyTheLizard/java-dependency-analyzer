@@ -1,80 +1,84 @@
 import {GraphNode} from '../transform/Graph';
-import { css, html, LitElement, TemplateResult } from 'lit';
+import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
 export class NodeEvent extends Event {
-	constructor(type: string, public readonly node: GraphNode) {
-		super(type);
-	}
+    constructor(type: string, public readonly node: GraphNode) {
+        super(type);
+    }
 }
 
 @customElement('node-details')
 export class NodeDetails extends LitElement {
-	@property()
-	public node?: GraphNode;
+    static styles = css`
+      .table-wrapper {
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
 
-	static styles = css`
-		.table-wrapper {
-			width: 100%;
-			overflow-y: scroll;
-			overflow-x: hidden;
-		}
-		.threeButtons {
-			width: 100%;
-			display: flex;
-		}
-		paper-button {
-			flex: 33%;
-		}
-		paper-button.pink {
-			background-color: indigo;
-			color: white;
-		}
-	`;
+      .threeButtons {
+        width: 100%;
+        display: flex;
+      }
 
-	protected render(): TemplateResult<1> {
-		if(!this.node) {
-			return html ` 
-				<h3>Node Details</h3>
-				<div>None Selected</div>
-			`;
-		}
-		return html `
-			<h3>Node Details</h3>
-			<div class="table-wrapper">
-				<table class="table">
-					<tr>
-						<td>Name</td>
-						<td>${this.node?.name}</td>
-					</tr>
-					<tr>
-						<td>Full</td>
-						<td>${this.node?.fullName}</td>
-					</tr>
-					<tr>
-						<td>Type</td>
-						<td>${this.node?.type}</td>
-					</tr>
-				</table>
-			</div>
-			<div class="threeButtons">
-				<paper-button class="custom pink" raised @click="${this.base}" ${(this.node?.type == 'CLASS') ? 'disabled' : ''}>Base</paper-button>		
-				<paper-button class="custom pink" raised @click="${this.ignore}">Ignore</paper-button>		
-				<paper-button class="custom pink" raised @click="${this.collapse}">Collapse</paper-button>		
-			</div>
-		`;
-	}
-	
-	private base(){
-		this.dispatchEvent(new NodeEvent('base', this.node!));
-	}
+      paper-button {
+        flex: 33%;
+      }
 
-	private ignore(){
-		this.dispatchEvent(new NodeEvent('ignore', this.node!));
-	}
+      paper-button.pink {
+        background-color: indigo;
+        color: white;
+      }
+    `;
+    @property()
+    public node?: GraphNode;
 
-	private collapse(){
-		this.dispatchEvent(new NodeEvent('collapse', this.node!));
-	}
+    protected render(): TemplateResult<1> {
+        if (!this.node) {
+            return html`
+                <h3>Node Details</h3>
+                <div>None Selected</div>
+            `;
+        }
+        return html`
+            <h3>Node Details</h3>
+            <div class="table-wrapper">
+                <table class="table">
+                    <tr>
+                        <td>Name</td>
+                        <td>${this.node?.name}</td>
+                    </tr>
+                    <tr>
+                        <td>Full</td>
+                        <td>${this.node?.fullName}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>${this.node?.type}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="threeButtons">
+                <paper-button class="custom pink" raised @click="${this.base}"
+                              ${(this.node?.type == 'CLASS') ? 'disabled' : ''}>Base
+                </paper-button>
+                <paper-button class="custom pink" raised @click="${this.ignore}">Ignore</paper-button>
+                <paper-button class="custom pink" raised @click="${this.collapse}">Collapse</paper-button>
+            </div>
+        `;
+    }
+
+    private base() {
+        this.dispatchEvent(new NodeEvent('base', this.node!));
+    }
+
+    private ignore() {
+        this.dispatchEvent(new NodeEvent('ignore', this.node!));
+    }
+
+    private collapse() {
+        this.dispatchEvent(new NodeEvent('collapse', this.node!));
+    }
 
 }

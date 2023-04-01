@@ -29,11 +29,11 @@ class DocumentationMojo : AbstractMojo() {
         try {
             val jDepsRunner = JDepsRunner()
             multiRelease?.let { jDepsRunner.multiRelease(it) }
-            fatJarRegex?.let { jDepsRunner.fatJarMatcher {x -> x.name.matches(it.toRegex())} }
+            fatJarRegex?.let { jDepsRunner.fatJarMatcher { x -> x.name.matches(it.toRegex()) } }
             input.split(",").stream()
                 .map { x -> File(x) }
-                .peek {x -> log.debug("Use input '${x.absolutePath}'")}
-                .forEach {x -> jDepsRunner.file(x)}
+                .peek { x -> log.debug("Use input '${x.absolutePath}'") }
+                .forEach { x -> jDepsRunner.file(x) }
             val jDepsResult = jDepsRunner.run()
 
             val file = File(outputFolder)

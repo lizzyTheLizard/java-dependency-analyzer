@@ -41,7 +41,7 @@ internal class JDepsRunnerTest {
             .stream().map { x -> x.toString() }.collect(Collectors.joining(System.lineSeparator()))
         val expectedFlat = TestFileHelpers.getFileContent("/flat-demo-0.0.1-SNAPSHOT.jdeps")
         val expectedFat = TestFileHelpers.getFileContent("/fat-demo-0.0.1-SNAPSHOT.jdeps")
-        val expectedJul= TestFileHelpers.getFileContent("/jul-to-slf4j-2.0.7.jdeps")
+        val expectedJul = TestFileHelpers.getFileContent("/jul-to-slf4j-2.0.7.jdeps")
         val expected = "$expectedFlat${System.lineSeparator()}$expectedFat${System.lineSeparator()}$expectedJul"
         assertEquals(expected, result)
     }

@@ -4,8 +4,8 @@ import java.io.File
 
 class TestFileHelpers {
     companion object {
-        fun getFile(path: String): File{
-            val url = object{}.javaClass.getResource(path)!!
+        private fun getFile(path: String): File {
+            val url = object {}.javaClass.getResource(path)!!
             return File(url.toURI())
         }
 

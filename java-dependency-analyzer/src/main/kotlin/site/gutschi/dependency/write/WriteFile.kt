@@ -7,7 +7,7 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.stream.Collectors
 
-private const val TEMPLATE_PATH = "/nomnuml/index.html"
+private const val TEMPLATE_PATH = "/frontend/index.html"
 private const val OUTPUT_FILE_NAME = "index.html"
 
 fun writeFile(outputDir: File, jdepsOutput: JDepsResult) {
@@ -28,7 +28,8 @@ private fun getTemplate(): String {
 }
 
 private fun merge(template: String, jdeps: JDepsResult): String {
-    val indexWithinVariable = template.indexOf("site.gutschi.dependency.maven.integrationtest.TestA -> java.lang.Object")
+    val indexWithinVariable =
+        template.indexOf("site.gutschi.dependency.maven.integrationtest.TestA -> java.lang.Object")
     val indexLeadingQute = template.substring(0, indexWithinVariable).lastIndexOf('`')
     val indexTrailingQute = template.indexOf('`', indexWithinVariable)
     val output = jdeps.stream().map { x -> "${x.from} -> ${x.to}" }.collect(Collectors.joining("\n"))

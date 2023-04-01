@@ -6,11 +6,11 @@ import java.nio.file.Files
 import java.util.*
 import java.util.stream.Stream
 
-private const val TMP_FOLDER_PREFIX = "fat_jar_unzipper"
+private const val TMP_FOLDER_PREFIX = "fat_jar_unzipped"
 
-class FatJarReader @Throws(IOException::class) constructor (inputFile: File) {
+class FatJarReader @Throws(IOException::class) constructor(inputFile: File) {
     private val libFolder: File
-    val isFatJar : Boolean
+    val isFatJar: Boolean
 
     init {
         val tmpFolder: File = Files.createTempDirectory(TMP_FOLDER_PREFIX).toFile()
