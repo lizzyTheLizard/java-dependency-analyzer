@@ -11,7 +11,8 @@ class TestFileHelpers {
 
         fun getFileContent(path: String): String {
             val file = getFile(path)
-            return file.readText()
+            //Make sure to use proper line separator and ignore newlines from file
+            return file.readLines().joinToString(System.lineSeparator())
         }
 
         val FLAT_JAR = getFile("/flat-demo-0.0.1-SNAPSHOT.jar")
