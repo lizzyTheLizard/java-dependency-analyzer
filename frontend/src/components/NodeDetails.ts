@@ -1,12 +1,9 @@
 import {GraphNode} from '../transform/Graph';
 import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {Image} from '../transform/Image';
+import {ImageChangedEvent} from './Main';
 
-export class NodeEvent extends Event {
-    constructor(type: string, public readonly node: GraphNode) {
-        super(type);
-    }
-}
 
 @customElement('node-details')
 export class NodeDetails extends LitElement {
@@ -32,10 +29,12 @@ export class NodeDetails extends LitElement {
       }
     `;
     @property()
-    public node?: GraphNode;
+    public image?: Image;
+    @property()
+    public selectedNode?: GraphNode;
 
     protected render(): TemplateResult<1> {
-        if (!this.node) {
+        if (!this.selectedNode) {
             return html`
                 <h3>Node Details</h3>
                 <div>None Selected</div>
@@ -47,38 +46,76 @@ export class NodeDetails extends LitElement {
                 <table class="table">
                     <tr>
                         <td>Name</td>
-                        <td>${this.node?.name}</td>
+                        <td>${this.selectedNode?.name}</td>
                     </tr>
                     <tr>
                         <td>Full</td>
-                        <td>${this.node?.fullName}</td>
+                        <td>${this.selectedNode?.fullName}</td>
                     </tr>
                     <tr>
                         <td>Type</td>
-                        <td>${this.node?.type}</td>
+                        <td>${this.selectedNode?.type}</td>
                     </tr>
                 </table>
             </div>
             <div class="threeButtons">
-                <paper-button class="custom pink" raised @click="${this.base}"
-                              ${(this.node?.type == 'CLASS') ? 'disabled' : ''}>Base
-                </paper-button>
-                <paper-button class="custom pink" raised @click="${this.ignore}">Ignore</paper-button>
-                <paper-button class="custom pink" raised @click="${this.collapse}">Collapse</paper-button>
+                <paper-button class="custom pink" raised @click="${this.base}" ?disabled=${!this.isClass()}>${this.isBase() ? 'Unbase': 'Base'}</paper-button>
+                <paper-button class="custom pink" raised @click="${this.ignore}">${this.isIgnored() ? 'Unignore': 'Ignore'}</paper-button>
+                <paper-button class="custom pink" raised @click="${this.collapse}" ?disabled=${!this.isClass()}>${this.isCollapsed() ? 'Uncollapse': 'Collapse'}</paper-button>
             </div>
         `;
     }
 
-    private base() {
-        this.dispatchEvent(new NodeEvent('base', this.node!));
+    private isClass(): boolean {
+        if(!this.selectedNode || !this.image) {
+            return false;
+        }
+        return this.selectedNode.type !== 'CLASS';
+
     }
 
-    private ignore() {
-        this.dispatchEvent(new NodeEvent('ignore', this.node!));
+    private base() {
+        const image = this.isBase() ? this.image!.setBase() : this.image!.setBase(this.selectedNode);
+        this.dispatchEvent(new ImageChangedEvent(image));
+        return false;
+    }
+
+    private isBase(): boolean {
+        if(!this.selectedNode || !this.image) {
+            return false;
+        }
+        return this.image.base === this.selectedNode;
+    }
+
+    private ignore(): boolean {
+        if(!this.image || !this.selectedNode) {
+            return true;
+        }
+        const image = this.image.ignore(this.selectedNode);
+        this.dispatchEvent(new ImageChangedEvent(image));
+        return false;
+    }
+
+    private isIgnored(): boolean {
+        if(!this.selectedNode || !this.image) {
+            return false;
+        }
+        return this.image.ignored.includes(this.selectedNode);
     }
 
     private collapse() {
-        this.dispatchEvent(new NodeEvent('collapse', this.node!));
+        if(!this.image || !this.selectedNode) {
+            return true;
+        }
+        const image = this.image.collapse(this.selectedNode);
+        this.dispatchEvent(new ImageChangedEvent(image));
+        return false;
     }
 
+    private isCollapsed(): boolean {
+        if(!this.selectedNode || !this.image) {
+            return false;
+        }
+        return this.image.collapsed.includes(this.selectedNode);
+    }
 }

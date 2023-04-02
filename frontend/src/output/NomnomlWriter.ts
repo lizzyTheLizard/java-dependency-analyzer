@@ -1,7 +1,10 @@
 import type {Graph, GraphNode} from '../transform/Graph';
 import * as nomnoml from 'nomnoml';
 
-export function writeSvg(input: Graph): string {
+export function writeSvg(input?: Graph): string {
+    if(!input) {
+        return '';
+    }
     const nomnomlText = writeNomnoml(input);
     return nomnoml.renderSvg(nomnomlText);
 }

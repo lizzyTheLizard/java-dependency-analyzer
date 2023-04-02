@@ -1019,7 +1019,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-a11y-keys-behavior@npm:^3.0.0-pre.26, @polymer/iron-a11y-keys-behavior@npm:^3.0.1":
+"@polymer/iron-a11y-keys-behavior@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/iron-a11y-keys-behavior@npm:3.0.1"
   dependencies:
@@ -1040,7 +1040,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-behaviors@npm:^3.0.0-pre.26, @polymer/iron-behaviors@npm:^3.0.1":
+"@polymer/iron-behaviors@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/iron-behaviors@npm:3.0.1"
   dependencies:
@@ -1082,7 +1082,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/iron-flex-layout@npm:^3.0.0-pre.26, @polymer/iron-flex-layout@npm:^3.0.1":
+"@polymer/iron-flex-layout@npm:^3.0.0-pre.26":
   version: 3.0.1
   resolution: "@polymer/iron-flex-layout@npm:3.0.1"
   dependencies:
@@ -1247,7 +1247,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/paper-input@npm:^3.1.0, @polymer/paper-input@npm:^3.2.1":
+"@polymer/paper-input@npm:^3.1.0":
   version: 3.2.1
   resolution: "@polymer/paper-input@npm:3.2.1"
   dependencies:
@@ -3829,12 +3829,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "java-deps-frontend@workspace:."
   dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.1
-    "@polymer/iron-behaviors": ^3.0.1
-    "@polymer/iron-flex-layout": ^3.0.1
     "@polymer/paper-button": ^3.0.1
     "@polymer/paper-dropdown-menu": ^3.2.0
-    "@polymer/paper-input": ^3.2.1
     "@polymer/paper-item": ^3.0.1
     "@polymer/paper-listbox": ^3.0.1
     "@types/file-saver": ^2.0.5

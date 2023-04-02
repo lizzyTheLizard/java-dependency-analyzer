@@ -1,43 +1,57 @@
-import {html, LitElement, TemplateResult} from 'lit';
-import {customElement, property, query} from 'lit/decorators.js';
-import '@polymer/paper-input/paper-textarea';
-import {PaperTextareaElement} from '@polymer/paper-input/paper-textarea';
+import {css, html, LitElement, TemplateResult} from 'lit';
+import {customElement, property} from 'lit/decorators.js';
+import '@polymer/paper-listbox/paper-listbox';
+import {GraphNode} from '../transform/Graph';
+import {NodeSelectedEvent} from './Main';
 
 @customElement('list-selection')
 export class ListSelection extends LitElement {
+    static styles = css`
+      paper-listbox {
+        --paper-item-min-height: 10px;
+        overflow-y: scroll;
+        height: 100px;
+      }
+      paper-item {
+        overflow-x: clip;
+      }
+    `;
     @property()
     public label = '';
     @property()
-    private _values: string[] = [];
-    @query('paper-textarea')
-    private _input?: PaperTextareaElement;
-
-    public constructor() {
-        super();
-    }
-
-    public addValue(value: string) {
-        if (this._values.includes(value)) {
-            return;
-        }
-        this._values = [value, ...this._values];
-    }
-
-    public getValues(): string[] {
-        return this._values;
-    }
+    private values: GraphNode[] = [];
+    @property()
+    private selectedNode?: GraphNode;
 
     protected render(): TemplateResult<1> {
-        const value = this._values.join(',');
-        return html`
-            <paper-textarea value="${value}" label="${this.label}" @blur="${this.changed}"
-                            placeholder="com.package"></paper-textarea>
-        `;
+        const items = this.values.sort((a,b) => a.fullName.localeCompare(b.fullName));
+        const itemsHtml = items.map(v => this.renderItem(v));
+        const selectedIndex = this.selectedNode ? items.indexOf(this.selectedNode) : undefined;
+        return html`${this.label}<paper-listbox selected="${selectedIndex}">${itemsHtml}</paper-listbox>`;
     }
 
-    private changed() {
-        const values = this._input!.value?.split(',');
-        this._values = [...new Set(values)];
-        this.dispatchEvent(new CustomEvent('changed'));
+    private renderItem(item: GraphNode): TemplateResult<1> {
+        return html `<paper-item @click="${this.select(item)}">${this.shortenFullName(item)}</paper-item>`;
+    }
+
+    private select(item: GraphNode): (e: Event) => void {
+        return () =>             this.dispatchEvent(new NodeSelectedEvent(item));
+    }
+
+    private shortenFullName(item:GraphNode): string {
+        return this.shorten(item.fullName, 0);
+    }
+
+    private shorten(s: string, used = 0): string {
+        if (used + s.length < 35) {
+            return s;
+        }
+        const splitted = s.split('.');
+        const first = splitted.shift();
+        const remainer = splitted.join('.');
+        if(!first) {
+            return '';
+        }
+        return first[0] + '.' + this.shorten(remainer, used + 2);
     }
 }

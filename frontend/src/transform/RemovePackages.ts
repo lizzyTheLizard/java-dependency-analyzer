@@ -2,8 +2,8 @@ import type {Filter, Graph, GraphNode} from './Graph';
 import {GraphNodeImpl} from './GraphImpl';
 
 
-export function removePackages(packages: string[]): Filter[] {
-    return packages.map(p => (graph => removePackagesRecursive(graph, p)));
+export function removePackages(packages: GraphNode[]): Filter[] {
+    return packages.map(p => (graph => removePackagesRecursive(graph, p.fullName)));
 }
 
 function removePackagesRecursive(graph: Graph, remainingName: string): GraphNode {

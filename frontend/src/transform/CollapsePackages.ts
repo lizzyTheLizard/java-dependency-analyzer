@@ -1,15 +1,15 @@
 import type {Filter, GraphNode} from './Graph';
 import {GraphImpl, GraphNodeImpl} from './GraphImpl';
 
-export function collapsePackages(packages: string[]): Filter[] {
+export function collapsePackages(packages: GraphNode[]): Filter[] {
     return packages.map(toCollapse => (graph => new GraphImpl(
         graph.nodes.map(n => collapsePackagesRecursive(n, toCollapse)),
         graph.dependencies
     )));
 }
 
-function collapsePackagesRecursive(graph: GraphNode, toCollapse: string): GraphNode {
-    const collapseNode = graph.fullName === toCollapse;
+function collapsePackagesRecursive(graph: GraphNode, toCollapse: GraphNode): GraphNode {
+    const collapseNode = graph === toCollapse;
     const newChildNodes = collapseNode ? [] : graph.nodes.map(n => collapsePackagesRecursive(n, toCollapse));
     const newDependencies = collapseNode ? [] : graph.dependencies;
     return new GraphNodeImpl(

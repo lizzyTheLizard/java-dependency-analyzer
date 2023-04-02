@@ -2,8 +2,8 @@ import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property, query, queryAll} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import svgPanZoom from 'svg-pan-zoom';
-import {Graph} from '../transform/Graph';
-import {NodeEvent} from './NodeDetails';
+import {Image} from '../transform/Image';
+import {NodeSelectedEvent} from './Main';
 
 @customElement('image-viewer')
 export class ImageViewer extends LitElement {
@@ -14,35 +14,44 @@ export class ImageViewer extends LitElement {
         display: block;
       }
     `;
-    @property()
-    public image = '';
-    @property()
-    public input?: Graph;
     private readonly panSettings = {minZoom: 0.1, maxZoom: 100, controlIconsEnabled: true};
+    @property()
+    private image?: Image;
     @query('svg')
     private svg?: HTMLElement;
     @queryAll('g')
     private g?: HTMLElement[];
 
     protected render(): TemplateResult<1> {
-        return html`${unsafeHTML(this.image)}`;
+        //TODO Set spinner...
+        return html`${unsafeHTML(this.image?.getSvgImage() ?? '')}`;
     }
 
     protected updated(): void {
         if (this.svg) {
             svgPanZoom(this.svg, this.panSettings);
         }
-        this.g?.forEach(g => g.onclick = (ev: MouseEvent) => this.selectElement(ev.target));
+        this.g?.forEach(g => g.onclick = (e: MouseEvent) => this.selectElement(g, e.target as HTMLElement));
     }
 
-    private selectElement(target: EventTarget | null) {
+    private selectElement(source: HTMLElement, target: HTMLElement | null) {
+        //We only want exactly one event per element
+        if(!this.isUpperMost(source, target)) { return; }
         const name = this.getFullName(target as HTMLElement);
-        const node = name ? this.input?.findNode(name) : undefined;
+        const node = name ? this.image?.findNode(name) : undefined;
         if (node) {
-            this.dispatchEvent(new NodeEvent('selectNode', node));
+            this.dispatchEvent(new NodeSelectedEvent(node));
             return false;
         }
         return true;
+    }
+
+    private isUpperMost(source: HTMLElement, target: HTMLElement | null){
+        if(target?.tagName === 'g' && target === source) {
+            return true;
+        }
+        return target?.tagName !== 'g' && target?.parentElement === source;
+
     }
 
     private getFullName(e: HTMLElement, lastName?: string): string {
