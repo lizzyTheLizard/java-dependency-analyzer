@@ -17,7 +17,7 @@ internal class WriteFileTest {
         writeFile(outputDir = tempDir.toFile(), jdepsOutput = input)
         val indexFile = tempDir.resolve("index.html")
         assertTrue(Files.exists(indexFile))
-        assertTrue(Files.readString(indexFile).contains("from -> to"))
+        assertTrue(Files.readString(indexFile).contains("{\"nodes\":[{\"name\":\"from\",\"fullName\":\"from\",\"attributes\":[]},{\"name\":\"to\",\"fullName\":\"to\",\"attributes\":[]}],\"dependencies\":[{\"from\":\"from\",\"to\":\"to\"}]}"))
     }
 
     @Test

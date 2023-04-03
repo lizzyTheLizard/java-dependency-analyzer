@@ -9,7 +9,7 @@ export function writeSvg(input?: Graph): string {
     return nomnoml.renderSvg(nomnomlText);
 }
 
-export function writeNomnoml(input: GraphNode | Graph): string {
+function writeNomnoml(input: GraphNode | Graph): string {
     return input.nodes
         .map(n => writeNode(n))
         .join('\n') + writeDependencies(input);
@@ -23,7 +23,6 @@ function writeNode(input: GraphNode): string {
         return `[${input.name}]`;
     }
 }
-
 
 function writeDependencies(input: GraphNode | Graph): string {
     if (input.dependencies.length === 0) {

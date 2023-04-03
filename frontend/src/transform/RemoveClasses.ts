@@ -19,6 +19,7 @@ function removeClassesRecursive(graph: Graph): GraphNode {
     return new GraphNodeImpl(
         graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeClassesRecursive(n)),
         graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
+        graph.attributes,
         (graph as GraphNode)?.name ?? '',
         (graph as GraphNode)?.fullName ?? '',
         (graph as GraphNode)?.type ?? 'PACKAGE'
@@ -30,6 +31,7 @@ function removeInternalClassesRecursive(graph: Graph): GraphNode {
     return new GraphNodeImpl(
         graph.nodes.filter(n => !classes.includes(n.name)).map(n => removeInternalClassesRecursive(n)),
         graph.dependencies.filter(d => !classes.includes(d.from) && !classes.includes(d.to)),
+        graph.attributes,
         (graph as GraphNode)?.name ?? '',
         (graph as GraphNode)?.fullName ?? '',
         (graph as GraphNode)?.type ?? 'PACKAGE'

@@ -2,7 +2,7 @@ import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property, query, queryAll} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import svgPanZoom from 'svg-pan-zoom';
-import {Image} from '../transform/Image';
+import {Image} from '../image/Image';
 import {NodeSelectedEvent} from './Main';
 
 @customElement('image-viewer')

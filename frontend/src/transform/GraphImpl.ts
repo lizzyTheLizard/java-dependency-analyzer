@@ -1,10 +1,13 @@
 import type {Graph, GraphDependency, GraphNode, Type} from './Graph';
 import {Filter} from './Graph';
+import {Attribute} from './Attribute';
 
 export class GraphImpl implements Graph {
+    // noinspection JSUnusedGlobalSymbols
     constructor(
         public readonly nodes: GraphNode[],
         public readonly dependencies: GraphDependency[],
+        public readonly attributes: Attribute[],
     ) {
     }
 
@@ -49,10 +52,46 @@ export class GraphNodeImpl extends GraphImpl implements GraphNode {
     constructor(
         nodes: GraphNode[],
         dependencies: GraphDependency[],
+        attributes: Attribute[],
         public readonly name: string,
         public readonly fullName: string,
         public readonly type: Type,
     ) {
-        super(nodes, dependencies);
+        super(nodes, dependencies, attributes);
+    }
+
+    public getShortenFullName(length: number): string {
+        return this.shorten(this.fullName, length);
+    }
+
+    private shorten(name: string, remaining = 0): string {
+        if (name.length <= remaining) {
+            return name;
+        }
+        const splitted = name.split('.');
+        const first = splitted.shift();
+        if(!first) {
+            return '';
+        }
+        if(splitted.length == 0) {
+            return first;
+        }
+        const remainer = splitted.join('.');
+        return first[0] + '.' + this.shorten(remainer, remaining - 2 );
+    }
+
+    public isChildOf(nodes: GraphNode[]): boolean {
+        for (const node of nodes) {
+            if (node.nodes.includes(this)) {
+                return true;
+            }
+            if (node.nodes.length === 0) {
+                continue;
+            }
+            if(this.isChildOf(node.nodes)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

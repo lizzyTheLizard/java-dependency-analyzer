@@ -1,20 +1,22 @@
 package site.gutschi.dependency.write
 
+import com.google.gson.Gson
 import site.gutschi.dependency.jdeps.JDepsResult
 import java.io.File
 import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.stream.Collectors
+import java.util.stream.Stream
 
 private const val TEMPLATE_PATH = "/frontend/index.html"
 private const val OUTPUT_FILE_NAME = "index.html"
 
 fun writeFile(outputDir: File, jdepsOutput: JDepsResult) {
     val template: String = getTemplate()
-    val output: String = merge(template, jdepsOutput)
+    val output = convertToOutput(jdepsOutput)
     ensureDirExists(outputDir)
-    writeToOutputDir(outputDir, output)
+    writeToOutputDir(outputDir, merge(template, output))
 }
 
 private fun getTemplate(): String {
@@ -27,12 +29,24 @@ private fun getTemplate(): String {
     }
 }
 
-private fun merge(template: String, jdeps: JDepsResult): String {
-    val indexWithinVariable =
-        template.indexOf("site.gutschi.dependency.maven.integrationtest.TestA -> java.lang.Object")
+private fun convertToOutput(jdepsOutput: JDepsResult): String {
+    val nodes = jdepsOutput.stream()
+        .flatMap { x -> Stream.of(x.from, x.to) }
+        .distinct()
+        .map { x -> Node(x.split(".").last(), x, listOf())}
+        .collect(Collectors.toList())
+    val dependenies = jdepsOutput.stream()
+        .map{x -> Dependency(x.from, x.to)}
+        .collect(Collectors.toList())
+    val output = Output(nodes, dependenies)
+    val gson = Gson()
+    return gson.toJson(output)
+}
+
+private fun merge(template: String, output: String): String {
+    val indexWithinVariable = template.indexOf("site.gutschi.dependency.maven.integrationtest.TestA")
     val indexLeadingQute = template.substring(0, indexWithinVariable).lastIndexOf('`')
     val indexTrailingQute = template.indexOf('`', indexWithinVariable)
-    val output = jdeps.stream().map { x -> "${x.from} -> ${x.to}" }.collect(Collectors.joining("\n"))
     return template.substring(0, indexLeadingQute + 2) + output + template.substring(indexTrailingQute)
 }
 
@@ -54,3 +68,8 @@ private fun writeToOutputDir(outputDir: File, output: String) {
     }
 }
 
+
+private data class Attribute(val name: String, val value: String, val type: String)
+private data class Node(val name: String, val fullName: String, val attributes: List<Attribute>)
+private data class Dependency(val from: String, val to: String)
+private data class Output(val nodes: List<Node>, val dependencies: List<Dependency>)

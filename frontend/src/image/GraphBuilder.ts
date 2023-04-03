@@ -1,16 +1,29 @@
-import {Dependency} from '../transform/Graph';
+import type {Dependency} from '../transform/Graph';
 import {GraphImpl, GraphNodeImpl} from '../transform/GraphImpl';
+import {Attribute} from '../transform/Attribute';
+
+interface NodeDefinition {
+    fullName: string,
+    attributes: Attribute[]
+}
+interface Input {
+    nodes: NodeDefinition[],
+    dependencies: Dependency[],
+}
 
 export class GraphBuilder extends GraphImpl {
-    constructor() {
-        super([], []);
+    constructor(inputString: string) {
+        super([], [], []);
+        const input: Input = JSON.parse(inputString);
+        input.nodes.forEach(n =>this.addNode(n));
+        input.dependencies.forEach(d => this.addDependency(d));
     }
 
-    public addNode(name: string): void {
-        this.findNode(name, (name, fullName, type) => new GraphNodeImpl([], [], name, fullName, type));
+    private addNode(node: NodeDefinition): void {
+        this.findNode(node.fullName, (name, fullName, type) => new GraphNodeImpl([], [], node.attributes, name, fullName, type));
     }
 
-    public addDependency(d: Dependency): void {
+    private addDependency(d: Dependency): void {
         const common = this.findCommon(d);
         const baseNode = common.root ? this.findNode(common.root) : this;
         const existingDependency = baseNode.dependencies.find(n => n.from === common.fromNext && n.to === common.toNext);

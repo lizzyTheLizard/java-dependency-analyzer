@@ -11,6 +11,6 @@ export function basePackage(basePackage?: GraphNode): Filter {
             name: basePackage.name,
             fullName: basePackage.fullName,
             type: 'PACKAGE',
-        }], []);
+        }], [], basePackage.attributes);
     };
 }

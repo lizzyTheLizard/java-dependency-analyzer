@@ -1,7 +1,7 @@
 import {GraphNode} from '../transform/Graph';
 import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {Image} from '../transform/Image';
+import {Image} from '../image/Image';
 
 export class ImageChangedEvent extends Event{
     constructor(public readonly image: Image) {

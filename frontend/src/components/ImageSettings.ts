@@ -1,5 +1,5 @@
 import FileSaver from 'file-saver';
-import {Image} from '../transform/Image';
+import {Image} from '../image/Image';
 import {customElement, property} from 'lit/decorators.js';
 import {css, html, LitElement, TemplateResult} from 'lit';
 import {ImageChangedEvent} from './Main';

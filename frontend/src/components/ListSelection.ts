@@ -31,27 +31,10 @@ export class ListSelection extends LitElement {
     }
 
     private renderItem(item: GraphNode): TemplateResult<1> {
-        return html `<paper-item @click="${this.select(item)}">${this.shortenFullName(item)}</paper-item>`;
+        return html `<paper-item @click="${this.select(item)}">${item.getShortenFullName(35)}</paper-item>`;
     }
 
     private select(item: GraphNode): (e: Event) => void {
-        return () =>             this.dispatchEvent(new NodeSelectedEvent(item));
-    }
-
-    private shortenFullName(item:GraphNode): string {
-        return this.shorten(item.fullName, 0);
-    }
-
-    private shorten(s: string, used = 0): string {
-        if (used + s.length < 35) {
-            return s;
-        }
-        const splitted = s.split('.');
-        const first = splitted.shift();
-        const remainer = splitted.join('.');
-        if(!first) {
-            return '';
-        }
-        return first[0] + '.' + this.shorten(remainer, used + 2);
+        return () => this.dispatchEvent(new NodeSelectedEvent(item));
     }
 }

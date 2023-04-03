@@ -1,8 +1,9 @@
 import {GraphNode} from '../transform/Graph';
 import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import {Image} from '../transform/Image';
+import {Image} from '../image/Image';
 import {ImageChangedEvent} from './Main';
+import {Attribute} from '../transform/Attribute';
 
 
 @customElement('node-details')
@@ -40,6 +41,7 @@ export class NodeDetails extends LitElement {
                 <div>None Selected</div>
             `;
         }
+        const attributesHtml = this.selectedNode.attributes.map(a => this.renderAttribute(a));
         return html`
             <h3>Node Details</h3>
             <div class="table-wrapper">
@@ -56,6 +58,7 @@ export class NodeDetails extends LitElement {
                         <td>Type</td>
                         <td>${this.selectedNode?.type}</td>
                     </tr>
+                    ${attributesHtml}
                 </table>
             </div>
             <div class="threeButtons">
@@ -63,6 +66,16 @@ export class NodeDetails extends LitElement {
                 <paper-button class="custom pink" raised @click="${this.ignore}">${this.isIgnored() ? 'Unignore': 'Ignore'}</paper-button>
                 <paper-button class="custom pink" raised @click="${this.collapse}" ?disabled=${!this.isClass()}>${this.isCollapsed() ? 'Uncollapse': 'Collapse'}</paper-button>
             </div>
+        `;
+    }
+
+    private renderAttribute(a: Attribute): TemplateResult<1>{
+        const attributeValue = a.type === 'LINK' ? html `<a href="${a.value}">Link</a>` : a.value;
+        return html `
+            <tr>
+                <td>${a.name}</td>
+                <td>${attributeValue}</td>
+            </tr>
         `;
     }
 
