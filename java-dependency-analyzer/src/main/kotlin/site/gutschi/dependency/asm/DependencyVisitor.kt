@@ -1,17 +1,16 @@
-package site.gutschi.dependency.dependency
+package site.gutschi.dependency.asm
 
 import org.apache.maven.shared.dependency.analyzer.asm.*
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
-import site.gutschi.dependency.Level
 import site.gutschi.dependency.Properties
-import site.gutschi.dependency.asm.Visitor
-import site.gutschi.dependency.write.Dependency
+import site.gutschi.dependency.Properties.Level
+import site.gutschi.dependency.write.Output.Dependency
 
-class DependencyVisitor(private val properties: Properties) : Visitor {
+class DependencyVisitor(private val properties: Properties) {
     val results = HashSet<Dependency>()
 
-    override fun visit(classFile: ByteArray) {
+    fun visit(classFile: ByteArray) {
         val reader = ClassReader(classFile)
         val className = getClassName(reader)
         val collector = ResultCollector()

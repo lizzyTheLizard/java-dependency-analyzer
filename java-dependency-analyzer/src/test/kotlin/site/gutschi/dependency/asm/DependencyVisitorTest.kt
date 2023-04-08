@@ -1,10 +1,9 @@
-package site.gutschi.dependency.dependency
+package site.gutschi.dependency.asm
 
 import site.gutschi.dependency.Properties
 import site.gutschi.dependency.TestFileHelpers.Companion.getFile
-import site.gutschi.dependency.asm.ClassFileFinder
 import site.gutschi.dependency.assertDependenciesEquals
-import site.gutschi.dependency.write.Dependency
+import site.gutschi.dependency.write.Output.Dependency
 import kotlin.test.Test
 
 internal class DependencyVisitorTest {
@@ -47,10 +46,9 @@ internal class DependencyVisitorTest {
         assertDependenciesEquals("fat-demo-0.0.1-SNAPSHOT.deps-snake.json", results)
     }
 
-    private fun analyze(properties: Properties): HashSet<Dependency> {
-        val classFileFinder = ClassFileFinder(properties)
-        val visitor = DependencyVisitor(properties)
-        classFileFinder.apply(visitor)
-        return visitor.results
+    private fun analyze(properties: Properties): Collection<Dependency> {
+        val classFileCollection = ClassFileCollection(properties)
+        classFileCollection.apply()
+        return classFileCollection.dependencies
     }
 }

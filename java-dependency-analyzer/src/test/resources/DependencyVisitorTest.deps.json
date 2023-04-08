@@ -1,6 +1,56 @@
 {
   "nodes": [
     {
+      "name": "Double",
+      "fullName": "java.lang.Double",
+      "attributes": []
+    },
+    {
+      "name": "Integer",
+      "fullName": "java.lang.Integer",
+      "attributes": []
+    },
+    {
+      "name": "Class",
+      "fullName": "java.lang.Class",
+      "attributes": []
+    },
+    {
+      "name": "Serializable",
+      "fullName": "java.io.Serializable",
+      "attributes": []
+    },
+    {
+      "name": "LinkedList",
+      "fullName": "java.util.LinkedList",
+      "attributes": []
+    },
+    {
+      "name": "PrintStream",
+      "fullName": "java.io.PrintStream",
+      "attributes": []
+    },
+    {
+      "name": "Object",
+      "fullName": "java.lang.Object",
+      "attributes": []
+    },
+    {
+      "name": "System",
+      "fullName": "java.lang.System",
+      "attributes": []
+    },
+    {
+      "name": "String",
+      "fullName": "java.lang.String",
+      "attributes": []
+    },
+    {
+      "name": "List",
+      "fullName": "java.util.List",
+      "attributes": []
+    },
+    {
       "name": "DependencyVisitorTest",
       "fullName": "site.gutschi.dependency.maven.DependencyVisitorTest",
       "attributes": [
@@ -10,42 +60,66 @@
           "type": "TEXT"
         },
         {
-          "name": "Type",
-          "value": "Abstract",
-          "type": "TEXT"
-        },
-        {
-          "name": "Super Class",
-          "value": "java.util.LinkedList",
-          "type": "TEXT"
-        },
-        {
-          "name": "Deprecated",
-          "value": "True",
-          "type": "BOOLEAN"
-        },
-        {
-          "name": "Version",
-          "value": "61",
-          "type": "NUMBER"
-        },
-        {
           "name": "Final",
           "value": "False",
           "type": "BOOLEAN"
         },
         {
-          "name": "Interfaces",
+          "name": "Type",
+          "value": "Abstract",
+          "type": "TEXT"
+        },
+        {
+          "name": "Implemented Interfaces",
           "value": "java.io.Serializable",
+          "type": "TEXT"
+        },
+        {
+          "name": "Base Class",
+          "value": "java.util.LinkedList",
           "type": "TEXT"
         }
       ]
+    },
+    {
+      "name": "Float",
+      "fullName": "java.lang.Float",
+      "attributes": []
+    },
+    {
+      "name": "Deprecated",
+      "fullName": "java.lang.Deprecated",
+      "attributes": []
+    },
+    {
+      "name": "Collection",
+      "fullName": "java.util.Collection",
+      "attributes": []
+    },
+    {
+      "name": "Character",
+      "fullName": "java.lang.Character",
+      "attributes": []
+    },
+    {
+      "name": "HashSet",
+      "fullName": "java.util.HashSet",
+      "attributes": []
+    },
+    {
+      "name": "CharSequence",
+      "fullName": "java.lang.CharSequence",
+      "attributes": []
     }
   ],
   "dependencies": [
     {
       "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
       "to": "java.io.PrintStream"
+    },
+    {
+      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "to": "java.lang.Object"
     },
     {
       "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
@@ -102,10 +176,6 @@
     {
       "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
       "to": "java.util.HashSet"
-    },
-    {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
-      "to": "java.lang.Object"
     }
   ]
 }

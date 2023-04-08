@@ -2,13 +2,13 @@ package site.gutschi.dependency
 
 import com.google.gson.GsonBuilder
 import org.junit.ComparisonFailure
-import site.gutschi.dependency.write.Dependency
-import site.gutschi.dependency.write.Node
 import site.gutschi.dependency.write.Output
+import site.gutschi.dependency.write.Output.Dependency
+import site.gutschi.dependency.write.Output.Node
 
 private val gson = GsonBuilder().setPrettyPrinting().create()
 
-fun assertDependenciesEquals(expectedFile: String, actual: Set<Dependency>) {
+fun assertDependenciesEquals(expectedFile: String, actual: Collection<Dependency>) {
     val expectedOut = getOutputFromFile(expectedFile)
     val expected = expectedOut.dependencies
     val actualStr = gson.toJson(actual)
@@ -29,7 +29,7 @@ fun assertDependenciesEquals(expectedFile: String, actual: Set<Dependency>) {
     }
 }
 
-fun assertNodesEquals(expectedFile: String, actual: Set<Node>) {
+fun assertNodesEquals(expectedFile: String, actual: Collection<Node>) {
     val expectedOut = getOutputFromFile(expectedFile)
     val expected = expectedOut.nodes
     val actualStr = gson.toJson(actual)

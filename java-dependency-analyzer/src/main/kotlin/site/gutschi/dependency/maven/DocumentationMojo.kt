@@ -5,24 +5,33 @@ import org.apache.maven.plugin.MojoExecutionException
 import org.apache.maven.plugins.annotations.LifecyclePhase
 import org.apache.maven.plugins.annotations.Mojo
 import org.apache.maven.plugins.annotations.Parameter
-import site.gutschi.dependency.Level
 import site.gutschi.dependency.Main
 import site.gutschi.dependency.Properties
+import site.gutschi.dependency.Properties.Level
 import java.io.File
 
 @Mojo(name = "create-documentation", defaultPhase = LifecyclePhase.PROCESS_CLASSES)
 class DocumentationMojo : AbstractMojo() {
-    @Parameter(property = "input", defaultValue = "target/classes")
-    var input: String = "target/classes"
+    @Parameter(property = "inputs", defaultValue = "target/classes")
+    var inputs: List<String> = listOf("target/classes")
 
-    @Parameter(property = "fatJarMatcher", defaultValue = "")
-    var fatJarMatcher: String = ""
+    @Parameter(property = "fatJarMatchers")
+    var fatJarMatchers: List<String> = listOf()
 
-    @Parameter(property = "includeFatJarBoot", defaultValue = "false")
-    var includeFatJarBoot: Boolean = false
+    @Parameter(property = "includeFatJarClasses", defaultValue = "false")
+    var includeFatJarClasses: Boolean = false
 
     @Parameter(property = "outputFolder", defaultValue = "target/doc")
     var outputFolder: String = "target/doc"
+
+    @Parameter(property = "basePackage")
+    var basePackage: String? = null
+
+    @Parameter(property = "collapsePackages")
+    var collapsePackages: List<String> = listOf()
+
+    @Parameter(property = "ignoredPackages")
+    var ignoredPackages: List<String> = listOf()
 
     @Throws(MojoExecutionException::class)
     override fun execute() {
@@ -30,9 +39,12 @@ class DocumentationMojo : AbstractMojo() {
             val properties = Properties(
                 log = { m: String, l: Level -> log(m, l) },
                 outputFolder = File(outputFolder),
-                inputs = input.split(",").map { File(it) },
-                fatJarMatchers = fatJarMatcher.split(",").map { Regex(it) },
-                includeFatJarClasses = includeFatJarBoot
+                inputs = inputs.map { File(it) },
+                fatJarMatchers = fatJarMatchers.map { Regex(it) },
+                includeFatJarClasses = includeFatJarClasses,
+                basePackage = basePackage,
+                collapsePackages = collapsePackages,
+                ignoredPackages = ignoredPackages,
             )
             Main(properties).execute()
         } catch (e: Exception) {
