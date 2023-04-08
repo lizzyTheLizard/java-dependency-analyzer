@@ -13,11 +13,12 @@
         <java.version>11</java.version>
         <kotlin.version>1.8.10</kotlin.version>
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
-        <zip4j.version>2.11.5</zip4j.version>
+        <maven-dependency-analyzer.version>1.13.0</maven-dependency-analyzer.version>
         <maven-plugin-api.version>3.9.0</maven-plugin-api.version>
         <maven-plugin-tools.version>3.8.1</maven-plugin-tools.version>
         <maven-plugin-plugin.version>3.8.1</maven-plugin-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+        <gson.version>2.10.1</gson.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,15 +30,16 @@
             <artifactId>kotlin-stdlib</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
+        <!--suppress VulnerableLibrariesLocal -->
         <dependency>
-            <groupId>net.lingala.zip4j</groupId>
-            <artifactId>zip4j</artifactId>
-            <version>${zip4j.version}</version>
+            <groupId>org.apache.maven.shared</groupId>
+            <artifactId>maven-dependency-analyzer</artifactId>
+            <version>${maven-dependency-analyzer.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>2.10.1</version>
+            <version>${gson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -71,6 +73,7 @@
                 <executions>
                     <execution>
                         <id>compile</id>
+                        <phase>process-sources</phase>
                         <goals>
                             <goal>compile</goal>
                         </goals>

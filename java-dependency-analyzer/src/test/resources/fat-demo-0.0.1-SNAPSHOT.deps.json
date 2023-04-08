@@ -1,0 +1,21 @@
+{
+  "nodes": [],
+  "dependencies": [
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "org.springframework.boot.SpringApplication"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "org.springframework.boot.autoconfigure.SpringBootApplication"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "java.lang.Object"
+    }
+  ]
+}

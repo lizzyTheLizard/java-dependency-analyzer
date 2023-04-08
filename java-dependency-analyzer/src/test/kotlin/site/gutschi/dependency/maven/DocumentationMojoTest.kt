@@ -13,7 +13,7 @@ internal class DocumentationMojoTest {
     fun dummy() {
         val target = DocumentationMojo()
         val tempDir = createTempDirectory()
-        target.input = TestFileHelpers.FLAT_JAR.absolutePath
+        target.input = TestFileHelpers.getFile("flat-demo-0.0.1-SNAPSHOT.jar").absolutePath
         target.outputFolder = tempDir.absolutePathString()
         target.execute()
         assertTrue(tempDir.resolve("index.html").exists())

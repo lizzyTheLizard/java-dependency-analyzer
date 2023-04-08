@@ -1,4 +1,4 @@
-export type AttributeType = 'LINK' | 'TEXT';
+export type AttributeType = 'LINK' | 'TEXT' | 'BOOLEAN' | 'NUMBER';
 
 export interface Attribute {
     type: AttributeType;

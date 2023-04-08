@@ -1,6 +1,0 @@
-JDepsResultLine(from=com.example.demo.DemoApplication, to=java.lang.Class, module=java.base)
-JDepsResultLine(from=com.example.demo.DemoApplication, to=java.lang.Object, module=java.base)
-JDepsResultLine(from=com.example.demo.DemoApplication, to=java.lang.String, module=java.base)
-JDepsResultLine(from=com.example.demo.DemoApplication, to=org.springframework.boot.SpringApplication, module=null)
-JDepsResultLine(from=com.example.demo.DemoApplication, to=org.springframework.boot.autoconfigure.SpringBootApplication, module=null)
-JDepsResultLine(from=com.example.demo.DemoApplication, to=org.springframework.context.ConfigurableApplicationContext, module=null)
