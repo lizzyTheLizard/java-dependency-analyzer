@@ -33,7 +33,7 @@
               <goal>create-documentation</goal>
             </goals>
             <configuration>
-              <input>target/classes</input>
+              <inputs>target/classes</inputs>
             </configuration>
 
           </execution>
