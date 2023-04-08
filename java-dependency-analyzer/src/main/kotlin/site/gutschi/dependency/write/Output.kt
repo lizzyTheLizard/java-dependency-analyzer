@@ -14,8 +14,9 @@ data class Output(
     data class Node(val name: String, val fullName: String, val attributes: Collection<Attribute>)
     data class Dependency(val from: String, val to: String)
     data class OutputProperties(
-        val basePackage: String?,
-        val collapsePackages: Collection<String>,
-        val ignoredPackages: Collection<String> = listOf()
+        val basePackage: String? = null,
+        val collapsePackages: Collection<String> = listOf(),
+        val ignoredPackages: Collection<String> = listOf(),
+        val splitPackages: Collection<String> = listOf(),
     )
 }

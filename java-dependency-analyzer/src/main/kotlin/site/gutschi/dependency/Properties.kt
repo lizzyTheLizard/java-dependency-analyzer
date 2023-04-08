@@ -15,6 +15,7 @@ data class Properties(
     val basePackage: String? = null,
     val collapsePackages: Collection<String> = listOf(),
     val ignoredPackages: Collection<String> = listOf(),
+    val splitPackages: Collection<String> = listOf(),
     val frameworks: List<Framework> = listOf(JavaBase(), Spring())
 ) {
     enum class Level { DEBUG, INFO, WARN }

@@ -33,6 +33,9 @@ class DocumentationMojo : AbstractMojo() {
     @Parameter(property = "ignoredPackages")
     var ignoredPackages: List<String> = listOf()
 
+    @Parameter(property = "splitPackages")
+    var splitPackages: List<String> = listOf()
+
     @Throws(MojoExecutionException::class)
     override fun execute() {
         try {
@@ -45,6 +48,7 @@ class DocumentationMojo : AbstractMojo() {
                 basePackage = basePackage,
                 collapsePackages = collapsePackages,
                 ignoredPackages = ignoredPackages,
+                splitPackages = splitPackages,
             )
             Main(properties).execute()
         } catch (e: Exception) {

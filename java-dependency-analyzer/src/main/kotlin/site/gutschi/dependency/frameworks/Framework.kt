@@ -10,10 +10,19 @@ interface Framework {
         val value: ((classReader: ClassReader) -> String)
     )
 
-    fun getCollapsedPackages(nodes: Collection<Node>): List<String>
+    fun getAttributes(classFile: ClassReader): Collection<Attribute> {
+        return listOf()
+    }
 
-    fun getIgnoredPackages(nodes: Collection<Node>): List<String>
+    fun getCollapsedPackages(nodes: Collection<Node>): Collection<String>{
+        return listOf()
+    }
 
-    fun getAttributes(classFile: ClassReader): Collection<Attribute>
+    fun getIgnoredPackages(nodes: Collection<Node>): Collection<String>{
+        return listOf()
+    }
 
+    fun getSplitPackages(nodes: Collection<Node>): Collection<String> {
+        return listOf()
+    }
 }

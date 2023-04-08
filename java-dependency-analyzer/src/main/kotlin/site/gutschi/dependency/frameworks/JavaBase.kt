@@ -8,8 +8,9 @@ import site.gutschi.dependency.write.Output.*
 
 
 class JavaBase : Framework {
-    private val ignoredPackages = listOf("java.lang", "kotlin")
-    private val collapsedPackages = listOf("javax.validation")
+    private val splitPackages = listOf("com", "org", "io")
+    private val ignoredPackages = listOf("java", "kotlin", "lombok", "reactor.core")
+    private val collapsedPackages = listOf("com.fasterxml.jackson", "com.google.common")
     private val generators = listOf(
         AttributeGenerator("Access", AttributeType.TEXT) { getAccess(it) },
         AttributeGenerator("Final", AttributeType.BOOLEAN) { getFinal(it) },
@@ -24,6 +25,10 @@ class JavaBase : Framework {
 
     override fun getIgnoredPackages(nodes: Collection<Node>): List<String> {
         return ignoredPackages.filter { p -> nodes.any { n -> n.fullName.startsWith(p) } }
+    }
+
+    override fun getSplitPackages(nodes: Collection<Node>): List<String> {
+        return splitPackages.filter { p -> nodes.any { n -> n.fullName.startsWith(p) } }
     }
 
     override fun getAttributes(classFile: ClassReader): Collection<Attribute> {
@@ -77,6 +82,9 @@ class JavaBase : Framework {
     }
 
     private fun getBaseClass(classFile: ClassReader): String {
-        return AsmHelper.getCanonicalName(classFile.superName)
+        if(classFile.superName != null) {
+            return AsmHelper.getCanonicalName(classFile.superName)
+        }
+        return ""
     }
 }
