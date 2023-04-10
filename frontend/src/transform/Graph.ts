@@ -1,4 +1,4 @@
-import {Attribute} from './Attribute';
+import {Attribute, Dependency} from '../image/InputFile';
 
 export interface Graph {
     readonly nodes: GraphNode[];
@@ -27,11 +27,6 @@ export type GraphDependency = {
     from: string;
     to: string;
     dependencies: Dependency[];
-};
-
-export type Dependency = {
-    readonly from: string;
-    readonly to: string;
 };
 
 export type Filter = (input: Graph) => Graph;

@@ -13,7 +13,13 @@ private val output = Output(
         Output.Node("to", "to", listOf())
     ),
     dependencies = listOf(Output.Dependency("from", "to")),
-    outputProperties = Output.OutputProperties(null, listOf(), listOf())
+    properties = Output.OutputProperties(
+        name ="",
+        version ="",
+        basePackage = null,
+        collapsePackages = listOf(),
+        ignoredPackages = listOf()
+    )
 )
 
 internal class WriteFileTest {

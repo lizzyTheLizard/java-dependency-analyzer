@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Deprecated
-public abstract class DependencyVisitorTest<T> extends LinkedList<T> implements Serializable {
+public abstract class DependencyVisitor<T> extends LinkedList<T> implements Serializable {
     private String string = Integer.TYPE.toString();
     private final static Character c = CharSequence.class.getCanonicalName().charAt(0);
 

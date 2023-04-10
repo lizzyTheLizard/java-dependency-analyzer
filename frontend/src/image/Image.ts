@@ -1,15 +1,14 @@
-import {data} from '../dummyData';
-import {GraphBuilder} from './GraphBuilder';
 import {writeSvg} from './writeSvg';
 import {Filter, Graph, GraphNode} from '../transform/Graph';
 import {removeClasses, RemoveClassesSelection} from '../transform/RemoveClasses';
 import {basePackage} from '../transform/BasePackage';
 import {removePackages} from '../transform/RemovePackages';
 import {collapsePackages} from '../transform/CollapsePackages';
+import {GraphImpl} from '../transform/GraphImpl';
 
 export class Image {
     public constructor(
-        private readonly _graph: Graph = new GraphBuilder(data),
+        private readonly _graph: Graph = new GraphImpl([],[],[]),
         public readonly base: GraphNode | undefined = undefined,
         public readonly collapsed: GraphNode[] = [],
         public readonly ignored: GraphNode[] = [],

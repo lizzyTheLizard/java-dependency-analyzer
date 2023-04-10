@@ -7,6 +7,8 @@ import java.io.File
 
 
 data class Properties(
+    val name: String,
+    val version: String,
     val inputs: Collection<File>,
     val log: (message: String, level: Level) -> Unit = { m: String, l: Level -> println("$l: $m") },
     val outputFolder: File? = null,

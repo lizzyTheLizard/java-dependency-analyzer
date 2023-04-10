@@ -51,8 +51,8 @@
       "attributes": []
     },
     {
-      "name": "DependencyVisitorTest",
-      "fullName": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "name": "DependencyVisitor",
+      "fullName": "site.gutschi.dependency.maven.DependencyVisitor",
       "attributes": [
         {
           "name": "Access",
@@ -114,67 +114,67 @@
   ],
   "dependencies": [
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.io.PrintStream"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.Object"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.io.Serializable"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.Deprecated"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.util.LinkedList"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.Class"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.Float"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.Integer"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.String"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.Double"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.System"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.util.List"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.util.Collection"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.CharSequence"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.lang.Character"
     },
     {
-      "from": "site.gutschi.dependency.maven.DependencyVisitorTest",
+      "from": "site.gutschi.dependency.maven.DependencyVisitor",
       "to": "java.util.HashSet"
     }
   ]

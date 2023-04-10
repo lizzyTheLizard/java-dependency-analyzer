@@ -23,7 +23,7 @@ export class ImageViewer extends LitElement {
     private g?: HTMLElement[];
 
     protected render(): TemplateResult<1> {
-        //TODO Set spinner...
+        //TODO Think about adding a spinner here
         return html`${unsafeHTML(this.image?.getSvgImage() ?? '')}`;
     }
 

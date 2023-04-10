@@ -13,6 +13,8 @@ class Main(private val properties: Properties) {
         classFileCollection.apply()
         properties.outputFolder?.let {
             val outputProperties = OutputProperties(
+                name = properties.name,
+                version = properties.version,
                 basePackage = properties.basePackage,
                 collapsePackages = getCollapsedPackages(classFileCollection.nodes),
                 ignoredPackages = getIgnoredPackages(classFileCollection.nodes),
@@ -33,8 +35,8 @@ class Main(private val properties: Properties) {
     }
 
     private fun getIgnoredPackages(nodes: Collection<Node>): Collection<String> {
-        if (properties.collapsePackages.isNotEmpty()) {
-            return properties.collapsePackages
+        if (properties.ignoredPackages.isNotEmpty()) {
+            return properties.ignoredPackages
         }
         return properties.frameworks.flatMap { it.getIgnoredPackages(nodes) }
     }

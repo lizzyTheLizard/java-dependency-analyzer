@@ -1,6 +1,6 @@
 import type {Graph, GraphDependency, GraphNode, Type} from './Graph';
 import {Filter} from './Graph';
-import {Attribute} from './Attribute';
+import {Attribute} from '../image/InputFile';
 
 export class GraphImpl implements Graph {
     // noinspection JSUnusedGlobalSymbols

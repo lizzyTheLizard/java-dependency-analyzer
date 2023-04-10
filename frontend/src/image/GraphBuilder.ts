@@ -1,20 +1,9 @@
-import type {Dependency} from '../transform/Graph';
 import {GraphImpl, GraphNodeImpl} from '../transform/GraphImpl';
-import {Attribute} from '../transform/Attribute';
-
-interface NodeDefinition {
-    fullName: string,
-    attributes: Attribute[]
-}
-interface Input {
-    nodes: NodeDefinition[],
-    dependencies: Dependency[],
-}
+import {Dependency, Input, NodeDefinition} from './InputFile';
 
 export class GraphBuilder extends GraphImpl {
-    constructor(inputString: string) {
+    constructor(input: Input) {
         super([], [], []);
-        const input: Input = JSON.parse(inputString);
         input.nodes.forEach(n =>this.addNode(n));
         input.dependencies.forEach(d => this.addDependency(d));
     }

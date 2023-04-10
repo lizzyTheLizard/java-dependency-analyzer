@@ -363,6 +363,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.16.3":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.20.7, @babel/template@npm:^7.3.3":
   version: 7.20.7
   resolution: "@babel/template@npm:7.20.7"
@@ -407,6 +416,29 @@ __metadata:
   version: 0.2.3
   resolution: "@bcoe/v8-coverage@npm:0.2.3"
   checksum: 850f9305536d0f2bd13e9e0881cb5f02e4f93fad1189f7b2d4bebf694e3206924eadee1068130d43c11b750efcc9405f88a8e42ef098b6d75239c0f047de1a27
+  languageName: node
+  linkType: hard
+
+"@carbon/telemetry@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@carbon/telemetry@npm:0.1.0"
+  bin:
+    carbon-telemetry: bin/carbon-telemetry.js
+  checksum: e93039763ed40b612a1cb5c70001d5e7e92ff034f1559676d47ce9a98e6285ba2856f6a59146b03e6349702eb96d61f2fe91349e981ca858e45c4527a3c1e876
+  languageName: node
+  linkType: hard
+
+"@carbon/web-components@npm:^1.26.0":
+  version: 1.26.0
+  resolution: "@carbon/web-components@npm:1.26.0"
+  dependencies:
+    "@babel/runtime": ^7.16.3
+    carbon-components: 10.58.3
+    flatpickr: 4.6.9
+    lit-element: ^2.5.1
+    lit-html: ^1.4.1
+    lodash-es: ^4.17.21
+  checksum: 15c263c894d4144462ce9c6fd1e70f603ee88d020ef4a5a1eb295ed167b3226a4b8206f82bb84e1093dc196d9c4ff76f534741b304057a78a9908ee544e603b2
   languageName: node
   linkType: hard
 
@@ -1003,334 +1035,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polymer/font-roboto@npm:^3.0.1":
-  version: 3.0.2
-  resolution: "@polymer/font-roboto@npm:3.0.2"
-  checksum: 6f487bc1df5636437592c1f75115816818f72327284518539c2fee71ea932f6fc47c45c2e03281f40a8e873a3541ed732d2f5c4b8365cc2baa5029a4945e9194
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-a11y-announcer@npm:^3.0.0-pre.26":
-  version: 3.2.0
-  resolution: "@polymer/iron-a11y-announcer@npm:3.2.0"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: 4a5ba03c5fb1b1121f1d179671167c6a4a049496c4c87c8dbf7763bae7311a76013e2042caa3c983d17f70c0f9c3c927b2e20868fa89f31235da54c4316a750d
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-a11y-keys-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-a11y-keys-behavior@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: a8f1ffdf2e83bad123a4514eafdc8a28a8d741920b1c3cd141bd5df4390dfe639004b1f9775533c8bc3673f4c21755575e96d5e21c7d62be42eb968769eeceb3
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-autogrow-textarea@npm:^3.0.0-pre.26":
-  version: 3.0.3
-  resolution: "@polymer/iron-autogrow-textarea@npm:3.0.3"
-  dependencies:
-    "@polymer/iron-behaviors": ^3.0.0-pre.26
-    "@polymer/iron-flex-layout": ^3.0.0-pre.26
-    "@polymer/iron-validatable-behavior": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 3ecc2d32539e6564c7f79a9fa958f8bc96091e9bf748fd6c80d136bcbf5bd90f334e02abf017e6765cdbb8b2550d2c6f715fd211029773da2afaeb0150fd12a2
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-behaviors@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-behaviors@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: b4aaa531fbdf4ea52df35d429d6834e35b6795c740c4d3e4c1285dd7d61ee7b33578429ebd6a6dcc608c9b56d59fef9ccfde331161523764722887be78c2e356
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-checked-element-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-checked-element-behavior@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-form-element-behavior": ^3.0.0-pre.26
-    "@polymer/iron-validatable-behavior": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 35a6072c989e43a14b3fe95027f351c066b333ee400df5001fc5549aa5eee7904df72739c270912b75c8606910aeeaafff13eb77dd140a94083ba98ef6522449
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-dropdown@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-dropdown@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": ^3.0.0-pre.26
-    "@polymer/iron-overlay-behavior": ^3.0.0-pre.27
-    "@polymer/neon-animation": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 2c1ba429c8f5553f8493f256691efa8a338e8c038c1102f482ecb612b61c079b5019f6c362aefb31b44d3429661152c1b6912408a69c67e9d6fff62914ad801f
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-fit-behavior@npm:^3.0.0-pre.26, @polymer/iron-fit-behavior@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@polymer/iron-fit-behavior@npm:3.1.0"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: 1153f13c5dd6cfb3132336d6d68e55537ca9a4aaae8ceee412800daa242ba580ff640407baa5d3da563a18579fca36b5f44460770151c279958c468b2bfceee0
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-flex-layout@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-flex-layout@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: bdfe717831ac9e7df475ae85a6b9c2cfa2fc5cdd8416f51f2707ec29a52f28b103868e33949751a65cea72c5ecf913d59c8b613ae1253c39565614348404d8e1
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-form-element-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-form-element-behavior@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: b48f2ae7e29e7762f53c316e006a67ab53f61f9f5b631fd459169889f5b77194766d7d546ffbd2dbd68a0bbe717a26df5e3f8045e7a60dbae05817231c689ed6
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-icon@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-icon@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-flex-layout": ^3.0.0-pre.26
-    "@polymer/iron-meta": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: b0a08d6e3868c96701c67fa1ac2908dacbe7ed473c230f321976512b6c841d674867b7f447324266d0943991abfbea5a2f1a99d57ebc7049e02021b5958bed2c
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-iconset-svg@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-iconset-svg@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-meta": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 81d14a4eb5d79d8d35b2744834aa56c2bf10eb1af5c5aaf363cb087eaac9539ea8fef3ed1a66204e7ec694fb8579b7fd9bbd1d83223782550ca4558cd6de2adb
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-input@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-input@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-a11y-announcer": ^3.0.0-pre.26
-    "@polymer/iron-validatable-behavior": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: e95e57027d57654d3e6d77b0f33a528af0355ff0ff6c7883d2cd5281e397ac3fdeefe9ee793c5004d8a04924eb379dbe74a652eda33f0be056f856a68524b146
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-menu-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.2
-  resolution: "@polymer/iron-menu-behavior@npm:3.0.2"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.0-pre.26
-    "@polymer/iron-flex-layout": ^3.0.0-pre.26
-    "@polymer/iron-selector": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 6d599c55ec09aea353eed5fa1d1e23df211e7092ec70e3490ffd3f41e5a49cae0270ed9727ac8d8790e17339927ab203c160c00d8ca7e0bed9ce946d796228f2
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-meta@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-meta@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: 0bd49f27f0e0f7241083b0e6e1e262b96a2371ba4d8cf70174b320f12245c219973702f6ba5144453ab4754f28667854000bcbe0772817ab9bbaeecdb472e47e
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-overlay-behavior@npm:^3.0.0-pre.27":
-  version: 3.0.3
-  resolution: "@polymer/iron-overlay-behavior@npm:3.0.3"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.0-pre.26
-    "@polymer/iron-fit-behavior": ^3.0.0-pre.26
-    "@polymer/iron-resizable-behavior": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 26b0834f689116ab87629cb59e83af062ff64aaf2238ecbe0954503a08bb35d0b945289aa053f9ca7d7d5bff43c41007ea49133c52ba8e099b9fc974dc150a8b
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-resizable-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-resizable-behavior@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: 2adf29387b5253a011438aadff3fbc8027814e0f3bd410baf25242f3fc300664425e38844f1de48e5a161d8c242d9cf08f092c1095560d360c1ed6e01707a24e
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-selector@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-selector@npm:3.0.1"
-  dependencies:
-    "@polymer/polymer": ^3.0.0
-  checksum: 132caa75cca144e18c52727b68e814a69c2f65c9deb15bbfd6c2514f017ecb3061e053864a512fdb3c4189770be6cdda5280fe239d5f73dfea67fce57ddfc59e
-  languageName: node
-  linkType: hard
-
-"@polymer/iron-validatable-behavior@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/iron-validatable-behavior@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-meta": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: ff2c88e7bd2ce6ce57972d4d4ae39748a91ce6f51e2bb6102415533d830bca9d82f5e2ce76a131ea6b8c07588cd580584dddc09933aa80581a38b542d7800f68
-  languageName: node
-  linkType: hard
-
-"@polymer/neon-animation@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/neon-animation@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-resizable-behavior": ^3.0.0-pre.26
-    "@polymer/iron-selector": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: c5ea5e1ef9f2017faaa5799ea108b26634dd7d986fe469369e629075efe382a5e5d4f9c537bacc77f9852453a2758c9f67e491d6ea5a1c4457f772bfdf06c707
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-behaviors@npm:^3.0.0-pre.27":
-  version: 3.0.1
-  resolution: "@polymer/paper-behaviors@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": ^3.0.0-pre.26
-    "@polymer/iron-checked-element-behavior": ^3.0.0-pre.26
-    "@polymer/paper-ripple": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 1b61e7472588cfadfcac611f535b1c9a82a11e3925710ddd18d1def243fc9461b50eca2a453cf6cf067a5662a1fb5d0146b633cbd87b78c59f85502caf9b9974
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-button@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@polymer/paper-button@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-flex-layout": ^3.0.0-pre.26
-    "@polymer/paper-behaviors": ^3.0.0-pre.27
-    "@polymer/paper-styles": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 994f398631437afa6b0b12d73a550ca9f8e490adf0ef836213280b83c264df19d3a5b1225561540774982dddc8b89ef19626fa57997d1becaa9f6734df075f8f
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-dropdown-menu@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@polymer/paper-dropdown-menu@npm:3.2.0"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.0-pre.26
-    "@polymer/iron-form-element-behavior": ^3.0.0-pre.26
-    "@polymer/iron-icon": ^3.0.0-pre.26
-    "@polymer/iron-iconset-svg": ^3.0.0-pre.26
-    "@polymer/iron-validatable-behavior": ^3.0.0-pre.26
-    "@polymer/paper-behaviors": ^3.0.0-pre.27
-    "@polymer/paper-input": ^3.1.0
-    "@polymer/paper-menu-button": ^3.1.0
-    "@polymer/paper-ripple": ^3.0.0-pre.26
-    "@polymer/paper-styles": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.3.1
-  checksum: dc7f6a8e3d449f37068ad5ee1d1c6d9037c9abd855ccc1d4e433d743c6378bb25af165ea86174edd1414887cf56a011ad0adda6d24dd55765e9458d49dc3e5e3
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-input@npm:^3.1.0":
-  version: 3.2.1
-  resolution: "@polymer/paper-input@npm:3.2.1"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.0-pre.26
-    "@polymer/iron-autogrow-textarea": ^3.0.0-pre.26
-    "@polymer/iron-behaviors": ^3.0.0-pre.26
-    "@polymer/iron-form-element-behavior": ^3.0.0-pre.26
-    "@polymer/iron-input": ^3.0.0-pre.26
-    "@polymer/paper-styles": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 241d4a9754451193fd112d1e8a0fcd19af9c479baaf402745b9816ef15eeb93553ba306f499f90046cf840824ccab558b6f9ff958c1961b005e4bdc3b5b232be
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-item@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@polymer/paper-item@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": ^3.0.0-pre.26
-    "@polymer/iron-flex-layout": ^3.0.0-pre.26
-    "@polymer/paper-styles": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 1573e1ae41e91b938ed9e591e6ae95888a44255646d2fa56a5f0742e5a6c3f7f33046c7c1d03114344649fbe8bdfe953ba670726da013f9facc0db54259f26f3
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-listbox@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@polymer/paper-listbox@npm:3.0.1"
-  dependencies:
-    "@polymer/iron-behaviors": ^3.0.0-pre.26
-    "@polymer/iron-menu-behavior": ^3.0.0-pre.26
-    "@polymer/paper-styles": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 5200382e9ccd806e2f2963fd53a267585c414997cd60a4af137d347dd34d475da69b561989eaef8536777714fbdd2660db7dbffef1b9928e521119c19531cb23
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-menu-button@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@polymer/paper-menu-button@npm:3.1.0"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.0-pre.26
-    "@polymer/iron-behaviors": ^3.0.0-pre.26
-    "@polymer/iron-dropdown": ^3.0.0-pre.26
-    "@polymer/iron-fit-behavior": ^3.1.0
-    "@polymer/neon-animation": ^3.0.0-pre.26
-    "@polymer/paper-styles": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 9243e104bac583189c6221f2df8dffeb331868cbf8084dd488cf2ddaba25987bfb3d4d2a9bd3168e6b49f28ba6b1b07ef7163fbfcf3af97978d34608e91cc605
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-ripple@npm:^3.0.0-pre.26":
-  version: 3.0.2
-  resolution: "@polymer/paper-ripple@npm:3.0.2"
-  dependencies:
-    "@polymer/iron-a11y-keys-behavior": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: dea7d164a1d377ee4ab352d552cb457b810a0e5d562083b2dbcd6afb8371bea6eb4ef93d214d06bfc0a6c10c817ee2bbdb5235f9b2ff21195238292399f494b9
-  languageName: node
-  linkType: hard
-
-"@polymer/paper-styles@npm:^3.0.0-pre.26":
-  version: 3.0.1
-  resolution: "@polymer/paper-styles@npm:3.0.1"
-  dependencies:
-    "@polymer/font-roboto": ^3.0.1
-    "@polymer/iron-flex-layout": ^3.0.0-pre.26
-    "@polymer/polymer": ^3.0.0
-  checksum: 4dd43bd00abac69ee3f82965b03cbc278f1c6cd87ea7351d8451ef62aef962b3a7bfa37ee0de4f008824a02ce72d7793336010a8aa7c0d1de85511942cca7cc3
-  languageName: node
-  linkType: hard
-
-"@polymer/polymer@npm:^3.0.0, @polymer/polymer@npm:^3.3.1":
-  version: 3.5.1
-  resolution: "@polymer/polymer@npm:3.5.1"
-  dependencies:
-    "@webcomponents/shadycss": ^1.9.1
-  checksum: 4c499cd817e8ca79ad192d1006f7063a20173c425d00ba99ea93b25d47feccc72ccee7acdd41ad9aeba48f52f2e88aad632ba1651852d8170bc66d8717ec059c
-  languageName: node
-  linkType: hard
-
 "@sinclair/typebox@npm:^0.25.16":
   version: 0.25.24
   resolution: "@sinclair/typebox@npm:0.25.24"
@@ -1654,13 +1358,6 @@ __metadata:
     "@typescript-eslint/types": 5.57.0
     eslint-visitor-keys: ^3.3.0
   checksum: 77d53f74648e48bf1c6313cd60568c2b1539157ac13945f26204a54beb156666c24f3d033dd0db8ed5d1d4595ee63c072732b17132e4488b46763bf8fdcefa49
-  languageName: node
-  linkType: hard
-
-"@webcomponents/shadycss@npm:^1.9.1":
-  version: 1.11.1
-  resolution: "@webcomponents/shadycss@npm:1.11.1"
-  checksum: e57b186190e5c4f871adef7dfd31110efca9e04cde686fd0f7651868a9420da7ec418bf060fa5aa664964b149cd69cccf2c2367cb5d06d1656eda0022834c155
   languageName: node
   linkType: hard
 
@@ -2103,6 +1800,18 @@ __metadata:
   version: 1.0.30001472
   resolution: "caniuse-lite@npm:1.0.30001472"
   checksum: 60f2fbe9b7fc6d88c500779ddbebda5fb0ba86eece32ecf3c18d5c1f74e2c36ac5151ed6464f72b6c43c43dc6a3d1ea83c73a195ebb6d2f49738add1f8a0cd4d
+  languageName: node
+  linkType: hard
+
+"carbon-components@npm:10.58.3":
+  version: 10.58.3
+  resolution: "carbon-components@npm:10.58.3"
+  dependencies:
+    "@carbon/telemetry": 0.1.0
+    flatpickr: 4.6.1
+    lodash.debounce: ^4.0.8
+    warning: ^3.0.0
+  checksum: 84a7e6ad39df192462225f92394407c59d2c3dcf6b1f4b5c2fb9ed96f3f593538d3999a8f1f30ff8de0095d1e282a3ddcdd3c8a3e653f295ef6e60436dba59d7
   languageName: node
   linkType: hard
 
@@ -3085,6 +2794,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flatpickr@npm:4.6.1":
+  version: 4.6.1
+  resolution: "flatpickr@npm:4.6.1"
+  checksum: 66ea82084a70570a0dcf5a46a3b7e6a6551ec06fd1238f544226540feae69d2c3fd7af69f77c73023059e1a0d50e2f6ed0a6c4d4c390794cc4c8dd3c50002338
+  languageName: node
+  linkType: hard
+
+"flatpickr@npm:4.6.9":
+  version: 4.6.9
+  resolution: "flatpickr@npm:4.6.9"
+  checksum: 4702ad182531af0524b2fc74a70e06d276ff91918449092b3a11c464cb5a5e010df6c7cc9ff92e8b8373f81b238ea85d911ce9b3b883ee8df5085180cc3aea13
+  languageName: node
+  linkType: hard
+
 "flatted@npm:^3.1.0":
   version: 3.2.7
   resolution: "flatted@npm:3.2.7"
@@ -3829,10 +3552,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "java-deps-frontend@workspace:."
   dependencies:
-    "@polymer/paper-button": ^3.0.1
-    "@polymer/paper-dropdown-menu": ^3.2.0
-    "@polymer/paper-item": ^3.0.1
-    "@polymer/paper-listbox": ^3.0.1
+    "@carbon/web-components": ^1.26.0
     "@types/file-saver": ^2.0.5
     "@types/jest": ^29.5.0
     "@types/jquery": ^3.5.16
@@ -4310,7 +4030,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-tokens@npm:^4.0.0":
+"js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
   checksum: 8a95213a5a77deb6cbe94d86340e8d9ace2b93bc367790b260101d2f36a2eaf4e4e22d9fa9cf459b38af3a32fb4190e638024cf82ec95ef708680e405ea7cc78
@@ -4421,6 +4141,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lit-element@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "lit-element@npm:2.5.1"
+  dependencies:
+    lit-html: ^1.1.1
+  checksum: c4f45d0cc84d49cc9dca2502b5e0bd14289c46a5ee331c21fb0014693541a4824887f8c2c6725310d380d713adecbe31fba1eda6f8aabc14927f524d6527f6c9
+  languageName: node
+  linkType: hard
+
 "lit-element@npm:^3.3.0":
   version: 3.3.0
   resolution: "lit-element@npm:3.3.0"
@@ -4429,6 +4158,13 @@ __metadata:
     "@lit/reactive-element": ^1.3.0
     lit-html: ^2.7.0
   checksum: 5a483c34dd55412599978e02858d841a932199dedca0b86ec54639096bc36c301f57915c0ee0463d8a57ac265d57f3468c8378224816c732c73df641a2549d62
+  languageName: node
+  linkType: hard
+
+"lit-html@npm:^1.1.1, lit-html@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "lit-html@npm:1.4.1"
+  checksum: 6e1bb335cd8493700d2f1eaf1e019c2f6bf78ac641bdba5e2ff9f1545430e0fec15c6721ee1c8ca75559e1d52a1d34cdc568da46319681304299d9aff83a6346
   languageName: node
   linkType: hard
 
@@ -4470,6 +4206,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash-es@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
+  languageName: node
+  linkType: hard
+
+"lodash.debounce@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "lodash.debounce@npm:4.0.8"
+  checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
+  languageName: node
+  linkType: hard
+
 "lodash.memoize@npm:4.x":
   version: 4.1.2
   resolution: "lodash.memoize@npm:4.1.2"
@@ -4481,6 +4231,17 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: ad580b4bdbb7ca1f7abf7e1bce63a9a0b98e370cf40194b03380a46b4ed799c9573029599caebc1b14e3f24b111aef72b96674a56cfa105e0f5ac70546cdc005
+  languageName: node
+  linkType: hard
+
+"loose-envify@npm:^1.0.0":
+  version: 1.4.0
+  resolution: "loose-envify@npm:1.4.0"
+  dependencies:
+    js-tokens: ^3.0.0 || ^4.0.0
+  bin:
+    loose-envify: cli.js
+  checksum: 6517e24e0cad87ec9888f500c5b5947032cdfe6ef65e1c1936a0c48a524b81e65542c9c3edc91c97d5bddc806ee2a985dbc79be89215d613b1de5db6d1cfe6f4
   languageName: node
   linkType: hard
 
@@ -5136,6 +4897,13 @@ __metadata:
   dependencies:
     picomatch: ^2.2.1
   checksum: 1ced032e6e45670b6d7352d71d21ce7edf7b9b928494dcaba6f11fba63180d9da6cd7061ebc34175ffda6ff529f481818c962952004d273178acd70f7059b320
+  languageName: node
+  linkType: hard
+
+"regenerator-runtime@npm:^0.13.11":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
   languageName: node
   linkType: hard
 
@@ -5905,6 +5673,15 @@ __metadata:
   dependencies:
     makeerror: 1.0.12
   checksum: ad7a257ea1e662e57ef2e018f97b3c02a7240ad5093c392186ce0bcf1f1a60bbadd520d073b9beb921ed99f64f065efb63dfc8eec689a80e569f93c1c5d5e16c
+  languageName: node
+  linkType: hard
+
+"warning@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "warning@npm:3.0.0"
+  dependencies:
+    loose-envify: ^1.0.0
+  checksum: c9f99a12803aab81b29858e7dc3415bf98b41baee3a4c3acdeb680d98c47b6e17490f1087dccc54432deed5711a5ce0ebcda2b27e9b5eb054c32ae50acb4419c
   languageName: node
   linkType: hard
 

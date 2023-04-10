@@ -9,9 +9,13 @@ import kotlin.test.Test
 internal class NodeVisitorTest {
     @Test
     fun classFile() {
-        val properties = Properties(listOf(getFile("DependencyVisitorTest.class")))
+        val properties = Properties(
+            name = "name",
+            version = "version",
+            inputs = listOf(getFile("DependencyVisitor.class"))
+        )
         val results = analyze(properties)
-        assertNodesEquals("DependencyVisitorTest.deps.json", results)
+        assertNodesEquals("DependencyVisitor.deps.json", results)
     }
 
 

@@ -1,15 +1,21 @@
 import {GraphBuilder} from './GraphBuilder';
+import {Input, Properties} from './InputFile';
+
+const properties: Properties = {
+    collapsePackages: [], ignoredPackages: [], name: '', splitPackages: [], version: ''
+};
+
 test('Empty', () => {
-    const input = {nodes: [], dependencies: []};
-    const result = new GraphBuilder(JSON.stringify(input));
+    const input = {nodes: [], dependencies: [], properties: properties};
+    const result = new GraphBuilder(input);
     expect(result.nodes).toEqual([]);
     expect(result.dependencies).toEqual([]);
     expect(result.attributes).toEqual([]);
 });
 
 test('Single Node', () => {
-    const input = {nodes: [{fullName: 'a', attributes: []}], dependencies: []};
-    const result = new GraphBuilder(JSON.stringify(input));
+    const input = {nodes: [{fullName: 'a', attributes: []}], dependencies: [], properties: properties};
+    const result = new GraphBuilder(input);
     expect(result.nodes).toEqual([{
         name: 'a',
         fullName: 'a',
@@ -23,8 +29,8 @@ test('Single Node', () => {
 });
 
 test('Attribute Node', () => {
-    const input = {nodes: [{fullName: 'a', attributes: [{type: 'LINK', name:'name', value:'value'}]}], dependencies: []};
-    const result = new GraphBuilder(JSON.stringify(input));
+    const input: Input = {nodes: [{fullName: 'a', attributes: [{type: 'LINK', name:'name', value:'value'}]}], dependencies: [], properties: properties};
+    const result = new GraphBuilder(input);
     expect(result.nodes).toEqual([{
         name: 'a',
         fullName: 'a',
@@ -42,8 +48,8 @@ test('Attribute Node', () => {
 });
 
 test('Dependency', () => {
-    const input = {nodes: [{fullName: 'a', attributes: []},{fullName: 'b', attributes: []} ], dependencies: [{from: 'a', to: 'b'}]};
-    const result = new GraphBuilder(JSON.stringify(input));
+    const input = {nodes: [{fullName: 'a', attributes: []},{fullName: 'b', attributes: []} ], dependencies: [{from: 'a', to: 'b'}], properties: properties};
+    const result = new GraphBuilder(input);
     expect(result.nodes).toEqual([{
         name: 'a',
         fullName: 'a',
@@ -64,8 +70,8 @@ test('Dependency', () => {
 });
 
 test('FullName', () => {
-    const input = {nodes: [{fullName: 'a.b.c', attributes: []},{fullName: 'a.c.c', attributes: []} ], dependencies: [{from: 'a.b.c', to: 'a.c.c'}]};
-    const result = new GraphBuilder(JSON.stringify(input));
+    const input = {nodes: [{fullName: 'a.b.c', attributes: []},{fullName: 'a.c.c', attributes: []} ], dependencies: [{from: 'a.b.c', to: 'a.c.c'}], properties: properties};
+    const result = new GraphBuilder(input);
     expect(result.nodes).toEqual([{
         name: 'a',
         fullName: 'a',

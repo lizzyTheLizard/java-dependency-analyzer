@@ -10,36 +10,45 @@ import site.gutschi.dependency.Properties
 import site.gutschi.dependency.Properties.Level
 import java.io.File
 
+
 @Mojo(name = "create-documentation", defaultPhase = LifecyclePhase.PROCESS_CLASSES)
 class DocumentationMojo : AbstractMojo() {
-    @Parameter(property = "inputs", defaultValue = "target/classes")
+    @Parameter(property = "name", readonly = true, required = true, defaultValue = "\${project.name}")
+    var name: String = ""
+
+    @Parameter(property = "version", readonly = true, required = true, defaultValue = "\${project.version}")
+    var version: String = ""
+
+    @Parameter(property = "inputs", readonly = true, required = true,  defaultValue = "target/classes")
     var inputs: List<String> = listOf("target/classes")
 
-    @Parameter(property = "fatJarMatchers")
+    @Parameter(property = "fatJarMatchers", readonly = true)
     var fatJarMatchers: List<String> = listOf()
 
-    @Parameter(property = "includeFatJarClasses", defaultValue = "false")
+    @Parameter(property = "includeFatJarClasses", readonly = true)
     var includeFatJarClasses: Boolean = false
 
-    @Parameter(property = "outputFolder", defaultValue = "target/doc")
+    @Parameter(property = "outputFolder", readonly = true)
     var outputFolder: String = "target/doc"
 
-    @Parameter(property = "basePackage")
+    @Parameter(property = "basePackage", readonly = true)
     var basePackage: String? = null
 
-    @Parameter(property = "collapsePackages")
+    @Parameter(property = "collapsePackages", readonly = true)
     var collapsePackages: List<String> = listOf()
 
-    @Parameter(property = "ignoredPackages")
+    @Parameter(property = "ignoredPackages", readonly = true)
     var ignoredPackages: List<String> = listOf()
 
-    @Parameter(property = "splitPackages")
+    @Parameter(property = "splitPackages", readonly = true)
     var splitPackages: List<String> = listOf()
 
     @Throws(MojoExecutionException::class)
     override fun execute() {
         try {
             val properties = Properties(
+                name = name,
+                version = version,
                 log = { m: String, l: Level -> log(m, l) },
                 outputFolder = File(outputFolder),
                 inputs = inputs.map { File(it) },

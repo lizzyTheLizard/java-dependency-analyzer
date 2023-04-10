@@ -35,7 +35,7 @@ class FileWriter(private val outputDir: File) {
         val indexWithinVariable = template.indexOf("site.gutschi.dependency.maven.integrationtest.TestA")
         val indexLeadingQute = template.substring(0, indexWithinVariable).lastIndexOf('`')
         val indexTrailingQute = template.indexOf('`', indexWithinVariable)
-        return template.substring(0, indexLeadingQute + 2) + output + template.substring(indexTrailingQute)
+        return template.substring(0, indexLeadingQute + 1) + output + template.substring(indexTrailingQute)
     }
 
     private fun ensureDirExists(outputDir: File) {

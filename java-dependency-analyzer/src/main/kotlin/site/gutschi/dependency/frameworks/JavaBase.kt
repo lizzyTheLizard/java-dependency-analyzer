@@ -10,7 +10,7 @@ import site.gutschi.dependency.write.Output.*
 class JavaBase : Framework {
     private val splitPackages = listOf("com", "org", "io")
     private val ignoredPackages = listOf("java", "kotlin", "lombok", "reactor.core")
-    private val collapsedPackages = listOf("com.fasterxml.jackson", "com.google.common")
+    private val collapsedPackages = listOf("com.fasterxml.jackson", "com.google.common", "org.jetbrains")
     private val generators = listOf(
         AttributeGenerator("Access", AttributeType.TEXT) { getAccess(it) },
         AttributeGenerator("Final", AttributeType.BOOLEAN) { getFinal(it) },

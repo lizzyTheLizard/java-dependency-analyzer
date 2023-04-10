@@ -3,7 +3,7 @@ package site.gutschi.dependency.write
 data class Output(
     val nodes: Collection<Node>,
     val dependencies: Collection<Dependency>,
-    val outputProperties: OutputProperties
+    val properties: OutputProperties
 ) {
     @Suppress("unused")
     enum class AttributeType {
@@ -14,6 +14,8 @@ data class Output(
     data class Node(val name: String, val fullName: String, val attributes: Collection<Attribute>)
     data class Dependency(val from: String, val to: String)
     data class OutputProperties(
+        val name: String,
+        val version: String,
         val basePackage: String? = null,
         val collapsePackages: Collection<String> = listOf(),
         val ignoredPackages: Collection<String> = listOf(),
