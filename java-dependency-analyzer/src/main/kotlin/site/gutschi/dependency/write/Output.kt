@@ -17,6 +17,7 @@ data class Output(
         val name: String,
         val version: String,
         val basePackage: String? = null,
+        val showClasses: String = "HIDE_INNER",
         val collapsePackages: Collection<String> = listOf(),
         val ignoredPackages: Collection<String> = listOf(),
         val splitPackages: Collection<String> = listOf(),

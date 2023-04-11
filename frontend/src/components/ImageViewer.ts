@@ -3,7 +3,7 @@ import {customElement, property, query, queryAll} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import svgPanZoom from 'svg-pan-zoom';
 import {NodeSelectedEvent} from './Main';
-import {Image} from '../image/Image';
+import {Image} from '../logic/Image';
 
 @customElement('image-viewer')
 export class ImageViewer extends LitElement {

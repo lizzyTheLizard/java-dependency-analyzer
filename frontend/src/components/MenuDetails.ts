@@ -1,12 +1,12 @@
 import {customElement, property} from 'lit/decorators.js';
 import {css, html, LitElement, TemplateResult} from 'lit';
 import {ImageChangedEvent} from './Main';
-import {Image} from '../image/Image';
+import {Image} from '../logic/Image';
 import '@carbon/web-components/es/components/button/index.js';
 import '@carbon/web-components/es/components/data-table/index.js';
 import '@carbon/web-components/es/components/checkbox/index.js';
-import {Attribute} from '../image/Input';
-import {ImageNode} from '../image/ImageNode';
+import {Attribute} from '../logic/Input';
+import {ImageNode} from '../logic/ImageNode';
 
 //TODO: Support splits
 @customElement('menu-details')

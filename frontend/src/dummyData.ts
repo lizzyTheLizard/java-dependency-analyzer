@@ -77,6 +77,7 @@ export const data = `{
         "version": "0.0.1-SNAPSHOT",
         "collapsePackages": [],
         "ignoredPackages": ["java", "kotlin"],
+        "showClasses": "HIDE_INNER",
         "splitPackages": ["org"]
     }
 }`;

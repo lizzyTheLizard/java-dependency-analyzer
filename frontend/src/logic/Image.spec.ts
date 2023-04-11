@@ -9,6 +9,7 @@ test('FromData', () => {
         ignoredPackages: ['java', 'kotlin'],
         name: 'Maven Integration Test',
         splitPackages: ['org'],
+        showClasses: 'HIDE_INNER',
         version: '0.0.1-SNAPSHOT'
     });
 });
@@ -34,6 +35,7 @@ test('update', () => {
         ignoredPackages: ['java', 'kotlin'],
         name: 'Maven Integration Test',
         splitPackages: ['org'],
+        showClasses: 'HIDE_INNER',
         version: '0.0.1-SNAPSHOT'
     });
 });
@@ -46,11 +48,12 @@ test('ignore', () => {
         ignoredPackages: ['java', 'kotlin', 'dummy'],
         name: 'Maven Integration Test',
         splitPackages: ['org'],
+        showClasses: 'HIDE_INNER',
         version: '0.0.1-SNAPSHOT'
     });
 });
 
-test('unignore', () => {
+test('un-ignore', () => {
     const target = fromDefault();
     const result = target.toggleIgnored('dummy').toggleIgnored('dummy');
     expect(result.properties).toEqual({
@@ -58,6 +61,7 @@ test('unignore', () => {
         ignoredPackages: ['java', 'kotlin'],
         name: 'Maven Integration Test',
         splitPackages: ['org'],
+        showClasses: 'HIDE_INNER',
         version: '0.0.1-SNAPSHOT'
     });
 });
@@ -70,11 +74,12 @@ test('collapse', () => {
         ignoredPackages: ['java', 'kotlin'],
         name: 'Maven Integration Test',
         splitPackages: ['org'],
+        showClasses: 'HIDE_INNER',
         version: '0.0.1-SNAPSHOT'
     });
 });
 
-test('uncollapse', () => {
+test('un-collapse', () => {
     const target = fromDefault();
     const result = target.toggleCollapsed('dummy').toggleCollapsed('dummy');
     expect(result.properties).toEqual({
@@ -82,6 +87,7 @@ test('uncollapse', () => {
         ignoredPackages: ['java', 'kotlin'],
         name: 'Maven Integration Test',
         splitPackages: ['org'],
+        showClasses: 'HIDE_INNER',
         version: '0.0.1-SNAPSHOT'
     });
 });

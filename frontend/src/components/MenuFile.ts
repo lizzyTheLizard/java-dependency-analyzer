@@ -1,6 +1,6 @@
 import {customElement, property} from 'lit/decorators.js';
 import {css, html, LitElement, TemplateResult} from 'lit';
-import {fromFile, Image} from '../image/Image';
+import {fromFile, Image} from '../logic/Image';
 import {ImageChangedEvent} from './Main';
 import FileSaver from 'file-saver';
 import '@carbon/web-components/es/components/button/index.js';

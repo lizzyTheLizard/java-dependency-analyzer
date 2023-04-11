@@ -1,8 +1,8 @@
 import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import '@carbon/web-components/es/components/ui-shell/index.js';
-import {fromDefault, Image} from '../image/Image';
-import {ImageNode} from '../image/ImageNode';
+import {fromDefault, Image} from '../logic/Image';
+import {ImageNode} from '../logic/ImageNode';
 
 export class ImageChangedEvent extends Event {
     constructor(public readonly image: Image) {
