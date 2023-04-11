@@ -1,12 +1,14 @@
-import {customElement, property, query} from  'lit/decorators.js';
+import {customElement, property} from  'lit/decorators.js';
 import {css, html, LitElement, TemplateResult} from 'lit';
 import {Image} from '../image/Image';
+import {GraphNode} from '../transform/Graph';
+import {ImageChangedEvent, NodeSelectedEvent} from './Main';
+import {BXComboBox, BXInput} from '@carbon/web-components';
+import {RemoveClassesSelection} from '../transform/RemoveClasses';
 import '@carbon/web-components/es/components/input/index.js';
 import '@carbon/web-components/es/components/button/index.js';
 import '@carbon/web-components/es/components/structured-list/index.js';
-import {GraphNode} from '../transform/Graph';
-import {ImageChangedEvent, NodeSelectedEvent} from './Main';
-import {BXInput} from '@carbon/web-components';
+import '@carbon/web-components/es/components/combo-box/index.js';
 
 @customElement('menu-settings')
 export class MenuSettings extends LitElement {
@@ -14,7 +16,7 @@ export class MenuSettings extends LitElement {
       .grid-container {
         display: grid;
         height: 100%;
-        grid-template-rows: 75px 100px auto auto ;
+        grid-template-rows: 75px 100px 100px auto auto ;
       }
       bx-structured-list-cell, bx-structured-list-header-cell{
         padding: 5px 5px 5px 5px;
@@ -26,8 +28,6 @@ export class MenuSettings extends LitElement {
     `;
     @property()
     public image?: Image;
-    @query('bx-input')
-    private baseInput?: BXInput;
 
     protected render(): TemplateResult<1> {
         return html`
@@ -36,6 +36,11 @@ export class MenuSettings extends LitElement {
                     <bx-input @keyup="${this.baseChanged}" value="${this.image?.base?.fullName}">
                         <span slot="label-text">Base Package</span>
                     </bx-input>
+                    <bx-combo-box value="${this.image?.showClasses}" @bx-combo-box-selected="${this.showClassesChanged}" label-text="Show Classes">
+                        <bx-combo-box-item value="HIDE_INNER">Hide Inner Classes</bx-combo-box-item>
+                        <bx-combo-box-item value="HIDE_ALL">Hide All Classes</bx-combo-box-item>
+                        <bx-combo-box-item value="SHOW_ALL">Show All Classes</bx-combo-box-item>
+                    </bx-combo-box>
                     <bx-structured-list>
                         <bx-structured-list-head>
                             <bx-structured-list-header-row>
@@ -90,11 +95,12 @@ export class MenuSettings extends LitElement {
         return () => this.dispatchEvent(new NodeSelectedEvent(node));
     }
 
-    private baseChanged(){
-        const value = this.baseInput?.value;
+    private baseChanged(e: Event){
         if(!this.image) {
             return;
         }
+        const input = e.target as BXInput;
+        const value = input.value;
         if(!value){
             return;
         }
@@ -103,6 +109,19 @@ export class MenuSettings extends LitElement {
             return;
         }
         const newImage = this.image.setBase(node);
+        this.dispatchEvent(new ImageChangedEvent(newImage));
+    }
+
+    private showClassesChanged(e: Event){
+        if(!this.image) {
+            return;
+        }
+        const target = e.target as BXComboBox;
+        const newValue = target.value as RemoveClassesSelection;
+        if(newValue == this.image?.showClasses) {
+            return;
+        }
+        const newImage = this.image.setShowClasses(newValue);
         this.dispatchEvent(new ImageChangedEvent(newImage));
     }
 

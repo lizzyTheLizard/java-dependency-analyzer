@@ -3,10 +3,10 @@ import {css, html, LitElement, TemplateResult} from 'lit';
 import {Image} from '../image/Image';
 import {GraphNode} from '../transform/Graph';
 import {ImageChangedEvent} from './Main';
+import {Attribute} from '../image/InputFile';
 import '@carbon/web-components/es/components/button/index.js';
 import '@carbon/web-components/es/components/data-table/index.js';
 import '@carbon/web-components/es/components/checkbox/index.js';
-import {Attribute} from '../image/InputFile';
 
 @customElement('menu-details')
 export class MenuDetails extends LitElement {

@@ -4,6 +4,8 @@ import {Image} from '../image/Image';
 import {InputFile} from '../image/InputFile';
 import {ImageChangedEvent} from './Main';
 import FileSaver from 'file-saver';
+import '@carbon/web-components/es/components/button/index.js';
+import '@carbon/web-components/es/components/data-table/index.js';
 
 @customElement('menu-file')
 export class MenuFile extends LitElement {
