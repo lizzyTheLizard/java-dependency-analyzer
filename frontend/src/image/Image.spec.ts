@@ -1,87 +1,109 @@
-import {simpleTestGraph} from '../transform/TestData';
-import {Image} from './Image';
-import {writeSvg} from './writeSvg';
+import {fromDefault} from './Image';
 
-test('Construct', () => {
-    const target = new Image(simpleTestGraph);
-    expect(target.base).toBeUndefined();
-    expect(target.collapsed).toEqual([]);
-    expect(target.ignored).toEqual([]);
-    expect(target.showClasses).toEqual('SHOW_ALL');
+test('FromData', () => {
+    const target = fromDefault();
+    expect(target.numberOfNodes).toEqual(7);
+    expect(target.numberOfDependencies).toEqual(10);
+    expect(target.properties).toEqual({
+        collapsePackages: [],
+        ignoredPackages: ['java', 'kotlin'],
+        name: 'Maven Integration Test',
+        splitPackages: ['org'],
+        version: '0.0.1-SNAPSHOT'
+    });
 });
 
 test('getSvgImage', () => {
-    const target = new Image(simpleTestGraph);
-    const svg = target.getSvgImage();
-    expect(svg).toEqual(writeSvg(simpleTestGraph));
+    const target = fromDefault();
+    const result = target.getSvgImage();
+    expect(result).toBeDefined();
 });
 
-test('findNode', () => {
-    const target = new Image(simpleTestGraph);
-    const node = target.findNode('package1.test1');
-    expect(node).toEqual({
-        nodes: [],
-        dependencies: [],
-        attributes: [],
-        name: 'test1',
-        fullName: 'package1.test1',
-        type: 'CLASS'
+test('toString', () => {
+    const target = fromDefault();
+    const result = target.toString();
+    expect(result).toBeDefined();
+});
+
+test('update', () => {
+    const target = fromDefault();
+    const result = target.update({basePackage: 'dummy'});
+    expect(result.properties).toEqual({
+        collapsePackages: [],
+        basePackage: 'dummy',
+        ignoredPackages: ['java', 'kotlin'],
+        name: 'Maven Integration Test',
+        splitPackages: ['org'],
+        version: '0.0.1-SNAPSHOT'
     });
 });
 
-test('setBase', () => {
-    const input = new Image(simpleTestGraph);
-    const target = input.setBase(input.findNode('package1.test1'));
-    expect(target.base).toEqual({
-        nodes: [],
-        dependencies: [],
-        attributes: [],
-        name: 'test1',
-        fullName: 'package1.test1',
-        type: 'CLASS'
+test('ignore', () => {
+    const target = fromDefault();
+    const result = target.toggleIgnored('dummy');
+    expect(result.properties).toEqual({
+        collapsePackages: [],
+        ignoredPackages: ['java', 'kotlin', 'dummy'],
+        name: 'Maven Integration Test',
+        splitPackages: ['org'],
+        version: '0.0.1-SNAPSHOT'
     });
-    expect(target.collapsed).toEqual([]);
-    expect(target.ignored).toEqual([]);
-    expect(target.showClasses).toEqual('SHOW_ALL');
+});
+
+test('unignore', () => {
+    const target = fromDefault();
+    const result = target.toggleIgnored('dummy').toggleIgnored('dummy');
+    expect(result.properties).toEqual({
+        collapsePackages: [],
+        ignoredPackages: ['java', 'kotlin'],
+        name: 'Maven Integration Test',
+        splitPackages: ['org'],
+        version: '0.0.1-SNAPSHOT'
+    });
 });
 
 test('collapse', () => {
-    const input = new Image(simpleTestGraph);
-    const target = input.collapse(input.findNode('package1.test1'));
-    expect(target.base).toBeUndefined();
-    expect(target.collapsed).toEqual([{
-        nodes: [],
-        dependencies: [],
-        attributes: [],
-        name: 'test1',
-        fullName: 'package1.test1',
-        type: 'CLASS'
-    }]);
-    expect(target.ignored).toEqual([]);
-    expect(target.showClasses).toEqual('SHOW_ALL');
+    const target = fromDefault();
+    const result = target.toggleCollapsed('dummy');
+    expect(result.properties).toEqual({
+        collapsePackages: ['dummy'],
+        ignoredPackages: ['java', 'kotlin'],
+        name: 'Maven Integration Test',
+        splitPackages: ['org'],
+        version: '0.0.1-SNAPSHOT'
+    });
 });
 
-test('collapse', () => {
-    const input = new Image(simpleTestGraph);
-    const target = input.ignore(input.findNode('package1.test1'));
-    expect(target.base).toBeUndefined();
-    expect(target.collapsed).toEqual([]);
-    expect(target.ignored).toEqual([{
-        nodes: [],
-        dependencies: [],
-        attributes: [],
-        name: 'test1',
-        fullName: 'package1.test1',
-        type: 'CLASS'
-    }]);
-    expect(target.showClasses).toEqual('SHOW_ALL');
+test('uncollapse', () => {
+    const target = fromDefault();
+    const result = target.toggleCollapsed('dummy').toggleCollapsed('dummy');
+    expect(result.properties).toEqual({
+        collapsePackages: [],
+        ignoredPackages: ['java', 'kotlin'],
+        name: 'Maven Integration Test',
+        splitPackages: ['org'],
+        version: '0.0.1-SNAPSHOT'
+    });
 });
 
-test('setShowClasses', () => {
-    const input = new Image(simpleTestGraph);
-    const target = input.setShowClasses('HIDE_ALL');
-    expect(target.base).toBeUndefined();
-    expect(target.collapsed).toEqual([]);
-    expect(target.ignored).toEqual([]);
-    expect(target.showClasses).toEqual('HIDE_ALL');
+test('findClass', () => {
+    const target = fromDefault();
+    const result = target.findNode('site.gutschi.dependency.maven.integrationtest.TestA');
+    expect(result).toEqual({
+        type: 'CLASS',
+        fullName: 'site.gutschi.dependency.maven.integrationtest.TestA',
+        attributes: [
+            {name: 'Access', type: 'TEXT', value: 'Public'},
+            {name: 'Final', type: 'BOOLEAN', value: 'True'},
+            {name: 'Type', type: 'TEXT', value: 'Class'},
+            {name: 'Implemented Interfaces', type: 'TEXT', value: ''},
+            {name: 'Base Class', type: 'TEXT', value: 'java.lang.Object'},
+        ]
+    });
+});
+
+test('findPackage', () => {
+    const target = fromDefault();
+    const result = target.findNode('site.gutschi');
+    expect(result).toEqual({type: 'PACKAGE', fullName: 'site.gutschi', attributes: []});
 });

@@ -1,17 +1,17 @@
-import {GraphNode} from '../transform/Graph';
 import {css, html, LitElement, TemplateResult} from 'lit';
-import {property, customElement} from  'lit/decorators.js';
-import {Image} from '../image/Image';
+import {customElement, property} from 'lit/decorators.js';
 import '@carbon/web-components/es/components/ui-shell/index.js';
+import {fromDefault, Image} from '../image/Image';
+import {ImageNode} from '../image/ImageNode';
 
-export class ImageChangedEvent extends Event{
+export class ImageChangedEvent extends Event {
     constructor(public readonly image: Image) {
         super('imageChanged');
     }
 }
 
 export class NodeSelectedEvent extends Event {
-    constructor(public readonly node?: GraphNode) {
+    constructor(public readonly node?: ImageNode) {
         super('nodeSelected', {bubbles: true, composed: true});
     }
 }
@@ -19,7 +19,7 @@ export class NodeSelectedEvent extends Event {
 @customElement('app-main')
 export class Main extends LitElement {
     static styles = css`
-      .sidebar{
+      .sidebar {
         position: absolute;
         left: 10px;
         right: 100px;
@@ -30,12 +30,12 @@ export class Main extends LitElement {
         z-index: 1000;
         background-color: white;
       }
-      
+
       image-viewer {
         position: absolute;
-        top:30px;
+        top: 30px;
         bottom: 0;
-        right:0;
+        right: 0;
         left: 100px;
       }
 
@@ -50,7 +50,7 @@ export class Main extends LitElement {
       }
     `;
     @property()
-    private _selectedNode?: GraphNode;
+    private _selectedNode?: ImageNode;
     @property()
     private _image: Image;
     @property()
@@ -66,12 +66,20 @@ export class Main extends LitElement {
 
     public constructor() {
         super();
-        this._image = new Image();
+        this._image = fromDefault();
+    }
+
+    mouseMoved(e: MouseEvent) {
+        if (!this._draggingDivider) {
+            return;
+        }
+        const moved = e.x - this._startMouseX;
+        this._sidenavWidth = Math.max(100, this._startDraggingWidth + moved);
     }
 
     protected render(): TemplateResult<1> {
         return html`
-            <div 
+            <div
                     @mousemove="${this.mouseMoved}"
                     @mouseup="${this.stopDraggingDivider}"
                     @mouseleave="${this.stopDraggingDivider}"
@@ -84,28 +92,33 @@ export class Main extends LitElement {
                         <bx-header-nav-item @click="${this.toggleMenu('DETAILS')}">Node Details</bx-header-nav-item>
                     </bx-header-nav>
                 </bx-header>
-                <div class="sidebar" style="display:${this._showSidenav?'inherit':'none'};width:${this._sidenavWidth-10}px;">
-                    <menu-file style="display:${this._menuToShow == 'FILE' ? 'inherit' : 'none'}; width:${this._sidenavWidth-20}px; height: 100%;" 
-                               .image="${this._image}" 
-                               .selectedNode="${this._selectedNode}" 
-                               @nodeSelected="${this.nodeSelected}" 
-                               @imageChanged="${this.imageChanged}"
+                <div class="sidebar"
+                     style="display:${this._showSidenav ? 'inherit' : 'none'};width:${this._sidenavWidth - 10}px;">
+                    <menu-file
+                            style="display:${this._menuToShow == 'FILE' ? 'inherit' : 'none'}; width:${this._sidenavWidth - 20}px; height: 100%;"
+                            .image="${this._image}"
+                            .selectedNode="${this._selectedNode}"
+                            @nodeSelected="${this.nodeSelected}"
+                            @imageChanged="${this.imageChanged}"
                     ></menu-file>
-                    <menu-settings style="display:${this._menuToShow == 'SETTINGS' ? 'inherit' : 'none'}; width:${this._sidenavWidth-20}px;height: 100%;" 
-                                   .image="${this._image}"
-                                   .selectedNode="${this._selectedNode}" 
-                                   @nodeSelected="${this.nodeSelected}" 
-                                   @imageChanged="${this.imageChanged}"
+                    <menu-settings
+                            style="display:${this._menuToShow == 'SETTINGS' ? 'inherit' : 'none'}; width:${this._sidenavWidth - 20}px;height: 100%;"
+                            .image="${this._image}"
+                            .selectedNode="${this._selectedNode}"
+                            @nodeSelected="${this.nodeSelected}"
+                            @imageChanged="${this.imageChanged}"
                     ></menu-settings>
-                    <menu-details style="display:${this._menuToShow == 'DETAILS' ? 'inherit' : 'none'}; width:${this._sidenavWidth-20}px;height: 100%;" 
-                                  .image="${this._image}"
-                                  .selectedNode="${this._selectedNode}" 
-                                  @nodeSelected="${this.nodeSelected}" 
-                                  @imageChanged="${this.imageChanged}"
+                    <menu-details
+                            style="display:${this._menuToShow == 'DETAILS' ? 'inherit' : 'none'}; width:${this._sidenavWidth - 20}px;height: 100%;"
+                            .image="${this._image}"
+                            .selectedNode="${this._selectedNode}"
+                            @nodeSelected="${this.nodeSelected}"
+                            @imageChanged="${this.imageChanged}"
                     ></menu-details>
                 </div>
                 <image-viewer .image="${this._image}" @nodeSelected="${this.nodeSelected}"></image-viewer>
-                <div class="divider" style="display:${this._showSidenav?'inherit':'none'};left:${this._sidenavWidth}px;"
+                <div class="divider"
+                     style="display:${this._showSidenav ? 'inherit' : 'none'};left:${this._sidenavWidth}px;"
                      @mousedown="${this.startDraggingDivider}"
                 ></div>
             </div>
@@ -122,16 +135,8 @@ export class Main extends LitElement {
         this._draggingDivider = false;
     }
 
-    mouseMoved(e: MouseEvent) {
-        if(!this._draggingDivider) {
-            return;
-        }
-        const moved = e.x - this._startMouseX;
-        this._sidenavWidth = Math.max(100, this._startDraggingWidth + moved);
-    }
-
     private toggleMenu(type?: string): () => void {
-        if(!type || this._menuToShow === type) {
+        if (!type || this._menuToShow === type) {
             return () => this._showSidenav = !this._showSidenav;
         }
         return () => {
@@ -147,7 +152,7 @@ export class Main extends LitElement {
 
     private nodeSelected(e: NodeSelectedEvent): boolean {
         this._selectedNode = e.node;
-        if(this._selectedNode) {
+        if (this._selectedNode) {
             this._showSidenav = true;
             this._menuToShow = 'DETAILS';
         }

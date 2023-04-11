@@ -2,8 +2,8 @@ import {css, html, LitElement, TemplateResult} from 'lit';
 import {customElement, property, query, queryAll} from 'lit/decorators.js';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import svgPanZoom from 'svg-pan-zoom';
-import {Image} from '../image/Image';
 import {NodeSelectedEvent} from './Main';
+import {Image} from '../image/Image';
 
 @customElement('image-viewer')
 export class ImageViewer extends LitElement {
@@ -36,7 +36,9 @@ export class ImageViewer extends LitElement {
 
     private selectElement(source: HTMLElement, target: HTMLElement | null) {
         //We only want exactly one event per element
-        if(!this.isUpperMost(source, target)) { return; }
+        if (!this.isUpperMost(source, target)) {
+            return;
+        }
         const name = this.getFullName(target as HTMLElement);
         const node = name ? this.image?.findNode(name) : undefined;
         if (node) {
@@ -46,8 +48,8 @@ export class ImageViewer extends LitElement {
         return true;
     }
 
-    private isUpperMost(source: HTMLElement, target: HTMLElement | null){
-        if(target?.tagName === 'g' && target === source) {
+    private isUpperMost(source: HTMLElement, target: HTMLElement | null) {
+        if (target?.tagName === 'g' && target === source) {
             return true;
         }
         return target?.tagName !== 'g' && target?.parentElement === source;
