@@ -3,11 +3,35 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>site.gutschi.dependency</groupId>
-    <artifactId>java-dependency-analyzer</artifactId>
-    <name>Java Class Dependency Analyzer</name>
+    <groupId>site.gutschi</groupId>
+    <artifactId>dependency-analyzer</artifactId>
+    <name>Class Dependency Documentation Generator</name>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
+    <description>A maven plugin to automatically generate a class dependency documentation for a java project</description>
+    <url>https://github.com/lizzyTheLizard/java-dependency-analyzer</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Matthias Graf</name>
+            <email>14069652+lizzythelizard@users.noreply.github.com</email>
+            <organization>lizzythelizard</organization>
+            <organizationUrl>https://github.com/lizzyTheLizard</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/lizzyTheLizard/java-dependency-analyzer.git</connection>
+        <developerConnection>scm:git:ssh://github.com:lizzyTheLizard/java-dependency-analyzer.git</developerConnection>
+        <url>http://github.com/lizzyTheLizard/java-dependency-analyzer/tree/main</url>
+    </scm>
 
     <properties>
         <java.version>11</java.version>
