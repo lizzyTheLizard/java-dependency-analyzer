@@ -112,11 +112,8 @@ test('Remove Ignored', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.removeIgnored(['foo.bar']);
-    //TODO: When code improved, check that there is only one node left
     expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo', nodes: [
-            {fullName: 'foo.zip', nodeDefinition: {fullName: 'foo.zip', attributes: []}, nodes: []},
-        ]},
+        {fullName: 'foo.zip', nodeDefinition: {fullName: 'foo.zip', attributes: []}, nodes: []},
     ]});
 });
 

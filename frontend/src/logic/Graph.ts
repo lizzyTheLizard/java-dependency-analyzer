@@ -94,10 +94,12 @@ export class Graph {
     }
 
     public removeIgnored(ignoredPackages: string[]): Graph {
-        //TODO merge if only one kid remains
         const newNodes = this.nodes
             .filter(n => !ignoredPackages.find(i => n.fullName.startsWith(i)))
             .map(n => n.removeIgnored(ignoredPackages));
+        if(newNodes.length == 1 && this.fullName !== ''){
+            return newNodes[0];
+        }
         return new Graph(newNodes, this.fullName, this.nodeDefinition);
     }
 
