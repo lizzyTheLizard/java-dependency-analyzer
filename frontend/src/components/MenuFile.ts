@@ -72,7 +72,6 @@ export class MenuFile extends LitElement {
         if (!this.image) {
             return;
         }
-        //TODO Think about adding a spinner here
         const fileContend = this.image.getSvgImage();
         const file = new File([fileContend], 'image.svg', {type: 'image/svg+xml'});
         FileSaver.saveAs(file);

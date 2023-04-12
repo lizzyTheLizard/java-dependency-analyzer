@@ -8,14 +8,13 @@ import '@carbon/web-components/es/components/checkbox/index.js';
 import {Attribute} from '../logic/Input';
 import {ImageNode} from '../logic/ImageNode';
 
-//TODO: Support splits
 @customElement('menu-details')
 export class MenuDetails extends LitElement {
     static styles = css`
       .grid-container {
         display: grid;
         height: 100%;
-        grid-template-rows: 75px 75px auto 60px 60px 60px 60px;
+        grid-template-rows: 75px 75px auto 60px 60px 60px 60px 60px;
       }
 
       .fullName {
@@ -57,6 +56,7 @@ export class MenuDetails extends LitElement {
                     <bx-btn @click="${this.setBase}">${this.isBase() ? 'Unset' : 'Set'} as Base</bx-btn>
                     <bx-btn @click="${this.toggleIgnored}">${this.isIgnored() ? 'Un-Ignore' : 'Ignore'}</bx-btn>
                     <bx-btn @click="${this.toggleCollapsed}">${this.isCollapsed() ? 'Expand' : 'Collapse'}</bx-btn>
+                    <bx-btn @click="${this.toggleSplitted}">${this.isSplitted() ? 'Un-Split' : 'Split'}</bx-btn>
                     <div></div>
                 </div>
             `;
@@ -81,6 +81,7 @@ export class MenuDetails extends LitElement {
                 <bx-btn disabled @click="${this.setBase}">${this.isBase() ? 'Unset' : 'Set'} as Base</bx-btn>
                 <bx-btn @click="${this.toggleIgnored}">${this.isIgnored() ? 'Un-Ignore' : 'Ignore'}</bx-btn>
                 <bx-btn disabled @click="${this.toggleCollapsed}">${this.isCollapsed() ? 'Expand' : 'Collapse'}</bx-btn>
+                <bx-btn disabled @click="${this.toggleSplitted}">${this.isSplitted() ? 'Un-Split' : 'Split'}</bx-btn>
                 <div></div>
             </div>
         `;
@@ -135,6 +136,15 @@ export class MenuDetails extends LitElement {
         return false;
     }
 
+    private toggleSplitted(): boolean {
+        if (!this.selectedNode || !this.image) {
+            return false;
+        }
+        const newImage = this.image?.toggleSplit(this.selectedNode.fullName);
+        this.dispatchEvent(new ImageChangedEvent(newImage));
+        return false;
+    }
+
     private isBase(): boolean {
         return this.image?.properties.basePackage === this.selectedNode?.fullName;
     }
@@ -148,4 +158,10 @@ export class MenuDetails extends LitElement {
         return this.image?.properties.collapsePackages
             .includes(this.selectedNode?.fullName ?? '') ?? false;
     }
+
+    private isSplitted(): boolean {
+        return this.image?.properties.splitPackages
+            .includes(this.selectedNode?.fullName ?? '') ?? false;
+    }
+
 }

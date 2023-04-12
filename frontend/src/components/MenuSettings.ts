@@ -9,14 +9,13 @@ import '@carbon/web-components/es/components/button/index.js';
 import '@carbon/web-components/es/components/structured-list/index.js';
 import '@carbon/web-components/es/components/combo-box/index.js';
 
-//TODO: Support splits
 @customElement('menu-settings')
 export class MenuSettings extends LitElement {
     static styles = css`
       .grid-container {
         display: grid;
         height: 100%;
-        grid-template-rows: 75px 100px 100px auto auto;
+        grid-template-rows: 75px 100px 100px auto auto auto;
       }
 
       bx-structured-list-cell, bx-structured-list-header-cell {
@@ -68,6 +67,17 @@ export class MenuSettings extends LitElement {
                     </bx-structured-list-head>
                     <bx-structured-list-body>
                         ${this.renderListRows(this.properties.ignoredPackages, n => this.toggleIgnored(n))}
+                    </bx-structured-list-body>
+                </bx-structured-list>
+                <bx-structured-list>
+                    <bx-structured-list-head>
+                        <bx-structured-list-header-row>
+                            <bx-structured-list-header-cell></bx-structured-list-header-cell>
+                            <bx-structured-list-header-cell>Splitted</bx-structured-list-header-cell>
+                        </bx-structured-list-header-row>
+                    </bx-structured-list-head>
+                    <bx-structured-list-body>
+                        ${this.renderListRows(this.properties.splitPackages, n => this.toggleSplitted(n))}
                     </bx-structured-list-body>
                 </bx-structured-list>
                 <div></div>
@@ -137,6 +147,17 @@ export class MenuSettings extends LitElement {
                 return true;
             }
             const newImage = this.image?.toggleIgnored(fullName);
+            this.dispatchEvent(new ImageChangedEvent(newImage));
+            return false;
+        };
+    }
+
+    private toggleSplitted(fullName: string): () => void {
+        return () => {
+            if (!this.image) {
+                return true;
+            }
+            const newImage = this.image?.toggleSplit(fullName);
             this.dispatchEvent(new ImageChangedEvent(newImage));
             return false;
         };

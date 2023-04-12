@@ -87,11 +87,8 @@ test('Hide Inner Classses', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.removeClasses('HIDE_INNER');
-    //TODO: When code improved, check that there is only one node left
     expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodes: [
-            {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []}
-        ]},
+        {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []}
     ]});
 });
 
@@ -147,5 +144,19 @@ test('Take Base', () => {
             {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []},
             {fullName: 'foo.bar.zap$inner', nodeDefinition: {fullName: 'foo.bar.zap$inner', attributes: []}, nodes: []},
         ]},
+    ]});
+});
+
+test('Split', () => {
+    const target = Graph.createFrom([
+        {fullName: 'foo.bar1.test1.zap', attributes: []},
+        {fullName: 'foo.bar1.test2.zep', attributes: []},
+        {fullName: 'foo.bar2.zip', attributes: []}
+    ]);
+    const result = target.splitSplitted(['foo', 'foo.bar1']);
+    expect(result).toEqual({fullName: '', nodes: [
+        {fullName: 'foo.bar1.test1.zap', nodeDefinition: {fullName: 'foo.bar1.test1.zap', attributes: []}, nodes: []},
+        {fullName: 'foo.bar1.test2.zep', nodeDefinition: {fullName: 'foo.bar1.test2.zep', attributes: []}, nodes: []},
+        {fullName: 'foo.bar2.zip', nodeDefinition: {fullName: 'foo.bar2.zip', attributes: []}, nodes: []},
     ]});
 });

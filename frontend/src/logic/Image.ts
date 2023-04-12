@@ -41,6 +41,13 @@ export class Image {
         return this.update({collapsePackages: newList});
     }
 
+    public toggleSplit(node: string): Image {
+        const newList = this.properties.splitPackages.includes(node) ?
+            this.properties.splitPackages.filter(x => x != node) :
+            [...this.properties.splitPackages, node];
+        return this.update({splitPackages: newList});
+    }
+
     public toString(): string {
         return JSON.stringify(this.input, null, 2);
     }
@@ -57,6 +64,7 @@ export class Image {
             .removeClasses(this.properties.showClasses)
             .removeIgnored(this.properties.ignoredPackages)
             .collapseCollapsed(this.properties.collapsePackages)
+            .splitSplitted(this.properties.splitPackages)
             .takeBase(this.properties.basePackage)
             .addDependencies(this.dependencies);
         return writeSvg(graph);

@@ -75,22 +75,22 @@ export class Graph {
     }
 
     public removeClasses(showClasses: ShowClasses): Graph {
-        //TODO merge if only one kid remains
-        if (showClasses === 'HIDE_INNER') {
-            const withoutInner = this.nodes
-                .filter(n => !n.nodeDefinition || !n.fullName.includes('$'))
-                .map(n => n.removeClasses(showClasses));
-            return new Graph(withoutInner, this.fullName, this.nodeDefinition);
-        } else if (showClasses === 'HIDE_ALL') {
-            const withoutClasses = this.nodes
-                .filter(n => !n.nodeDefinition)
-                .map(n => n.removeClasses(showClasses));
-            return new Graph(withoutClasses, this.fullName, this.nodeDefinition);
-        } else if (showClasses === 'SHOW_ALL') {
-            return this;
-        } else {
-            throw 'Invalid show classes value ' + showClasses;
+        const newNodes = this.nodes
+            .filter(n => {switch (showClasses) {
+            case 'HIDE_ALL':
+                return !n.nodeDefinition;
+            case 'HIDE_INNER':
+                return !n.nodeDefinition || !n.fullName.includes('$');
+            case 'SHOW_ALL':
+                return true;
+            default:
+                throw 'Invalid show classes value ' + showClasses;
+            }})
+            .map(n => n.removeClasses(showClasses));
+        if(newNodes.length == 1 && this.fullName !== ''){
+            return newNodes[0];
         }
+        return new Graph(newNodes, this.fullName, this.nodeDefinition);
     }
 
     public removeIgnored(ignoredPackages: string[]): Graph {
@@ -116,6 +116,24 @@ export class Graph {
             .map(n => n.collapseCollapsed(collapsePackages));
         return new Graph(newNodes, this.fullName, this.nodeDefinition);
     }
+
+    public splitSplitted(splitPackages: string[]): Graph {
+        if(this.fullName !== ''){
+            throw 'splitSplitted can only be called on the root';
+        }
+        const mappedChildren = this.nodes.flatMap(n => n.splitSplittedInternal(splitPackages));
+        return new Graph(mappedChildren, this.fullName, this.nodeDefinition);
+    }
+
+    private splitSplittedInternal(splitPackages: string[]): Graph[] {
+        const shouldSplitt = splitPackages.includes(this.fullName);
+        const mappedChildren = this.nodes.flatMap(n => n.splitSplittedInternal(splitPackages));
+        if(!shouldSplitt) {
+            return [new Graph(mappedChildren, this.fullName, this.nodeDefinition)];
+        }
+        return mappedChildren;
+    }
+
 
     public takeBase(basePackage: string | undefined): Graph {
         if (!basePackage) {
