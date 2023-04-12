@@ -1,9 +1,8 @@
 import {data} from '../dummyData';
 import {Dependency, Input, NodeDefinition, Properties} from './Input';
 import {ImageNode} from './ImageNode';
-import {initializeGraph} from './Graph';
-import {initializeDependencyGraph} from './DependencyGraph';
-import * as nomnoml from 'nomnoml';
+import {Graph} from './Graph';
+import {writeSvg} from './WriteSvg';
 
 export class Image {
     public readonly properties: Properties;
@@ -54,13 +53,13 @@ export class Image {
     }
 
     public getSvgImage(): string {
-        const graph = initializeGraph(this.nodes)
+        const graph = Graph.createFrom(this.nodes)
             .removeClasses(this.properties.showClasses)
             .removeIgnored(this.properties.ignoredPackages)
             .collapseCollapsed(this.properties.collapsePackages)
-            .takeBase(this.properties.basePackage);
-        const nomnomlText = initializeDependencyGraph(graph, this.dependencies).toNomnomlText();
-        return nomnoml.renderSvg(nomnomlText);
+            .takeBase(this.properties.basePackage)
+            .addDependencies(this.dependencies);
+        return writeSvg(graph);
     }
 }
 

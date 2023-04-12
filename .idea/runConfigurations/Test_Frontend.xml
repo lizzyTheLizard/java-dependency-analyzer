@@ -1,13 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test Frontend" type="js.build_tools.npm">
-    <package-json value="$PROJECT_DIR$/frontend/package.json" />
-    <command value="run" />
-    <scripts>
-      <script value="test" />
-    </scripts>
+  <configuration default="false" name="Test Frontend" type="JavaScriptTestRunnerJest">
     <node-interpreter value="project" />
-    <package-manager value="yarn" />
+    <jest-package value="$PROJECT_DIR$/frontend/node_modules/jest" />
+    <working-dir value="$PROJECT_DIR$/frontend" />
+    <jest-options value="--watch" />
     <envs />
+    <scope-kind value="ALL" />
     <method v="2" />
   </configuration>
 </component>
