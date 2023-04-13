@@ -10,7 +10,7 @@ jobs:
           mkdir -p ~/.gnupg/
           echo "no-tty" >> ~/.gnupg/gpg.conf
           echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
-          chmod 700 -r  ~/.gnupg/
+          chmod -R 700 ~/.gnupg/
           gpg --import ~/.gnupg/import.key
         env:
           GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
