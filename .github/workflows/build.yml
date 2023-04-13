@@ -35,6 +35,7 @@ jobs:
           export GPG_TTY=$(tty)
           mkdir -p ~/.gnupg/
           echo "${GPG_SIGNING_KEY}" > ~/.gnupg/private.key
+          chmod 700 ~/.gnupg/private.key
           gpg --import ~/.gnupg/private.key
         env:
           GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
