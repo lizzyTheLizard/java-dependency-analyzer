@@ -4,6 +4,22 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
+      - name: Import GPG Key
+        run: |
+          export GPG_TTY=$(tty)
+          mkdir -p ~/.gnupg/
+          echo "no-tty" >> ~/.gnupg/gpg.conf
+          echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
+          chmod 700 -r  ~/.gnupg/
+          gpg --import ~/.gnupg/import.key
+        env:
+          GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+      - name: Import Maven Username / Passwords
+        run: |
+          echo -n "<settings><servers><server><id>ossrh</id><username>${OSSRH_USERNAME}</username><password>${OSSRH_PASSWORD}</password></server></servers></settings>" > ~/.m2/settings.xml
+        env:
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
@@ -30,22 +46,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Import GPG Key
-        run: |
-          export GPG_TTY=$(tty)
-          mkdir -p ~/.gnupg/
-          echo "no-tty" >> ~/.gnupg/gpg.conf
-          echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
-          chmod -r 700 ~/.gnupg/
-          gpg --import ~/.gnupg/import.key
-        env:
-          GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
-      - name: Import Maven Username / Passwords
-        run: |
-          echo -n "<settings><servers><server><id>ossrh</id><username>${OSSRH_USERNAME}</username><password>${OSSRH_PASSWORD}</password></server></servers></settings>" > ~/.m2/settings.xml
-        env:
-          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
       - name: Build Plugin
         working-directory: java-dependency-analyzer
         run: mvn --batch-mode install
