@@ -10,6 +10,7 @@ jobs:
           export GPG_TTY=$(tty)
           ls -la ~/.gnupg/
           mkdir -p ~/.gnupg/
+          mkdir -p ~/.gnupg/private-keys-v1.d
           echo "no-tty" >> ~/.gnupg/gpg.conf
           echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
           chmod -R 700 ~/.gnupg/
