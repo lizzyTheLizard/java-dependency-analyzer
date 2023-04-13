@@ -4,13 +4,6 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - id: install-secret-key
-        name: Install gpg secret key
-        run: |
-          # Install gpg secret key
-          cat <(echo -e "${{ secrets.GPG_SIGNING_KEY }}") | gpg --batch --import
-          # Verify gpg secret key
-          gpg --list-secret-keys --keyid-format LONG
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node
@@ -51,9 +44,3 @@ jobs:
       - name: Integration Test
         working-directory: maven-plugin-integration-test
         run: mvn --batch-mode verify
-      - name: Deploy
-        working-directory: maven-plugin-integration-test
-        run: mvn clean deploy
-        env:
-          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
