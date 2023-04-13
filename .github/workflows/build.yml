@@ -33,6 +33,7 @@ jobs:
       - name: Import GPG Key
         run: |
           export GPG_TTY=$(tty)
+          echo "no-tty" >> ~/.gnupg/gpg.conf
           mkdir -p ~/.gnupg/
           echo "${GPG_SIGNING_KEY}" > ~/.gnupg/private.key
           chmod 700 ~/.gnupg/private.key
