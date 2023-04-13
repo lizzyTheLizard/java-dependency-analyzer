@@ -35,9 +35,9 @@ jobs:
           export GPG_TTY=$(tty)
           mkdir -p ~/.gnupg/
           echo "no-tty" >> ~/.gnupg/gpg.conf
-          echo "${GPG_SIGNING_KEY}" > ~/.gnupg/private.key
-          chmod 700 ~/.gnupg/private.key
-          gpg --import ~/.gnupg/private.key
+          echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
+          chmod -r 700 ~/.gnupg/
+          gpg --import ~/.gnupg/import.key
         env:
           GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
       - name: Import Maven Username / Passwords
