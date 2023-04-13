@@ -14,6 +14,7 @@ jobs:
           echo "no-tty" >> ~/.gnupg/gpg.conf
           echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
           chmod -R 700 ~/.gnupg/
+          gpgconf --kill gpg-agent
           gpg --import ~/.gnupg/import.key
         env:
           GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
