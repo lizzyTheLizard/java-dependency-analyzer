@@ -6,7 +6,9 @@ jobs:
     steps:
       - name: Import GPG Key
         run: |
+          gpg --list-public-keys
           export GPG_TTY=$(tty)
+          ls -la ~/.gnupg/
           mkdir -p ~/.gnupg/
           echo "no-tty" >> ~/.gnupg/gpg.conf
           echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
