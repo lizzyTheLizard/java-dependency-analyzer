@@ -4,20 +4,13 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - name: Import GPG Key
+      - id: install-secret-key
+        name: Install gpg secret key
         run: |
-          gpg --list-public-keys
-          export GPG_TTY=$(tty)
-          ls -la ~/.gnupg/
-          mkdir -p ~/.gnupg/
-          mkdir -p ~/.gnupg/private-keys-v1.d
-          echo "no-tty" >> ~/.gnupg/gpg.conf
-          echo "${GPG_SIGNING_KEY}" > ~/.gnupg/import.key
-          chmod -R 700 ~/.gnupg/
-          gpgconf --kill gpg-agent
-          gpg --import ~/.gnupg/import.key
-        env:
-          GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
+          # Install gpg secret key
+          cat <(echo -e "${{ secrets.GPG_SIGNING_KEY }}") | gpg --batch --import
+          # Verify gpg secret key
+          gpg --list-secret-keys --keyid-format LONG
       - name: Import Maven Username / Passwords
         run: |
           echo -n "<settings><servers><server><id>ossrh</id><username>${OSSRH_USERNAME}</username><password>${OSSRH_PASSWORD}</password></server></servers></settings>" > ~/.m2/settings.xml
