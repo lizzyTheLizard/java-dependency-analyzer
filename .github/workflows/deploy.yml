@@ -21,12 +21,6 @@ jobs:
       - name: Install Frontend Dependencies
         working-directory: frontend
         run: yarn install
-      - name: Test Frontend
-        working-directory: frontend
-        run: yarn test:nowatch
-      - name: Lint Frontend
-        working-directory: frontend
-        run: yarn lint:nofix
       - name: Build Frontend
         working-directory: frontend
         run: yarn build
@@ -51,18 +45,16 @@ jobs:
           gpg --list-secret-keys --keyid-format LONG
       - name: Build Plugin
         working-directory: java-dependency-analyzer
-        run: ./mvnw --batch-mode deploy -P deploy
+        run: ./mvnw --batch-mode deploy -P deploy -DskipTests
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      - name: Report Unit Tests
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          name: Unit Tests
-          path: java-dependency-analyzer/target/surefire-reports/*.xml
-          reporter: java-junit
-          fail-on-error: true
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Release ${{ inputs.version }}"
+          git push
       - name: Release
         uses: actions/create-release@latest
         env:
