@@ -32,7 +32,7 @@ jobs:
           cache: 'maven'
       - name: Build Plugin
         working-directory: java-dependency-analyzer
-        run: mvn --batch-mode install
+        run: ./mvnc --batch-mode install
       - name: Report Unit Tests
         uses: dorny/test-reporter@v1
         if: success() || failure()
