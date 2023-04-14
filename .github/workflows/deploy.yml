@@ -41,7 +41,7 @@ jobs:
           server-password: MAVEN_PASSWORD
       - name: Set Version
         working-directory: java-dependency-analyzer
-        run: ./mvnc versions:set -DnewVersion=${{ inputs.version }}
+        run: ./mvnw versions:set -DnewVersion=${{ inputs.version }}
       - id: install-secret-key
         name: Install gpg secret key
         run: |
@@ -51,7 +51,7 @@ jobs:
           gpg --list-secret-keys --keyid-format LONG
       - name: Build Plugin
         working-directory: java-dependency-analyzer
-        run: ./mvnc --batch-mode deploy -P deploy
+        run: ./mvnw --batch-mode deploy -P deploy
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
