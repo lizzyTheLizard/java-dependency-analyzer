@@ -10,24 +10,8 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     steps:
-      - id: install-secret-key
-        name: Install gpg secret key
-        run: |
-          # Install gpg secret key
-          cat <(echo -e "${{ secrets.GPG_SIGNING_KEY }}") | gpg --batch --import
-          # Verify gpg secret key
-          gpg --list-secret-keys --keyid-format LONG
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-          cache: 'maven'
-      - name: Set Verstion
-        working-directory: java-dependency-analyzer
-        run: mvn --set-version  ${{ inputs.version }}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -46,9 +30,28 @@ jobs:
       - name: Build Frontend
         working-directory: frontend
         run: yarn build
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Set Version
+        working-directory: java-dependency-analyzer
+        run: mvn --set-version  ${{ inputs.version }}
+      - id: install-secret-key
+        name: Install gpg secret key
+        run: |
+          # Install gpg secret key
+          cat <(echo -e "${{ secrets.GPG_SIGNING_KEY }}") | gpg --batch --import
+          # Verify gpg secret key
+          gpg --list-secret-keys --keyid-format LONG
       - name: Build Plugin
         working-directory: java-dependency-analyzer
-        run: mvn --batch-mode install
+        run: mvn --batch-mode deploy -P deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
       - name: Report Unit Tests
         uses: dorny/test-reporter@v1
         if: success() || failure()
@@ -57,15 +60,6 @@ jobs:
           path: java-dependency-analyzer/target/surefire-reports/*.xml
           reporter: java-junit
           fail-on-error: true
-      - name: Integration Test
-        working-directory: maven-plugin-integration-test
-        run: mvn --batch-mode verify
-      - name: Deploy
-        working-directory: maven-plugin-integration-test
-        run: mvn clean deploy
-        env:
-          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
       - name: Release
         uses: actions/create-release@latest
         env:

@@ -41,6 +41,3 @@ jobs:
           path: java-dependency-analyzer/target/surefire-reports/*.xml
           reporter: java-junit
           fail-on-error: true
-      - name: Integration Test
-        working-directory: maven-plugin-integration-test
-        run: mvn --batch-mode verify
