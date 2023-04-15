@@ -49,7 +49,8 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-      - run: |
+      - name: Commit updated version
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
@@ -62,3 +63,14 @@ jobs:
         with:
           tag_name: ${{ inputs.version }}
           release_name: ${{ inputs.version }}
+      - name: Set Version back to SNAPSHOT
+        working-directory: java-dependency-analyzer
+        run: ./mvnw versions:set -DnewVersion=${{ inputs.version }}-SNAPSHOT
+      - name: Commit updated version
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Set back to snapshot ${{ inputs.version }}"
+          git push
+
