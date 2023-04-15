@@ -7,6 +7,11 @@ import site.gutschi.dependency.write.Output
 import site.gutschi.dependency.write.Output.Node
 import site.gutschi.dependency.write.Output.OutputProperties
 
+/***
+ * This is the main class of the dependency analyzer. It is called from the maven-plugin, but could also be called
+ * from library or cli modules. You have to instantiate it using a property object and the call "execute" on
+ * it to generate the documentation
+ */
 class Main(private val properties: Properties) {
     fun execute() {
         val classFileCollection = ClassFileCollection(properties)

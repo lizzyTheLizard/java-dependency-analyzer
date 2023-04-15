@@ -25,10 +25,10 @@ class DocumentationMojo : AbstractMojo() {
     @Parameter(property = "fatJarMatchers", readonly = true)
     var fatJarMatchers: List<String> = listOf()
 
-    @Parameter(property = "includeFatJarClasses", readonly = true)
+    @Parameter(property = "includeFatJarClasses", readonly = true, defaultValue = "false")
     var includeFatJarClasses: Boolean = false
 
-    @Parameter(property = "outputFolder", readonly = true)
+    @Parameter(property = "outputFolder", readonly = true, defaultValue = "target/doc")
     var outputFolder: String = "target/doc"
 
     @Parameter(property = "basePackage", readonly = true)

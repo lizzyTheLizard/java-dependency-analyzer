@@ -23,9 +23,9 @@
     <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
     <plugins>
       <plugin>
-        <groupId>site.gutschi.dependency</groupId>
-        <artifactId>java-dependency-analyzer</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>site.gutschi</groupId>
+        <artifactId>dependency-analyzer</artifactId>
+        <version>0.0.5-SNAPSHOT</version>
         <executions>
           <execution>
             <goals>
@@ -34,10 +34,8 @@
             <configuration>
               <inputs>target/classes</inputs>
             </configuration>
-
           </execution>
         </executions>
-
       </plugin>
       <plugin>
         <groupId>org.jetbrains.kotlin</groupId>
