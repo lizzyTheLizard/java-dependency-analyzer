@@ -4,8 +4,8 @@ import org.codehaus.plexus.util.IOUtil
 import org.objectweb.asm.ClassReader
 import site.gutschi.dependency.Properties
 import site.gutschi.dependency.Properties.Level
-import site.gutschi.dependency.write.Output.Dependency
-import site.gutschi.dependency.write.Output.Node
+import site.gutschi.dependency.Output.Dependency
+import site.gutschi.dependency.Output.Node
 import java.io.File
 import java.io.FileInputStream
 import java.io.InputStream

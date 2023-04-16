@@ -1,5 +1,6 @@
 package site.gutschi.dependency.write
 
+import site.gutschi.dependency.Output
 import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.io.path.createTempDirectory

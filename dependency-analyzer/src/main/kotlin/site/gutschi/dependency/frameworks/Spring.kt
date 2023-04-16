@@ -1,12 +1,13 @@
 package site.gutschi.dependency.frameworks
 
 import org.objectweb.asm.*
-import site.gutschi.dependency.frameworks.Framework.AttributeGenerator
-import site.gutschi.dependency.write.Output.Attribute
-import site.gutschi.dependency.write.Output.Node
+import site.gutschi.dependency.AttributeCollector.AttributeGenerator
+import site.gutschi.dependency.Output.Attribute
+import site.gutschi.dependency.Output.Node
+import site.gutschi.dependency.AttributeCollector
 
 
-class Spring : Framework {
+class Spring : AttributeCollector {
     private val collapsedPackages = listOf("org.springframework")
     private val ignoredPackages = listOf("javax.validation", "jakarta.validation", "jakarta.persistence", "jakarta.annotation", "jakarta.servlet", "io.swagger")
     private val generators = listOf<AttributeGenerator>()

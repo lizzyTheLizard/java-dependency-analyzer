@@ -1,4 +1,4 @@
-package site.gutschi.dependency.write
+package site.gutschi.dependency
 
 data class Output(
     val nodes: Collection<Node>,

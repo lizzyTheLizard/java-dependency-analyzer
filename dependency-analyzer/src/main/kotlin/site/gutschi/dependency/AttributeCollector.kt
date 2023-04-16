@@ -1,9 +1,9 @@
-package site.gutschi.dependency.frameworks
+package site.gutschi.dependency
 
 import org.objectweb.asm.ClassReader
-import site.gutschi.dependency.write.Output.*
+import site.gutschi.dependency.Output.*
 
-interface Framework {
+interface AttributeCollector {
     data class AttributeGenerator(
         val name: String,
         val type: AttributeType,

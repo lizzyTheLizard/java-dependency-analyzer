@@ -1,6 +1,7 @@
 package site.gutschi.dependency.write
 
 import com.google.gson.Gson
+import site.gutschi.dependency.Output
 import java.io.File
 import java.io.IOException
 import java.nio.file.Files

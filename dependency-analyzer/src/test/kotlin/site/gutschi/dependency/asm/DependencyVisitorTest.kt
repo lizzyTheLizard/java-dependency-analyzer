@@ -3,7 +3,7 @@ package site.gutschi.dependency.asm
 import site.gutschi.dependency.Properties
 import site.gutschi.dependency.TestFileHelpers.Companion.getFile
 import site.gutschi.dependency.assertDependenciesEquals
-import site.gutschi.dependency.write.Output.Dependency
+import site.gutschi.dependency.Output.Dependency
 import kotlin.test.Test
 
 internal class DependencyVisitorTest {
@@ -12,7 +12,8 @@ internal class DependencyVisitorTest {
         val properties = Properties(
             name ="name",
             version ="version",
-            inputs = listOf(getFile("DependencyVisitor.class"))
+            inputs = listOf(getFile("DependencyVisitor.class")),
+            attributeCollectors = listOf()
         )
         val results = analyze(properties)
         assertDependenciesEquals("DependencyVisitor.deps.json", results)
@@ -23,7 +24,8 @@ internal class DependencyVisitorTest {
         val properties = Properties(
             name ="name",
             version ="version",
-            inputs = listOf(getFile("flat-demo-0.0.1-SNAPSHOT.jar"))
+            inputs = listOf(getFile("flat-demo-0.0.1-SNAPSHOT.jar")),
+            attributeCollectors = listOf()
         )
         val results = analyze(properties)
         assertDependenciesEquals("flat-demo-0.0.1-SNAPSHOT.deps.json", results)
@@ -34,7 +36,8 @@ internal class DependencyVisitorTest {
         val properties = Properties(
             name ="name",
             version ="version",
-            inputs = listOf(getFile("fat-demo-0.0.1-SNAPSHOT.jar"))
+            inputs = listOf(getFile("fat-demo-0.0.1-SNAPSHOT.jar")),
+            attributeCollectors = listOf()
         )
         val results = analyze(properties)
         assertDependenciesEquals("fat-demo-0.0.1-SNAPSHOT.deps.json", results)
@@ -46,7 +49,8 @@ internal class DependencyVisitorTest {
             name ="name",
             version ="version",
             inputs = listOf(getFile("fat-demo-0.0.1-SNAPSHOT.jar")),
-            includeFatJarClasses = true
+            includeFatJarClasses = true,
+            attributeCollectors = listOf()
         )
         val results = analyze(properties)
         assertDependenciesEquals("fat-demo-0.0.1-SNAPSHOT.deps-boot.json", results)
@@ -58,7 +62,8 @@ internal class DependencyVisitorTest {
             name ="name",
             version ="version",
             inputs = listOf(getFile("fat-demo-0.0.1-SNAPSHOT.jar")),
-            fatJarMatchers = listOf(Regex("snakeyaml.*"))
+            fatJarMatchers = listOf(Regex("snakeyaml.*")),
+            attributeCollectors = listOf()
         )
         val results = analyze(properties)
         assertDependenciesEquals("fat-demo-0.0.1-SNAPSHOT.deps-snake.json", results)

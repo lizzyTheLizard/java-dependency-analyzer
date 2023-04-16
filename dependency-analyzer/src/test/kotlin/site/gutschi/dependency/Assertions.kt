@@ -2,9 +2,8 @@ package site.gutschi.dependency
 
 import com.google.gson.GsonBuilder
 import org.junit.ComparisonFailure
-import site.gutschi.dependency.write.Output
-import site.gutschi.dependency.write.Output.Dependency
-import site.gutschi.dependency.write.Output.Node
+import site.gutschi.dependency.Output.Dependency
+import site.gutschi.dependency.Output.Node
 
 private val gson = GsonBuilder().setPrettyPrinting().create()
 

@@ -3,11 +3,12 @@ package site.gutschi.dependency.frameworks
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.Opcodes
 import site.gutschi.dependency.asm.AsmHelper
-import site.gutschi.dependency.frameworks.Framework.AttributeGenerator
-import site.gutschi.dependency.write.Output.*
+import site.gutschi.dependency.AttributeCollector.AttributeGenerator
+import site.gutschi.dependency.Output.*
+import site.gutschi.dependency.AttributeCollector
 
 
-class JavaBase : Framework {
+class JavaBase : AttributeCollector {
     private val splitPackages = listOf("com", "org", "io")
     private val ignoredPackages = listOf("java", "kotlin", "lombok", "reactor.core")
     private val collapsedPackages = listOf("com.fasterxml.jackson", "com.google.common", "org.jetbrains")

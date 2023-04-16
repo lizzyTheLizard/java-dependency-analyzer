@@ -3,9 +3,8 @@ package site.gutschi.dependency
 import site.gutschi.dependency.Properties.Level
 import site.gutschi.dependency.asm.ClassFileCollection
 import site.gutschi.dependency.write.FileWriter
-import site.gutschi.dependency.write.Output
-import site.gutschi.dependency.write.Output.Node
-import site.gutschi.dependency.write.Output.OutputProperties
+import site.gutschi.dependency.Output.Node
+import site.gutschi.dependency.Output.OutputProperties
 
 /***
  * This is the main class of the dependency analyzer. It is called from the maven-plugin, but could also be called
@@ -31,25 +30,24 @@ class Main(private val properties: Properties) {
         }
     }
 
-
     private fun getCollapsedPackages(nodes: Collection<Node>): Collection<String> {
         if (properties.collapsePackages.isNotEmpty()) {
             return properties.collapsePackages
         }
-        return properties.frameworks.flatMap { it.getCollapsedPackages(nodes) }
+        return properties.attributeCollectors.flatMap { it.getCollapsedPackages(nodes) }
     }
 
     private fun getIgnoredPackages(nodes: Collection<Node>): Collection<String> {
         if (properties.ignoredPackages.isNotEmpty()) {
             return properties.ignoredPackages
         }
-        return properties.frameworks.flatMap { it.getIgnoredPackages(nodes) }
+        return properties.attributeCollectors.flatMap { it.getIgnoredPackages(nodes) }
     }
 
     fun getSplitPackages(nodes: Collection<Node>): Collection<String>{
         if (properties.splitPackages.isNotEmpty()) {
             return properties.splitPackages
         }
-        return properties.frameworks.flatMap { it.getSplitPackages(nodes) }
+        return properties.attributeCollectors.flatMap { it.getSplitPackages(nodes) }
     }
 }

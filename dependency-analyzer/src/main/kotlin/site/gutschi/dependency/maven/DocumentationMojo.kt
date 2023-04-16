@@ -8,39 +8,41 @@ import org.apache.maven.plugins.annotations.Parameter
 import site.gutschi.dependency.Main
 import site.gutschi.dependency.Properties
 import site.gutschi.dependency.Properties.Level
+import site.gutschi.dependency.frameworks.JavaBase
+import site.gutschi.dependency.frameworks.Spring
 import java.io.File
 
 
 @Mojo(name = "create-documentation", defaultPhase = LifecyclePhase.PROCESS_CLASSES)
 class DocumentationMojo : AbstractMojo() {
-    @Parameter(property = "name", readonly = true, required = true, defaultValue = "\${project.name}")
+    @Parameter(property = "name", required = true, defaultValue = "\${project.name}")
     var name: String = ""
 
-    @Parameter(property = "version", readonly = true, required = true, defaultValue = "\${project.version}")
+    @Parameter(property = "version", required = true, defaultValue = "\${project.version}")
     var version: String = ""
 
-    @Parameter(property = "inputs", readonly = true, required = true,  defaultValue = "target/classes")
+    @Parameter(property = "inputs", required = true,  defaultValue = "target/classes")
     var inputs: List<String> = listOf("target/classes")
 
-    @Parameter(property = "fatJarMatchers", readonly = true)
+    @Parameter(property = "fatJarMatchers")
     var fatJarMatchers: List<String> = listOf()
 
-    @Parameter(property = "includeFatJarClasses", readonly = true, defaultValue = "false")
+    @Parameter(property = "includeFatJarClasses",  defaultValue = "false")
     var includeFatJarClasses: Boolean = false
 
-    @Parameter(property = "outputFolder", readonly = true, defaultValue = "target/doc")
+    @Parameter(property = "outputFolder",  defaultValue = "target/doc")
     var outputFolder: String = "target/doc"
 
-    @Parameter(property = "basePackage", readonly = true)
+    @Parameter(property = "basePackage")
     var basePackage: String? = null
 
-    @Parameter(property = "collapsePackages", readonly = true)
+    @Parameter(property = "collapsePackages")
     var collapsePackages: List<String> = listOf()
 
-    @Parameter(property = "ignoredPackages", readonly = true)
+    @Parameter(property = "ignoredPackages")
     var ignoredPackages: List<String> = listOf()
 
-    @Parameter(property = "splitPackages", readonly = true)
+    @Parameter(property = "splitPackages")
     var splitPackages: List<String> = listOf()
 
     @Throws(MojoExecutionException::class)
@@ -58,6 +60,7 @@ class DocumentationMojo : AbstractMojo() {
                 collapsePackages = collapsePackages,
                 ignoredPackages = ignoredPackages,
                 splitPackages = splitPackages,
+                attributeCollectors = listOf(JavaBase(), Spring())
             )
             Main(properties).execute()
         } catch (e: Exception) {

@@ -1,8 +1,5 @@
 package site.gutschi.dependency
 
-import site.gutschi.dependency.frameworks.Framework
-import site.gutschi.dependency.frameworks.JavaBase
-import site.gutschi.dependency.frameworks.Spring
 import java.io.File
 
 
@@ -18,7 +15,7 @@ data class Properties(
     val collapsePackages: Collection<String> = listOf(),
     val ignoredPackages: Collection<String> = listOf(),
     val splitPackages: Collection<String> = listOf(),
-    val frameworks: List<Framework> = listOf(JavaBase(), Spring())
+    val attributeCollectors: List<AttributeCollector>
 ) {
     enum class Level { DEBUG, INFO, WARN }
 }
