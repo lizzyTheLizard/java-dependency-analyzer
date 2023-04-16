@@ -14,11 +14,11 @@ interface AttributeCollector {
         return listOf()
     }
 
-    fun getCollapsedPackages(nodes: Collection<Node>): Collection<String>{
+    fun getCollapsedPackages(nodes: Collection<Node>): Collection<String> {
         return listOf()
     }
 
-    fun getIgnoredPackages(nodes: Collection<Node>): Collection<String>{
+    fun getIgnoredPackages(nodes: Collection<Node>): Collection<String> {
         return listOf()
     }
 

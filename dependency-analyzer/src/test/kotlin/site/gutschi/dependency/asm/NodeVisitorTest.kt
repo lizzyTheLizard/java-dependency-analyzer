@@ -1,9 +1,9 @@
 package site.gutschi.dependency.asm
 
+import site.gutschi.dependency.Output
 import site.gutschi.dependency.Properties
 import site.gutschi.dependency.TestFileHelpers.Companion.getFile
 import site.gutschi.dependency.assertNodesEquals
-import site.gutschi.dependency.Output
 import site.gutschi.dependency.frameworks.JavaBase
 import site.gutschi.dependency.frameworks.Spring
 import kotlin.test.Test

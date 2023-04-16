@@ -1,6 +1,6 @@
 {
   "nodes": [],
-  "dependencies":[
+  "dependencies": [
     {
       "from": "org.yaml.snakeyaml.parser.VersionTagsTuple",
       "to": "java.util.Map"

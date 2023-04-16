@@ -15,8 +15,8 @@ private val output = Output(
     ),
     dependencies = listOf(Output.Dependency("from", "to")),
     properties = Output.OutputProperties(
-        name ="",
-        version ="",
+        name = "",
+        version = "",
         basePackage = null,
         collapsePackages = listOf(),
         ignoredPackages = listOf()

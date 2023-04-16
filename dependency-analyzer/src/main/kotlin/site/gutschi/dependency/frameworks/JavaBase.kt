@@ -2,10 +2,10 @@ package site.gutschi.dependency.frameworks
 
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.Opcodes
-import site.gutschi.dependency.asm.AsmHelper
+import site.gutschi.dependency.AttributeCollector
 import site.gutschi.dependency.AttributeCollector.AttributeGenerator
 import site.gutschi.dependency.Output.*
-import site.gutschi.dependency.AttributeCollector
+import site.gutschi.dependency.asm.AsmHelper
 
 
 class JavaBase : AttributeCollector {
@@ -83,7 +83,7 @@ class JavaBase : AttributeCollector {
     }
 
     private fun getBaseClass(classFile: ClassReader): String {
-        if(classFile.superName != null) {
+        if (classFile.superName != null) {
             return AsmHelper.getCanonicalName(classFile.superName)
         }
         return ""

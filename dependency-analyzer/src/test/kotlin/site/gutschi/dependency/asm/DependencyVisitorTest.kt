@@ -1,17 +1,17 @@
 package site.gutschi.dependency.asm
 
+import site.gutschi.dependency.Output.Dependency
 import site.gutschi.dependency.Properties
 import site.gutschi.dependency.TestFileHelpers.Companion.getFile
 import site.gutschi.dependency.assertDependenciesEquals
-import site.gutschi.dependency.Output.Dependency
 import kotlin.test.Test
 
 internal class DependencyVisitorTest {
     @Test
     fun classFile() {
         val properties = Properties(
-            name ="name",
-            version ="version",
+            name = "name",
+            version = "version",
             inputs = listOf(getFile("DependencyVisitor.class")),
             attributeCollectors = listOf()
         )
@@ -22,8 +22,8 @@ internal class DependencyVisitorTest {
     @Test
     fun flatJar() {
         val properties = Properties(
-            name ="name",
-            version ="version",
+            name = "name",
+            version = "version",
             inputs = listOf(getFile("flat-demo-0.0.1-SNAPSHOT.jar")),
             attributeCollectors = listOf()
         )
@@ -34,8 +34,8 @@ internal class DependencyVisitorTest {
     @Test
     fun fatJar() {
         val properties = Properties(
-            name ="name",
-            version ="version",
+            name = "name",
+            version = "version",
             inputs = listOf(getFile("fat-demo-0.0.1-SNAPSHOT.jar")),
             attributeCollectors = listOf()
         )
@@ -46,8 +46,8 @@ internal class DependencyVisitorTest {
     @Test
     fun fatJarWithBoot() {
         val properties = Properties(
-            name ="name",
-            version ="version",
+            name = "name",
+            version = "version",
             inputs = listOf(getFile("fat-demo-0.0.1-SNAPSHOT.jar")),
             includeFatJarClasses = true,
             attributeCollectors = listOf()
@@ -59,8 +59,8 @@ internal class DependencyVisitorTest {
     @Test
     fun fatJarWithDependency() {
         val properties = Properties(
-            name ="name",
-            version ="version",
+            name = "name",
+            version = "version",
             inputs = listOf(getFile("fat-demo-0.0.1-SNAPSHOT.jar")),
             fatJarMatchers = listOf(Regex("snakeyaml.*")),
             attributeCollectors = listOf()

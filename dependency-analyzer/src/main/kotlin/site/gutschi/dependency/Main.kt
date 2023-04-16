@@ -1,10 +1,10 @@
 package site.gutschi.dependency
 
+import site.gutschi.dependency.Output.Node
+import site.gutschi.dependency.Output.OutputProperties
 import site.gutschi.dependency.Properties.Level
 import site.gutschi.dependency.asm.ClassFileCollection
 import site.gutschi.dependency.write.FileWriter
-import site.gutschi.dependency.Output.Node
-import site.gutschi.dependency.Output.OutputProperties
 
 /***
  * This is the main class of the dependency analyzer. It is called from the maven-plugin, but could also be called
@@ -44,7 +44,7 @@ class Main(private val properties: Properties) {
         return properties.attributeCollectors.flatMap { it.getIgnoredPackages(nodes) }
     }
 
-    fun getSplitPackages(nodes: Collection<Node>): Collection<String>{
+    fun getSplitPackages(nodes: Collection<Node>): Collection<String> {
         if (properties.splitPackages.isNotEmpty()) {
             return properties.splitPackages
         }

@@ -21,16 +21,16 @@ class DocumentationMojo : AbstractMojo() {
     @Parameter(property = "version", required = true, defaultValue = "\${project.version}")
     var version: String = ""
 
-    @Parameter(property = "inputs", required = true,  defaultValue = "target/classes")
+    @Parameter(property = "inputs", required = true, defaultValue = "target/classes")
     var inputs: List<String> = listOf("target/classes")
 
     @Parameter(property = "fatJarMatchers")
     var fatJarMatchers: List<String> = listOf()
 
-    @Parameter(property = "includeFatJarClasses",  defaultValue = "false")
+    @Parameter(property = "includeFatJarClasses", defaultValue = "false")
     var includeFatJarClasses: Boolean = false
 
-    @Parameter(property = "outputFolder",  defaultValue = "target/doc")
+    @Parameter(property = "outputFolder", defaultValue = "target/doc")
     var outputFolder: String = "target/doc"
 
     @Parameter(property = "basePackage")

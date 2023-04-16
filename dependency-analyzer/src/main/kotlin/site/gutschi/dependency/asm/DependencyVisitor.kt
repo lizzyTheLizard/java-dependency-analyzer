@@ -3,9 +3,9 @@ package site.gutschi.dependency.asm
 import org.apache.maven.shared.dependency.analyzer.asm.*
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
+import site.gutschi.dependency.Output.Dependency
 import site.gutschi.dependency.Properties
 import site.gutschi.dependency.Properties.Level
-import site.gutschi.dependency.Output.Dependency
 
 class DependencyVisitor(private val properties: Properties) {
     val results = HashSet<Dependency>()

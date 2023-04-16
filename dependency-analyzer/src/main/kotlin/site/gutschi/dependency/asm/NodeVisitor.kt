@@ -1,8 +1,8 @@
 package site.gutschi.dependency.asm
 
 import org.objectweb.asm.ClassReader
-import site.gutschi.dependency.Properties
 import site.gutschi.dependency.Output.Node
+import site.gutschi.dependency.Properties
 
 class NodeVisitor(private val properties: Properties) {
     val results = HashSet<Node>()
