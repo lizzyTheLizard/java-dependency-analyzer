@@ -32,7 +32,7 @@ This will generate a documentation under `target/doc`
 
 ## Configuration
 
-The following configuration options can be used
+The following configuration options can be used. 
 
 | Parameter             | Description                                                                                                                                                                                                             | Example                           | Default               |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|-----------------------|
@@ -47,6 +47,22 @@ The following configuration options can be used
 | ignoredPackages       | A list of packages who will be ignored in the generated documentation. The plugin will try to automatically ignore JDK-classes, but you can overwrite this setting here.                                                | java,kotlin,sun                   | -                     |
 | splitPackages         | A list of packages who will be split in the generated documentation. The plugin will try to automatically split certain widely used prefixes (e.g "org"), but you can overwrite this setting here.                      | org,org.apache,com                | -                     |
 
+List can either be given as comma-seperated lists or using multiple arguments
+
+```xml
+<configuration>
+    <inputs>
+        <input>target/classes</input>
+        <input>../otherLib/target/classes</input>
+    </inputs>
+</configuration>
+```
+
+```xml
+<configuration>
+    <inputs>target/classes, ../otherLib/target/classes</inputs>
+</configuration>
+```
 
 ## Build
 In order to build this plugin from scratch, you have to install
@@ -67,49 +83,17 @@ cd dependency-analyzer
 ./mvnw install
 ```
 
+## Build With
+The Frontend is build using [Typescript](https://www.typescriptlang.org/), [lit](https://lit.dev/), [Yarn](https://yarnpkg.com/) and WebComponents from the [Carbon Design System](https://web-components.carbondesignsystem.com/)
+
+The Backend is build using [Kotlin](https://kotlinlang.org/) and [Maven](https://maven.apache.org/). The dependency analyses is performed using [ASM](https://asm.ow2.io/) and some visitors from the [maven-dependency-plugin](https://maven.apache.org/plugins/maven-dependency-plugin/). 
+
+# Bugs
+If you find any bugs or have potential improvements, please open an issue in the [GitHub-Project](https://github.com/lizzyTheLizard/java-dependency-analyzer/issues)
+
 ## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
+Pull requests are welcome. For major changes, please open an issue first  to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
-
-
-
-
-# Foobar
-
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
-
-```bash
-pip install foobar
-```
-
-## Usage
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
-
-
-
