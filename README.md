@@ -2,7 +2,7 @@
 
 A class level dependency analyzer for JVM programs. Can be integrated as a maven plugin and generates an interactive HTML documentation of the class dependencies.
 
-![](.\doc\Screenshot.png)
+![](doc/Screenshot.png)
 Example dependency analysis for this plugin
 
 ## Usage
