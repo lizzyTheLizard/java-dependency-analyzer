@@ -2,6 +2,9 @@
 
 A class level dependency analyzer for JVM programs. Can be integrated as a maven plugin and generates an interactive HTML documentation of the class dependencies.
 
+![](C:\Users\matth\IdeaProjects\java-dependency-analyzer\doc\Screenshot.png)
+Example dependency analysis for this plugin
+
 ## Usage
 
 Integration as maven plugin
@@ -88,7 +91,7 @@ The Frontend is build using [Typescript](https://www.typescriptlang.org/), [lit]
 
 The Backend is build using [Kotlin](https://kotlinlang.org/) and [Maven](https://maven.apache.org/). The dependency analyses is performed using [ASM](https://asm.ow2.io/) and some visitors from the [maven-dependency-plugin](https://maven.apache.org/plugins/maven-dependency-plugin/). 
 
-# Bugs
+## Bugs
 If you find any bugs or have potential improvements, please open an issue in the [GitHub-Project](https://github.com/lizzyTheLizard/java-dependency-analyzer/issues)
 
 ## Contributing
