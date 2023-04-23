@@ -46,7 +46,7 @@ jobs:
           gpg --list-secret-keys --keyid-format LONG
       - name: Build Plugin
         working-directory: dependency-analyzer
-        run: ./mvnw --batch-mode deploy -P deploy -DskipTests
+        run: ./mvnw --batch-mode deploy -P build-release-documentation
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
@@ -65,7 +65,7 @@ jobs:
           files: dependency-analyzer/target/dependency-analyzer-${{ inputs.version }}*
       - name: Set Version back to SNAPSHOT
         working-directory: dependency-analyzer
-        run: ./mvnw versions:set -DnewVersion=${{ inputs.version }}-SNAPSHOT
+        run: ./mvnw versions:set -DnewVersion=${{ inputs.version }}-SNAPSHOT -DgenerateBackupPoms=false
       - name: Commit updated version
         run: |
           git config user.name github-actions
