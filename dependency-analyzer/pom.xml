@@ -49,10 +49,12 @@
         <!--Other dependencies-->
         <gson.version>2.10.1</gson.version>
         <dependency-analyzer.version>1.13.1</dependency-analyzer.version>
-        <itself.version>0.3.0</itself.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+
+        <!--Use itself as a first check. Usually the last released version, but you can use ${project.version} as well-->
+        <itself.version>0.4.0</itself.version>
     </properties>
 
     <dependencies>
@@ -170,7 +172,7 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
-            <!--Use itself as a first check. Usually the last released version, but you can use a snapshot as well-->
+            <!--Use itself as a first check-->
             <plugin>
                 <groupId>site.gutschi</groupId>
                 <artifactId>dependency-analyzer</artifactId>
