@@ -2,44 +2,12 @@
   "nodes": [],
   "dependencies": [
     {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "org.springframework.boot.loader.data.RandomAccessData"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "org.springframework.boot.loader.Launcher"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.AsciiBytes",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
-      "to": "java.util.LinkedHashMap"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.lang.Throwable"
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
       "to": "org.springframework.boot.loader.archive.JarFileArchive"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "org.springframework.boot.loader.jar.JarEntryCertification"
-    },
-    {
-      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
-      "to": "java.lang.ClassLoader"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
@@ -50,16 +18,8 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
-      "to": "java.util.zip.InflaterInputStream"
-    },
-    {
       "from": "org.springframework.boot.loader.ClassPathIndexFile",
       "to": "java.io.FileInputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessData",
-      "to": "java.io.IOException"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
@@ -90,132 +50,48 @@
       "to": "java.util.List"
     },
     {
+      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
+      "to": "java.lang.ClassLoader"
+    },
+    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.io.InputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.util.Comparator"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
       "to": "java.util.jar.Attributes"
     },
     {
-      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
-      "to": "java.util.jar.Manifest"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.nio.file.attribute.FileAttribute"
-    },
-    {
       "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
       "to": "org.springframework.util.ClassUtils"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
-      "to": "java.lang.IllegalStateException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarEntry",
-      "to": "org.springframework.boot.loader.jar.FileHeader"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "org.springframework.boot.loader.data.RandomAccessDataFile"
     },
     {
       "from": "com.example.demo.DemoApplication",
       "to": "java.lang.String"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
-      "to": "java.io.IOException"
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "java.lang.Throwable"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.AbstractJarFile$JarFileType",
-      "to": "java.lang.Enum"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
+      "from": "org.springframework.boot.loader.WarLauncher",
       "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.util.jar.JarEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
-      "to": "org.springframework.boot.loader.data.RandomAccessDataFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.Archive$EntryFilter",
-      "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$JarFileEntry",
-      "to": "java.lang.String"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.util.stream.Stream"
     },
     {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.net.URLClassLoader"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "java.util.ArrayList"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFile$1",
       "to": "org.springframework.boot.loader.jar.CentralDirectoryVisitor"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.util.HashSet"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$1",
-      "to": "org.springframework.boot.loader.jar.JarURLConnection"
-    },
-    {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
       "to": "java.lang.invoke.MethodHandles"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$DefinePackageCallType",
-      "to": "java.lang.String"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
@@ -230,12 +106,8 @@
       "to": "java.util.Iterator"
     },
     {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.lang.IllegalArgumentException"
-    },
-    {
-      "from": "org.springframework.boot.loader.JarLauncher",
-      "to": "org.springframework.boot.loader.archive.Archive"
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
@@ -246,32 +118,16 @@
       "to": "org.springframework.boot.loader.archive.Archive"
     },
     {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
-      "to": "java.time.ZonedDateTime"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
       "to": "org.springframework.boot.loader.jar.FileHeader"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.io.PrintStream"
     },
     {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
       "to": "java.io.IOException"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
-      "to": "java.lang.Integer"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.StringSequence",
       "to": "java.util.Objects"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.Class"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileWrapper",
@@ -282,60 +138,36 @@
       "to": "java.util.Arrays"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.io.InputStream"
-    },
-    {
       "from": "org.springframework.boot.loader.Launcher",
       "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.Archive",
-      "to": "java.io.IOException"
     },
     {
       "from": "org.springframework.boot.loader.jar.Handler",
       "to": "java.net.URI"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarEntryCertification",
-      "to": "java.util.jar.JarEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$JarFileEntry",
-      "to": "org.springframework.boot.loader.archive.JarFileArchive"
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.util.List"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
       "to": "java.io.File"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.util.Spliterator"
-    },
-    {
       "from": "org.springframework.boot.loader.ClassPathIndexFile",
       "to": "java.net.MalformedURLException"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.security.Permission"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
-      "to": "java.lang.Object"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.lang.ThreadLocal"
+      "to": "java.net.URLStreamHandler"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
       "to": "java.lang.Throwable"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.AsciiBytes",
-      "to": "java.lang.IndexOutOfBoundsException"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarEntry",
@@ -346,10 +178,6 @@
       "to": "org.springframework.boot.loader.jarmode.JarMode"
     },
     {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "org.springframework.boot.loader.jar.JarURLConnection"
-    },
-    {
       "from": "com.example.demo.DemoApplication",
       "to": "org.springframework.boot.SpringApplication"
     },
@@ -358,8 +186,8 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.util.Map"
+      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
+      "to": "java.lang.invoke.MethodType"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileWrapper",
@@ -374,32 +202,12 @@
       "to": "org.springframework.boot.loader.jar.AsciiBytes"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.lang.IllegalStateException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.net.URL"
-    },
-    {
       "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
       "to": "java.util.List"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries$Zip64Offsets",
       "to": "org.springframework.boot.loader.jar.JarFileEntries"
-    },
-    {
-      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.IllegalArgumentException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.net.URI"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
@@ -414,140 +222,40 @@
       "to": "java.util.Set"
     },
     {
-      "from": "org.springframework.boot.loader.archive.Archive",
-      "to": "java.util.jar.Manifest"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessData",
-      "to": "java.io.InputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.System"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive",
       "to": "java.lang.Deprecated"
     },
     {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.lang.String"
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.lang.invoke.MethodType"
     },
     {
       "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
       "to": "java.lang.invoke.StringConcatFactory"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
-      "to": "java.lang.Math"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
-      "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jarmode.JarMode",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryVisitor"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.io.BufferedReader"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.lang.UnsupportedOperationException"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
       "to": "java.io.File"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
-      "to": "java.net.MalformedURLException"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "java.io.InputStream"
     },
     {
-      "from": "org.springframework.boot.loader.jar.StringSequence",
-      "to": "java.lang.CharSequence"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.Archive",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
-      "to": "java.net.URLEncoder"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.io.IOException"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
       "to": "java.nio.file.FileSystem"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
-      "to": "java.net.URLConnection"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
-      "to": "java.lang.Character"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.reflect.Constructor"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.util.stream.StreamSupport"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
       "to": "java.util.ArrayList"
     },
     {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.lang.Class"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
-      "to": "java.util.zip.Inflater"
-    },
-    {
       "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
       "to": "java.util.Iterator"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.util.regex.Matcher"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
-      "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarEntryFilter",
-      "to": "org.springframework.boot.loader.jar.AsciiBytes"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
-      "to": "java.io.EOFException"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
@@ -558,32 +266,16 @@
       "to": "java.io.File"
     },
     {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.net.URLStreamHandlerFactory"
+    },
+    {
       "from": "org.springframework.boot.loader.jar.JarFileWrapper",
       "to": "java.util.stream.Stream"
     },
     {
       "from": "org.springframework.boot.loader.archive.JarFileArchive$AbstractIterator",
       "to": "org.springframework.boot.loader.archive.JarFileArchive"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile$1",
-      "to": "org.springframework.boot.loader.data.RandomAccessData"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64Locator",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
-      "to": "java.util.ArrayList"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.Exception"
-    },
-    {
-      "from": "org.springframework.boot.loader.MainMethodRunner",
-      "to": "java.lang.Thread"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarEntry",
@@ -598,20 +290,12 @@
       "to": "java.lang.String"
     },
     {
-      "from": "org.springframework.boot.loader.jar.AbstractJarFile$JarFileType",
-      "to": "org.springframework.boot.loader.jar.AbstractJarFile"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
       "to": "java.lang.String"
     },
     {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "java.util.jar.Manifest"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarEntry",
-      "to": "java.util.jar.Attributes"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
@@ -630,28 +314,12 @@
       "to": "java.io.IOException"
     },
     {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "java.lang.String"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
       "to": "java.lang.Deprecated"
     },
     {
-      "from": "org.springframework.boot.loader.jar.StringSequence",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
-      "to": "java.util.Enumeration"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$AbstractIterator",
-      "to": "java.util.Iterator"
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
@@ -678,48 +346,12 @@
       "to": "org.springframework.boot.loader.jar.AbstractJarFile"
     },
     {
-      "from": "org.springframework.boot.loader.archive.Archive$EntryFilter",
-      "to": "java.lang.FunctionalInterface"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryParser"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$Zip64Offsets",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
-      "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
-      "to": "java.io.IOException"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryVisitor",
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
-      "to": "org.springframework.boot.loader.jar.JarFileEntries"
-    },
-    {
       "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
       "to": "org.springframework.boot.loader.data.RandomAccessData"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.util.jar.Manifest"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "java.lang.invoke.StringConcatFactory"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
@@ -746,24 +378,8 @@
       "to": "java.io.InputStream"
     },
     {
-      "from": "org.springframework.boot.loader.archive.Archive",
-      "to": "java.net.URL"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.AsciiBytes",
       "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.lang.Boolean"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.invoke.MethodHandles"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader"
     },
     {
       "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
@@ -794,32 +410,12 @@
       "to": "org.springframework.boot.loader.data.RandomAccessDataFile"
     },
     {
-      "from": "org.springframework.boot.loader.MainMethodRunner",
-      "to": "java.lang.reflect.Method"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$EntryIterator",
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.jar.AsciiBytes",
-      "to": "org.springframework.boot.loader.jar.StringSequence"
-    },
-    {
       "from": "org.springframework.boot.loader.JarLauncher",
       "to": "java.lang.Exception"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.io.OutputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
-      "to": "java.lang.invoke.MethodHandles"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
@@ -830,10 +426,6 @@
       "to": "java.lang.System"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "java.security.Permission"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
       "to": "java.lang.String"
     },
@@ -842,24 +434,12 @@
       "to": "org.springframework.boot.loader.archive.JarFileArchive"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.lang.Throwable"
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
+      "to": "java.lang.String"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
-      "to": "java.io.File"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.util.Arrays"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$JarFileEntry",
-      "to": "org.springframework.boot.loader.archive.Archive"
+      "to": "java.lang.invoke.MethodType"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
@@ -870,12 +450,12 @@
       "to": "java.net.URLConnection"
     },
     {
-      "from": "org.springframework.boot.loader.JarLauncher",
-      "to": "java.lang.String"
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "org.springframework.boot.loader.jar.JarFile"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
-      "to": "org.springframework.boot.loader.jar.JarFile"
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$ArchiveIterator",
@@ -890,20 +470,16 @@
       "to": "java.net.URL"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.lang.Runnable"
-    },
-    {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "java.lang.ClassLoader"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarEntry",
-      "to": "java.net.MalformedURLException"
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.lang.RuntimeException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.invoke.MethodType"
     },
     {
       "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
@@ -922,24 +498,8 @@
       "to": "java.util.Enumeration"
     },
     {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.util.stream.Stream"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
       "to": "org.springframework.boot.loader.archive.ExplodedArchive"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
-      "to": "java.lang.Deprecated"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.net.JarURLConnection"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$PrefixMatchingArchiveFilter",
-      "to": "org.springframework.boot.loader.archive.Archive"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
@@ -954,24 +514,12 @@
       "to": "java.lang.invoke.MethodHandles"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$Offsets",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.io.InputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.data.RandomAccessData"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
-      "to": "java.time.Instant"
-    },
-    {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
       "to": "java.io.FileInputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.ClassPathIndexFile",
@@ -986,20 +534,12 @@
       "to": "java.io.InputStream"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.ClassLoader"
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.invoke.MethodType"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
       "to": "java.io.ByteArrayOutputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.JarLauncher",
-      "to": "org.springframework.boot.loader.ExecutableArchiveLauncher"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
-      "to": "java.lang.String"
     },
     {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
@@ -1012,10 +552,6 @@
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
       "to": "java.lang.Exception"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.lang.Error"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile$1",
@@ -1038,10 +574,6 @@
       "to": "java.util.jar.JarEntry"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
-      "to": "org.springframework.boot.loader.jar.StringSequence"
-    },
-    {
       "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
       "to": "java.lang.String"
     },
@@ -1058,16 +590,8 @@
       "to": "org.springframework.boot.loader.JarLauncher"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.jar.ZipInflaterInputStream"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
       "to": "org.springframework.boot.loader.jar.JarFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
-      "to": "org.springframework.boot.loader.jar.Bytes"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
@@ -1078,32 +602,20 @@
       "to": "java.io.IOException"
     },
     {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "org.springframework.boot.loader.jar.JarFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "java.util.jar.JarEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "org.springframework.boot.loader.jar.StringSequence"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryVisitor",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
-    },
-    {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "java.net.URLConnection"
     },
     {
-      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
-      "to": "java.lang.Object"
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.invoke.MethodHandle"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
-      "to": "java.io.IOException"
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
@@ -1122,44 +634,24 @@
       "to": "org.springframework.boot.loader.jarmode.JarMode"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.lang.invoke.LambdaMetafactory"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileWrapper",
       "to": "org.springframework.boot.loader.jar.AbstractJarFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$EntryIterator",
-      "to": "java.util.Iterator"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarEntry",
-      "to": "java.net.URL"
     },
     {
       "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
       "to": "java.lang.invoke.StringConcatFactory"
     },
     {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.lang.invoke.MethodHandles"
-    },
-    {
       "from": "org.springframework.boot.loader.ClassPathIndexFile",
       "to": "java.lang.invoke.MethodHandles"
     },
     {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "org.springframework.boot.loader.jar.Bytes"
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.util.Enumeration"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "org.springframework.boot.loader.jar.JarFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "org.springframework.boot.loader.jar.AbstractJarFile"
+      "from": "org.springframework.boot.loader.JarLauncher",
+      "to": "java.lang.invoke.MethodHandle"
     },
     {
       "from": "org.springframework.boot.loader.JarLauncher",
@@ -1174,24 +666,20 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "java.lang.String"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
       "to": "java.lang.String"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
-      "to": "java.io.InputStream"
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "java.time.temporal.TemporalUnit"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.lang.Object"
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.invoke.MethodType"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
-      "to": "java.io.FileNotFoundException"
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
+      "to": "org.springframework.boot.loader.jar.FileHeader"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
@@ -1206,16 +694,8 @@
       "to": "org.springframework.boot.loader.archive.Archive"
     },
     {
-      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
-      "to": "java.security.Permission"
-    },
-    {
       "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
       "to": "java.util.jar.Attributes"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$EntryIterator",
-      "to": "org.springframework.boot.loader.archive.ExplodedArchive"
     },
     {
       "from": "org.springframework.boot.loader.archive.Archive",
@@ -1224,14 +704,6 @@
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.util.Spliterators"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
-      "to": "java.lang.Object"
     },
     {
       "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
@@ -1254,10 +726,6 @@
       "to": "java.net.URLConnection"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.lang.Integer"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
       "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
     },
@@ -1274,24 +742,16 @@
       "to": "java.lang.RuntimeException"
     },
     {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
       "to": "org.springframework.boot.loader.archive.ExplodedArchive"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.util.NoSuchElementException"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
       "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.CharSequence"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
@@ -1314,22 +774,6 @@
       "to": "java.util.jar.Manifest"
     },
     {
-      "from": "org.springframework.boot.loader.archive.Archive",
-      "to": "java.util.Iterator"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
-      "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
-      "to": "java.util.Iterator"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.nio.file.Files"
-    },
-    {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "java.lang.ClassLoader"
     },
@@ -1346,6 +790,10 @@
       "to": "java.io.PrintStream"
     },
     {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.CharSequence"
+    },
+    {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "org.springframework.boot.loader.jar.JarFile"
     },
@@ -1354,32 +802,12 @@
       "to": "org.springframework.boot.loader.jar.JarFileWrapper"
     },
     {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "org.springframework.boot.loader.LaunchedURLClassLoader"
-    },
-    {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "java.net.JarURLConnection"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$Offsets",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.util.LinkedHashSet"
-    },
-    {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
       "to": "org.springframework.boot.loader.archive.ExplodedArchive"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.util.jar.Manifest"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.io.IOException"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
@@ -1390,12 +818,1580 @@
       "to": "java.lang.System"
     },
     {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.CharSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.ClassNotFoundException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "org.springframework.boot.loader.jar.JarFileWrapper"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.jar.JarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.net.MalformedURLException"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "java.lang.Exception"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "org.springframework.boot.loader.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.JarLauncher",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.WarLauncher",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "java.net.MalformedURLException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.lang.Exception"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.invoke.MethodHandle"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.jar.AsciiBytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "org.springframework.boot.loader.jar.FileHeader"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$EntryIterator",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
+      "to": "java.util.Map"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.jar.FileHeader"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "org.springframework.boot.loader.data.RandomAccessData"
+    },
+    {
+      "from": "org.springframework.boot.loader.MainMethodRunner",
+      "to": "java.lang.Exception"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "org.springframework.boot.loader.archive.ExplodedArchive"
+    },
+    {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.lang.StringBuilder"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.nio.file.LinkOption"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$1",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$EntryIterator",
+      "to": "java.util.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.util.jar.Attributes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.util.logging.Logger"
+    },
+    {
+      "from": "org.springframework.boot.loader.WarLauncher",
+      "to": "org.springframework.boot.loader.ExecutableArchiveLauncher"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.Exception"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
+      "to": "java.lang.System"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "org.springframework.boot.loader.data.RandomAccessData"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$PrefixMatchingArchiveFilter",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.net.URLStreamHandlerFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.io.ByteArrayOutputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.net.URI"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$1",
+      "to": "java.net.URLConnection"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.invoke.MethodHandle"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.util.Collections"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.Package"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.StringBuilder"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64Locator",
+      "to": "org.springframework.boot.loader.jar.Bytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
+      "to": "org.springframework.boot.loader.jar.Handler"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile$1",
+      "to": "org.springframework.boot.loader.jar.JarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.nio.file.StandardOpenOption"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.util.UUID"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
+      "to": "org.springframework.boot.loader.jar.JarFileEntries"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
+      "to": "java.util.jar.Manifest"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.net.URI"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.util.Deque"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
+      "to": "org.springframework.boot.loader.data.RandomAccessData"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
+      "to": "java.lang.Boolean"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$DefinePackageCallType",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive$EntryFilter",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "org.springframework.boot.loader.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.invoke.LambdaMetafactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.util.Properties"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.Error"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64Locator",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.util.Set"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.util.List"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.util.logging.Level"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
+      "to": "java.util.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "java.util.List"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "java.lang.invoke.MethodHandles"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.util.ArrayList"
+    },
+    {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
+      "to": "java.util.Enumeration"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.nio.file.Paths"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.util.function.Function"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "org.springframework.boot.loader.MainMethodRunner"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.lang.IllegalArgumentException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.lang.System"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "java.lang.Thread"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
+      "to": "java.io.RandomAccessFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
+      "to": "org.springframework.boot.loader.archive.ExplodedArchive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.jar.Bytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.util.Set"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
+      "to": "java.util.jar.JarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntry",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.IllegalStateException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.FileHeader",
+      "to": "java.lang.CharSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Bytes",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
+      "to": "java.lang.IllegalArgumentException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "org.springframework.boot.loader.data.RandomAccessData"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryVisitor"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.util.LinkedList"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$ArchiveIterator",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.net.MalformedURLException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.System"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "java.util.jar.Manifest"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.FileHeader",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive$Entry",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.StringSequence",
+      "to": "java.lang.StringIndexOutOfBoundsException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
+      "to": "org.springframework.boot.loader.archive.JarFileArchive"
+    },
+    {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.util.Properties"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.util.jar.JarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.net.URLDecoder"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "java.lang.Math"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "java.lang.IllegalStateException"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "org.springframework.boot.loader.archive.JarFileArchive"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
+      "to": "org.springframework.boot.loader.LaunchedURLClassLoader"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
+      "to": "java.lang.NullPointerException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.ref.SoftReference"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "org.springframework.boot.loader.jar.AsciiBytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntryCertification",
+      "to": "java.security.CodeSigner"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.io.InputStreamReader"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "java.util.Collection"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
+      "to": "java.io.EOFException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
+      "to": "java.net.MalformedURLException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$EntryIterator",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.util.zip.ZipEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.util.Collections"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.invoke.LambdaMetafactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "java.time.temporal.ChronoUnit"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.IllegalArgumentException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.lang.Boolean"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
+      "to": "java.util.List"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryVisitor",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
+      "to": "org.springframework.boot.loader.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
+      "to": "java.util.Collections"
+    },
+    {
+      "from": "org.springframework.boot.loader.MainMethodRunner",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntry",
+      "to": "java.security.CodeSigner"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive",
+      "to": "java.lang.Iterable"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.net.MalformedURLException"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ArchiveEntryFilter",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "org.springframework.boot.loader.jar.JarFileEntries"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.IllegalStateException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "java.lang.IllegalStateException"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$DefinePackageCallType",
+      "to": "java.lang.Enum"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$AbstractIterator",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessData",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.lang.IllegalStateException"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.util.jar.JarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "java.time.ZoneId"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$AbstractIterator",
+      "to": "java.util.jar.JarEntry"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "org.springframework.boot.autoconfigure.SpringBootApplication"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "java.time.temporal.ValueRange"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "org.springframework.boot.loader.data.RandomAccessData"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "org.springframework.boot.loader.Launcher"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AsciiBytes",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
+      "to": "java.util.LinkedHashMap"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "org.springframework.boot.loader.jar.JarEntryCertification"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.lang.ClassLoader"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
+      "to": "java.util.zip.InflaterInputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessData",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.util.Comparator"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.util.jar.Manifest"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.nio.file.attribute.FileAttribute"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.lang.IllegalStateException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
+      "to": "java.util.List"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntry",
+      "to": "org.springframework.boot.loader.jar.FileHeader"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "org.springframework.boot.loader.data.RandomAccessDataFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "org.springframework.boot.loader.jar.JarEntryFilter"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile$JarFileType",
+      "to": "java.lang.Enum"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.util.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
+      "to": "org.springframework.boot.loader.data.RandomAccessDataFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive$EntryFilter",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$JarFileEntry",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.net.URLClassLoader"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "java.util.ArrayList"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.util.HashSet"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$1",
+      "to": "org.springframework.boot.loader.jar.JarURLConnection"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$DefinePackageCallType",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.IllegalArgumentException"
+    },
+    {
+      "from": "org.springframework.boot.loader.JarLauncher",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "java.time.ZonedDateTime"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.io.PrintStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
+      "to": "java.lang.Integer"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntryCertification",
+      "to": "java.util.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$JarFileEntry",
+      "to": "org.springframework.boot.loader.archive.JarFileArchive"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.util.zip.ZipEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.util.Spliterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.security.Permission"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.ThreadLocal"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AsciiBytes",
+      "to": "java.lang.IndexOutOfBoundsException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.util.zip.ZipEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "org.springframework.boot.loader.jar.JarURLConnection"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.util.Map"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.lang.IllegalStateException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.IllegalArgumentException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.net.URI"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive",
+      "to": "java.util.jar.Manifest"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessData",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.System"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
+      "to": "org.springframework.boot.loader.jar.AsciiBytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
+      "to": "java.lang.Math"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.net.URLStreamHandler"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.JarMode",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryVisitor"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.io.BufferedReader"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.lang.UnsupportedOperationException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.Runnable"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
+      "to": "java.net.MalformedURLException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.StringSequence",
+      "to": "java.lang.CharSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.net.URLEncoder"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.net.URLConnection"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.lang.Character"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.reflect.Constructor"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.util.stream.StreamSupport"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
+      "to": "java.util.zip.Inflater"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.util.regex.Matcher"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.CharSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntryFilter",
+      "to": "org.springframework.boot.loader.jar.AsciiBytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
+      "to": "java.io.EOFException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile$1",
+      "to": "org.springframework.boot.loader.data.RandomAccessData"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64Locator",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "java.util.ArrayList"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$DefinePackageCallType",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.Exception"
+    },
+    {
+      "from": "org.springframework.boot.loader.MainMethodRunner",
+      "to": "java.lang.Thread"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile$JarFileType",
+      "to": "org.springframework.boot.loader.jar.AbstractJarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntry",
+      "to": "java.util.jar.Attributes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile$1",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.StringSequence",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
+      "to": "java.util.Enumeration"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$AbstractIterator",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive$EntryFilter",
+      "to": "java.lang.FunctionalInterface"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryParser"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$Zip64Offsets",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
+      "to": "org.springframework.boot.loader.jar.JarFileEntries"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.util.jar.Manifest"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "java.lang.invoke.StringConcatFactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.Boolean"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "java.lang.invoke.MethodHandles"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader"
+    },
+    {
+      "from": "org.springframework.boot.loader.MainMethodRunner",
+      "to": "java.lang.reflect.Method"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AsciiBytes",
+      "to": "org.springframework.boot.loader.jar.StringSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.io.OutputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.lang.invoke.MethodHandles"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "java.security.Permission"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "java.io.File"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.util.Arrays"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$JarFileEntry",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.JarLauncher",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.lang.Runnable"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "java.lang.ClassLoader"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntry",
+      "to": "java.net.MalformedURLException"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.util.stream.Stream"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
+      "to": "java.lang.Deprecated"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.net.JarURLConnection"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$PrefixMatchingArchiveFilter",
+      "to": "org.springframework.boot.loader.archive.Archive"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$Offsets",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.util.Collection"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.data.RandomAccessData"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
+      "to": "java.time.Instant"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.ClassLoader"
+    },
+    {
+      "from": "org.springframework.boot.loader.JarLauncher",
+      "to": "org.springframework.boot.loader.ExecutableArchiveLauncher"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.Error"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.nio.charset.Charset"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "org.springframework.boot.loader.jar.StringSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "org.springframework.boot.loader.jar.ZipInflaterInputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
+      "to": "org.springframework.boot.loader.jar.Bytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "org.springframework.boot.loader.jar.JarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "java.util.jar.JarEntry"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "org.springframework.boot.loader.jar.StringSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryVisitor",
+      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.lang.invoke.LambdaMetafactory"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive$EntryIterator",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarEntry",
+      "to": "java.net.URL"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.invoke.MethodHandles"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "org.springframework.boot.loader.jar.Bytes"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "org.springframework.boot.loader.jar.JarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "org.springframework.boot.loader.jar.AbstractJarFile"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
+      "to": "java.io.InputStream"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
+      "to": "java.io.FileNotFoundException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
+      "to": "java.security.Permission"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$EntryIterator",
+      "to": "org.springframework.boot.loader.archive.ExplodedArchive"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.lang.invoke.MethodHandle"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile$JarFileType",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries",
+      "to": "java.lang.Integer"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.AbstractJarFile$JarFileType",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.util.NoSuchElementException"
+    },
+    {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.lang.CharSequence"
+    },
+    {
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.lang.invoke.MethodHandle"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.Archive",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
+      "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.nio.file.Files"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "org.springframework.boot.loader.LaunchedURLClassLoader"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.JarFileEntries$Offsets",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.springframework.boot.loader.PropertiesLauncher",
+      "to": "java.util.LinkedHashSet"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
+      "to": "java.util.jar.Manifest"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.io.IOException"
+    },
+    {
+      "from": "org.springframework.boot.loader.Launcher",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
       "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
       "to": "java.util.Iterator"
     },
     {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.lang.String"
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "java.lang.CharSequence"
     },
     {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
@@ -1430,20 +2426,8 @@
       "to": "java.util.ArrayList"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.CharSequence"
-    },
-    {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
       "to": "java.lang.IllegalStateException"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.io.InputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.lang.ClassNotFoundException"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
@@ -1466,40 +2450,20 @@
       "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.jar.JarFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
-      "to": "java.net.URL"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.net.MalformedURLException"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarEntry",
       "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "java.lang.Exception"
     },
     {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "java.lang.String"
     },
     {
+      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection$1",
       "to": "java.net.URLStreamHandler"
-    },
-    {
-      "from": "org.springframework.boot.loader.WarLauncher",
-      "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "java.net.MalformedURLException"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
@@ -1510,20 +2474,8 @@
       "to": "java.util.Set"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.lang.Exception"
-    },
-    {
-      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
-      "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "java.util.Iterator"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.jar.AsciiBytes"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
@@ -1538,10 +2490,6 @@
       "to": "java.lang.Throwable"
     },
     {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
-      "to": "org.springframework.boot.loader.jar.FileHeader"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
       "to": "java.lang.invoke.MethodHandles"
     },
@@ -1554,20 +2502,8 @@
       "to": "java.net.URI"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$EntryIterator",
-      "to": "java.lang.Object"
-    },
-    {
       "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
       "to": "java.util.Locale"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
-      "to": "java.util.Map"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.jar.FileHeader"
     },
     {
       "from": "org.springframework.boot.loader.jarmode.TestJarMode",
@@ -1575,55 +2511,23 @@
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "org.springframework.boot.loader.data.RandomAccessData"
-    },
-    {
-      "from": "org.springframework.boot.loader.MainMethodRunner",
-      "to": "java.lang.Exception"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.util.Enumeration"
-    },
-    {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "org.springframework.boot.loader.archive.ExplodedArchive"
-    },
-    {
-      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
-      "to": "java.lang.StringBuilder"
     },
     {
       "from": "org.springframework.boot.loader.ClassPathIndexFile",
       "to": "java.lang.invoke.LambdaMetafactory"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.nio.file.LinkOption"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$1",
-      "to": "java.io.IOException"
     },
     {
       "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
-      "to": "java.util.Iterator"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarEntry",
       "to": "org.springframework.boot.loader.jar.JarEntryCertification"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$EntryIterator",
-      "to": "java.util.jar.JarEntry"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
@@ -1646,24 +2550,12 @@
       "to": "org.springframework.boot.loader.PropertiesLauncher"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
-      "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
-      "to": "java.io.InputStream"
+      "from": "org.springframework.boot.loader.jar.JarFile",
+      "to": "org.springframework.boot.loader.jar.FileHeader"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarEntry",
       "to": "java.util.jar.JarEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.util.jar.Attributes"
     },
     {
       "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
@@ -1678,12 +2570,8 @@
       "to": "java.net.URL"
     },
     {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.util.logging.Logger"
-    },
-    {
-      "from": "org.springframework.boot.loader.WarLauncher",
-      "to": "org.springframework.boot.loader.ExecutableArchiveLauncher"
+      "from": "org.springframework.boot.loader.JarLauncher",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
@@ -1692,10 +2580,6 @@
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive",
       "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.lang.Exception"
     },
     {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64Locator",
@@ -1710,40 +2594,24 @@
       "to": "org.springframework.boot.loader.ClassPathIndexFile"
     },
     {
-      "from": "org.springframework.boot.loader.jarmode.TestJarMode",
-      "to": "java.lang.System"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
-      "to": "org.springframework.boot.loader.data.RandomAccessData"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$PrefixMatchingArchiveFilter",
-      "to": "java.lang.String"
+      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
+      "to": "java.lang.invoke.CallSite"
     },
     {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
       "to": "org.springframework.boot.loader.jar.AsciiBytes"
     },
     {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.io.ByteArrayOutputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.net.URI"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection$1",
-      "to": "java.net.URLConnection"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive",
       "to": "org.springframework.boot.loader.archive.Archive"
     },
     {
+      "from": "org.springframework.boot.loader.jar.Handler",
+      "to": "java.lang.invoke.CallSite"
+    },
+    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.util.Collections"
+      "to": "java.lang.invoke.MethodHandle"
     },
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
@@ -1758,14 +2626,6 @@
       "to": "java.io.File"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.util.Iterator"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.lang.Package"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
       "to": "org.springframework.boot.loader.archive.Archive"
     },
@@ -1774,12 +2634,16 @@
       "to": "java.net.URL"
     },
     {
+      "from": "org.springframework.boot.loader.JarLauncher",
+      "to": "java.lang.invoke.MethodType"
+    },
+    {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryVisitor",
       "to": "org.springframework.boot.loader.data.RandomAccessData"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.lang.StringBuilder"
+      "from": "org.springframework.boot.loader.jar.AsciiBytes",
+      "to": "java.nio.charset.Charset"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive",
@@ -1792,22 +2656,6 @@
     {
       "from": "org.springframework.boot.loader.jar.JarEntry",
       "to": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64Locator",
-      "to": "org.springframework.boot.loader.jar.Bytes"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
-      "to": "org.springframework.boot.loader.jar.Handler"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile$1",
-      "to": "org.springframework.boot.loader.jar.JarFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.util.Iterator"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarEntryFilter",
@@ -1830,10 +2678,6 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.nio.file.StandardOpenOption"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
       "to": "java.util.Collections"
     },
@@ -1842,20 +2686,12 @@
       "to": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader"
     },
     {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.lang.Throwable"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.util.UUID"
+      "from": "org.springframework.boot.loader.ClassPathIndexFile",
+      "to": "java.io.Reader"
     },
     {
       "from": "org.springframework.boot.loader.jar.AbstractJarFile$JarFileType",
       "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$1",
-      "to": "org.springframework.boot.loader.jar.JarFileEntries"
     },
     {
       "from": "org.springframework.boot.loader.jar.Handler",
@@ -1864,10 +2700,6 @@
     {
       "from": "org.springframework.boot.loader.jar.AsciiBytes",
       "to": "java.lang.CharSequence"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
-      "to": "java.util.jar.Manifest"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive",
@@ -1880,30 +2712,6 @@
     {
       "from": "org.springframework.boot.loader.jar.Handler",
       "to": "java.io.PrintStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
-      "to": "java.io.InputStream"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.util.Deque"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.net.URL"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.lang.Throwable"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64End",
-      "to": "org.springframework.boot.loader.data.RandomAccessData"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
@@ -1919,10 +2727,6 @@
     },
     {
       "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
-      "to": "java.lang.Boolean"
-    },
-    {
-      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
       "to": "java.lang.Class"
     },
     {
@@ -1930,24 +2734,8 @@
       "to": "java.lang.invoke.MethodHandles"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.Archive$EntryFilter",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "org.springframework.boot.loader.jar.JarEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.lang.invoke.LambdaMetafactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.util.Properties"
+      "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.springframework.boot.loader.jar.Handler",
@@ -1959,19 +2747,11 @@
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.Error"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.util.function.Supplier"
     },
     {
       "from": "org.springframework.boot.loader.jar.AbstractJarFile",
       "to": "java.io.File"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord$Zip64Locator",
-      "to": "java.io.IOException"
     },
     {
       "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
@@ -1982,22 +2762,6 @@
       "to": "java.io.PrintStream"
     },
     {
-      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
-      "to": "java.util.Set"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.util.List"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.util.logging.Level"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.io.File"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "org.springframework.boot.loader.jar.JarEntry"
     },
@@ -2006,8 +2770,8 @@
       "to": "java.io.IOException"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
-      "to": "java.util.jar.JarEntry"
+      "from": "org.springframework.boot.loader.jar.AsciiBytes",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
@@ -2018,44 +2782,24 @@
       "to": "java.lang.invoke.MethodHandles"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
-      "to": "java.util.List"
-    },
-    {
       "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
       "to": "java.util.ArrayList"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "java.lang.invoke.MethodHandles"
+      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
+      "to": "java.util.zip.ZipEntry"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.lang.String"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.util.ArrayList"
-    },
-    {
       "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
       "to": "org.springframework.boot.loader.jar.Handler"
     },
     {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
-      "to": "java.util.Enumeration"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
       "to": "java.io.UnsupportedEncodingException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.nio.file.Paths"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
@@ -2074,56 +2818,8 @@
       "to": "java.util.Arrays"
     },
     {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "org.springframework.boot.loader.MainMethodRunner"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.lang.IllegalArgumentException"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.ZipInflaterInputStream",
       "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
-      "to": "java.net.URL"
-    },
-    {
-      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
-      "to": "java.lang.System"
-    },
-    {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "java.lang.Thread"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
-      "to": "java.io.RandomAccessFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
-      "to": "org.springframework.boot.loader.archive.ExplodedArchive"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.jar.Bytes"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.util.Set"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.AbstractJarFile",
-      "to": "java.util.jar.JarFile"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
@@ -2134,20 +2830,8 @@
       "to": "java.lang.IllegalStateException"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarEntry",
-      "to": "java.lang.String"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
       "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.lang.IllegalStateException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
-      "to": "java.io.File"
     },
     {
       "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
@@ -2158,40 +2842,12 @@
       "to": "org.springframework.boot.loader.jar.JarFile"
     },
     {
-      "from": "org.springframework.boot.loader.jar.FileHeader",
-      "to": "java.lang.CharSequence"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.Bytes",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
-      "to": "java.lang.IllegalArgumentException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.io.File"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.util.zip.ZipEntry"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries$EntryIterator",
-      "to": "java.util.Iterator"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryParser",
-      "to": "org.springframework.boot.loader.data.RandomAccessData"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "java.lang.invoke.LambdaMetafactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.lang.invoke.StringConcatFactory"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile$1",
@@ -2200,6 +2856,10 @@
     {
       "from": "org.springframework.boot.loader.PropertiesLauncher",
       "to": "org.springframework.boot.loader.util.SystemPropertyUtils"
+    },
+    {
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive",
@@ -2214,60 +2874,20 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
-      "to": "java.util.Iterator"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
       "to": "java.lang.Math"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.net.URL"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
-      "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryVisitor"
-    },
-    {
-      "from": "com.example.demo.DemoApplication",
-      "to": "java.lang.Object"
     },
     {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
       "to": "java.util.jar.JarEntry"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "java.util.LinkedList"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$ArchiveIterator",
-      "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.net.MalformedURLException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.System"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "java.util.jar.Manifest"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.Handler",
       "to": "java.util.regex.Matcher"
+    },
+    {
+      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
+      "to": "java.lang.invoke.MethodType"
     },
     {
       "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
@@ -2282,10 +2902,6 @@
       "to": "java.io.FilePermission"
     },
     {
-      "from": "org.springframework.boot.loader.jar.FileHeader",
-      "to": "java.lang.Object"
-    },
-    {
       "from": "org.springframework.boot.loader.MainMethodRunner",
       "to": "java.lang.Class"
     },
@@ -2294,56 +2910,20 @@
       "to": "java.lang.reflect.Constructor"
     },
     {
-      "from": "org.springframework.boot.loader.archive.Archive$Entry",
-      "to": "java.lang.Object"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "org.springframework.boot.loader.data.RandomAccessDataFile"
-    },
-    {
-      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.StringSequence",
-      "to": "java.lang.StringIndexOutOfBoundsException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
-      "to": "org.springframework.boot.loader.archive.JarFileArchive"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileWrapper",
       "to": "java.util.jar.JarFile"
     },
     {
-      "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
-      "to": "java.util.Properties"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.net.URL"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
-      "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries$ZipOffsets",
       "to": "org.springframework.boot.loader.jar.JarFileEntries"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarURLConnection",
-      "to": "java.util.jar.JarFile"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "java.net.MalformedURLException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$NestedArchiveIterator",
-      "to": "org.springframework.boot.loader.archive.Archive"
     },
     {
       "from": "org.springframework.boot.loader.jar.Handler",
@@ -2354,24 +2934,12 @@
       "to": "org.springframework.boot.loader.jar.CentralDirectoryVisitor"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher",
-      "to": "java.net.URLDecoder"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileWrapper",
       "to": "java.net.URL"
     },
     {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "java.lang.Math"
-    },
-    {
       "from": "org.springframework.boot.loader.MainMethodRunner",
       "to": "java.lang.Object"
-    },
-    {
-      "from": "org.springframework.boot.loader.Launcher",
-      "to": "java.lang.IllegalStateException"
     },
     {
       "from": "org.springframework.boot.loader.util.SystemPropertyUtils",
@@ -2382,20 +2950,12 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
-      "to": "java.io.InputStream"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
       "to": "java.util.Iterator"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "java.lang.Runtime"
-    },
-    {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$ClassPathArchives",
-      "to": "org.springframework.boot.loader.archive.JarFileArchive"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
@@ -2414,52 +2974,28 @@
       "to": "java.lang.IllegalStateException"
     },
     {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$UseFastConnectionExceptionsEnumeration",
-      "to": "org.springframework.boot.loader.LaunchedURLClassLoader"
+      "from": "org.springframework.boot.loader.jar.JarURLConnection",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
       "to": "java.lang.invoke.StringConcatFactory"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile$DataInputStream",
-      "to": "java.lang.NullPointerException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.ref.SoftReference"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "org.springframework.boot.loader.jar.AsciiBytes"
-    },
-    {
       "from": "org.springframework.boot.loader.data.RandomAccessDataFile$FileAccess",
       "to": "java.io.File"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarEntryCertification",
-      "to": "java.security.CodeSigner"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.io.InputStreamReader"
+      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
+      "to": "java.util.Collection"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
       "to": "java.net.URI"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
-      "to": "java.io.EOFException"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
-      "to": "java.net.MalformedURLException"
+      "from": "org.springframework.boot.loader.archive.JarFileArchive",
+      "to": "java.lang.Enum"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
@@ -2470,24 +3006,12 @@
       "to": "java.lang.String"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$EntryIterator",
-      "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.util.zip.ZipEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.util.Collections"
-    },
-    {
       "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
       "to": "org.springframework.boot.loader.archive.Archive"
     },
     {
-      "from": "org.springframework.boot.loader.data.RandomAccessDataFile",
-      "to": "java.io.File"
+      "from": "com.example.demo.DemoApplication",
+      "to": "org.springframework.context.ConfigurableApplicationContext"
     },
     {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
@@ -2502,14 +3026,6 @@
       "to": "java.util.function.Supplier"
     },
     {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord",
-      "to": "java.io.IOException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "java.lang.invoke.LambdaMetafactory"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarFileEntries",
       "to": "org.springframework.boot.loader.jar.JarEntryCertification"
     },
@@ -2522,36 +3038,24 @@
       "to": "org.springframework.boot.loader.archive.Archive"
     },
     {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive",
-      "to": "java.io.File"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.JarFileArchive$JarFileEntry",
       "to": "java.util.jar.JarEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
-      "to": "java.time.temporal.ChronoUnit"
     },
     {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$FileEntry",
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryEndRecord"
+      "from": "org.springframework.boot.loader.MainMethodRunner",
+      "to": "java.lang.ClassLoader"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarFile",
       "to": "org.springframework.boot.loader.jar.Handler"
     },
     {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.lang.IllegalArgumentException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileEntries",
-      "to": "java.lang.Boolean"
+      "from": "org.springframework.boot.loader.archive.ExplodedArchive$AbstractIterator",
+      "to": "java.util.function.Function"
     },
     {
       "from": "org.springframework.boot.loader.archive.JarFileArchive",
@@ -2566,48 +3070,12 @@
       "to": "java.util.jar.JarEntry"
     },
     {
-      "from": "org.springframework.boot.loader.jarmode.JarModeLauncher",
-      "to": "java.util.List"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryVisitor",
-      "to": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile$JarEntryEnumeration",
-      "to": "org.springframework.boot.loader.jar.JarEntry"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
-      "to": "java.util.Collections"
-    },
-    {
       "from": "org.springframework.boot.loader.WarLauncher",
       "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.MainMethodRunner",
-      "to": "java.lang.String"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarEntry",
-      "to": "java.security.CodeSigner"
     },
     {
       "from": "org.springframework.boot.loader.WarLauncher",
       "to": "java.lang.Exception"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "org.springframework.boot.loader.archive.Archive"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.Archive",
-      "to": "java.lang.Iterable"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.Handler",
-      "to": "java.net.MalformedURLException"
     },
     {
       "from": "org.springframework.boot.loader.jar.JarEntry",
@@ -2626,16 +3094,8 @@
       "to": "java.lang.IllegalArgumentException"
     },
     {
-      "from": "org.springframework.boot.loader.PropertiesLauncher$ArchiveEntryFilter",
-      "to": "java.lang.String"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection",
       "to": "java.lang.IllegalStateException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFile",
-      "to": "org.springframework.boot.loader.jar.JarFileEntries"
     },
     {
       "from": "org.springframework.boot.loader.jar.Handler",
@@ -2658,68 +3118,24 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "org.springframework.boot.loader.ClassPathIndexFile",
-      "to": "java.lang.IllegalStateException"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.JarFileWrapper",
-      "to": "java.lang.IllegalStateException"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.JarURLConnection$JarEntryName",
       "to": "org.springframework.boot.loader.jar.AsciiBytes"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader$DefinePackageCallType",
-      "to": "java.lang.Enum"
     },
     {
       "from": "org.springframework.boot.loader.Launcher",
       "to": "java.util.Iterator"
     },
     {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$AbstractIterator",
-      "to": "java.lang.Object"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.Archive",
       "to": "java.lang.Exception"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive",
-      "to": "java.io.File"
-    },
-    {
-      "from": "org.springframework.boot.loader.data.RandomAccessData",
-      "to": "java.lang.Object"
     },
     {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
       "to": "org.springframework.boot.loader.jar.AsciiBytes"
     },
     {
-      "from": "org.springframework.boot.loader.ExecutableArchiveLauncher",
-      "to": "java.lang.IllegalStateException"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.util.jar.JarFile"
-    },
-    {
       "from": "org.springframework.boot.loader.jar.Handler",
       "to": "java.lang.invoke.StringConcatFactory"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
-      "to": "java.time.ZoneId"
-    },
-    {
-      "from": "org.springframework.boot.loader.LaunchedURLClassLoader",
-      "to": "java.net.URL"
-    },
-    {
-      "from": "org.springframework.boot.loader.archive.JarFileArchive$AbstractIterator",
-      "to": "java.util.jar.JarEntry"
     },
     {
       "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
@@ -2742,16 +3158,8 @@
       "to": "java.lang.Object"
     },
     {
-      "from": "com.example.demo.DemoApplication",
-      "to": "org.springframework.boot.autoconfigure.SpringBootApplication"
-    },
-    {
       "from": "org.springframework.boot.loader.archive.ExplodedArchive$SimpleJarFileArchive",
       "to": "java.util.Iterator"
-    },
-    {
-      "from": "org.springframework.boot.loader.jar.CentralDirectoryFileHeader",
-      "to": "java.time.temporal.ValueRange"
     }
   ]
 }

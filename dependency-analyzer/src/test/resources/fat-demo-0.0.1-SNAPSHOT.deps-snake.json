@@ -18,6 +18,10 @@
       "to": "java.lang.String"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.composer.Composer",
       "to": "org.yaml.snakeyaml.events.NodeEvent"
     },
@@ -146,6 +150,14 @@
       "to": "java.lang.Class"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSet",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.env.EnvScalarConstructor",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.representer.Representer",
       "to": "java.lang.Deprecated"
     },
@@ -192,6 +204,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
       "to": "java.util.HashSet"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlNull",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.tokens.Token",
@@ -278,6 +294,10 @@
       "to": "org.yaml.snakeyaml.nodes.Tag"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
+    },
+    {
       "from": "org.yaml.snakeyaml.events.StreamEndEvent",
       "to": "org.yaml.snakeyaml.error.Mark"
     },
@@ -342,6 +362,10 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstFlowSequenceItem",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor",
       "to": "java.lang.NullPointerException"
     },
@@ -378,6 +402,10 @@
       "to": "java.util.Map"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.Representer",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.external.com.google.gdata.util.common.base.UnicodeEscaper",
       "to": "java.lang.Character"
     },
@@ -402,6 +430,10 @@
       "to": "org.yaml.snakeyaml.constructor.Construct"
     },
     {
+      "from": "org.yaml.snakeyaml.events.ScalarEvent",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
       "to": "org.yaml.snakeyaml.introspector.Property"
     },
@@ -416,6 +448,14 @@
     {
       "from": "org.yaml.snakeyaml.introspector.PropertyUtils",
       "to": "java.lang.reflect.Modifier"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryValue",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingEmptyValue",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry",
@@ -434,6 +474,10 @@
       "to": "org.yaml.snakeyaml.scanner.Scanner"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructScalar",
+      "to": "java.lang.Throwable"
+    },
+    {
       "from": "org.yaml.snakeyaml.comments.CommentLine",
       "to": "org.yaml.snakeyaml.events.CommentEvent"
     },
@@ -450,6 +494,10 @@
       "to": "java.util.Queue"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingKey",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.introspector.GenericProperty",
       "to": "java.lang.reflect.ParameterizedType"
     },
@@ -460,6 +508,10 @@
     {
       "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor",
       "to": "java.lang.Exception"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstFlowMappingKey",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
@@ -492,6 +544,10 @@
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
       "to": "java.util.Set"
+    },
+    {
+      "from": "org.yaml.snakeyaml.reader.StreamReader",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.yaml.snakeyaml.scanner.ScannerImpl",
@@ -562,6 +618,10 @@
       "to": "org.yaml.snakeyaml.events.SequenceEndEvent"
     },
     {
+      "from": "org.yaml.snakeyaml.Yaml",
+      "to": "java.lang.Throwable"
+    },
+    {
       "from": "org.yaml.snakeyaml.comments.CommentEventsCollector$1",
       "to": "org.yaml.snakeyaml.comments.CommentEventsCollector"
     },
@@ -598,6 +658,10 @@
       "to": "java.util.Set"
     },
     {
+      "from": "org.yaml.snakeyaml.comments.CommentType",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.Yaml$SilentEmitter",
       "to": "java.io.IOException"
     },
@@ -622,6 +686,10 @@
       "to": "org.yaml.snakeyaml.tokens.ScalarToken"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryKey",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
+    },
+    {
       "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor",
       "to": "org.yaml.snakeyaml.error.YAMLException"
     },
@@ -636,6 +704,10 @@
     {
       "from": "org.yaml.snakeyaml.DumperOptions$FlowStyle",
       "to": "java.lang.Boolean"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryValue",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
@@ -666,12 +738,28 @@
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectStreamStart",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.reader.StreamReader",
       "to": "java.io.Reader"
     },
     {
+      "from": "org.yaml.snakeyaml.comments.CommentType",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstFlowSequenceItem",
       "to": "org.yaml.snakeyaml.util.ArrayStack"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserException",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentNumber",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingFirstKey",
@@ -684,6 +772,10 @@
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentNumber",
       "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlPairs",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentMap",
@@ -720,6 +812,10 @@
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingSimpleValue",
       "to": "org.yaml.snakeyaml.comments.CommentEventsCollector"
+    },
+    {
+      "from": "org.yaml.snakeyaml.introspector.MethodProperty",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentMap",
@@ -798,6 +894,10 @@
       "to": "org.yaml.snakeyaml.events.CollectionStartEvent"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValueComment",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor",
       "to": "java.lang.Object"
     },
@@ -808,6 +908,14 @@
     {
       "from": "org.yaml.snakeyaml.error.Mark",
       "to": "java.io.Serializable"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntryMappingValue",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentEnum",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
@@ -862,6 +970,10 @@
       "to": "java.lang.Class"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlFloat",
       "to": "org.yaml.snakeyaml.constructor.ConstructorException"
     },
@@ -880,6 +992,10 @@
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentEnum",
       "to": "org.yaml.snakeyaml.representer.Represent"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowMappingSimpleValue",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder",
@@ -1002,6 +1118,10 @@
       "to": "org.yaml.snakeyaml.representer.Represent"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq",
+      "to": "java.util.Collection"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "java.util.ArrayDeque"
     },
@@ -1050,16 +1170,32 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructSequence",
       "to": "org.yaml.snakeyaml.error.YAMLException"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntryKey",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.tokens.BlockSequenceStartToken",
       "to": "org.yaml.snakeyaml.tokens.Token"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlPairs",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "java.lang.Integer"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentMap",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
@@ -1076,6 +1212,10 @@
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentEnd",
       "to": "org.yaml.snakeyaml.scanner.Scanner"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntryValue",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.DumperOptions",
@@ -1136,6 +1276,10 @@
     {
       "from": "org.yaml.snakeyaml.TypeDescription",
       "to": "java.lang.reflect.Constructor"
+    },
+    {
+      "from": "org.yaml.snakeyaml.DumperOptions$Version",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.Yaml",
@@ -1226,8 +1370,16 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.DumperOptions$ScalarStyle",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.util.ArrayUtils$CompositeUnmodifiableArrayList",
       "to": "java.util.AbstractList"
+    },
+    {
+      "from": "org.yaml.snakeyaml.Yaml",
+      "to": "org.yaml.snakeyaml.emitter.Emitable"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentPrimitiveArray",
@@ -1374,6 +1526,10 @@
       "to": "java.lang.Enum"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructScalar",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.tokens.FlowMappingEndToken",
       "to": "org.yaml.snakeyaml.error.Mark"
     },
@@ -1432,6 +1588,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
       "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValueComment",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
     },
     {
       "from": "org.yaml.snakeyaml.resolver.ResolverTuple",
@@ -1594,6 +1754,10 @@
       "to": "java.util.UUID"
     },
     {
+      "from": "org.yaml.snakeyaml.tokens.Token",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart",
       "to": "org.yaml.snakeyaml.error.Mark"
     },
@@ -1702,6 +1866,10 @@
       "to": "java.io.IOException"
     },
     {
+      "from": "org.yaml.snakeyaml.introspector.FieldProperty",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
       "to": "org.yaml.snakeyaml.tokens.TagTuple"
     },
@@ -1728,6 +1896,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap",
       "to": "java.util.Map"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValueCommentList",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstBlockSequenceItem",
@@ -1806,6 +1978,10 @@
       "to": "org.yaml.snakeyaml.tokens.AliasToken"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentUuid",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentPrimitiveArray",
       "to": "java.lang.Boolean"
     },
@@ -1824,6 +2000,10 @@
     {
       "from": "org.yaml.snakeyaml.events.SequenceEndEvent",
       "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowSequenceItem",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor",
@@ -1866,12 +2046,20 @@
       "to": "org.yaml.snakeyaml.util.ArrayUtils"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowMappingKey",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.reader.UnicodeReader",
       "to": "java.nio.charset.CharsetDecoder"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor",
       "to": "org.yaml.snakeyaml.constructor.Constructor"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry",
@@ -1896,6 +2084,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructSequence",
       "to": "java.lang.Character"
+    },
+    {
+      "from": "org.yaml.snakeyaml.nodes.NodeId",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntryValue",
@@ -1926,6 +2118,10 @@
       "to": "org.yaml.snakeyaml.nodes.Tag"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentContent",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
+    },
+    {
       "from": "org.yaml.snakeyaml.nodes.Node",
       "to": "java.lang.Object"
     },
@@ -1948,6 +2144,10 @@
     {
       "from": "org.yaml.snakeyaml.tokens.StreamEndToken",
       "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
+      "to": "org.yaml.snakeyaml.nodes.CollectionNode"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor",
@@ -1990,6 +2190,10 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstFlowMappingKey",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.nodes.ScalarNode",
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
@@ -2014,6 +2218,10 @@
       "to": "java.lang.Enum"
     },
     {
+      "from": "org.yaml.snakeyaml.tokens.Token$ID",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValueComment",
       "to": "org.yaml.snakeyaml.events.Event"
     },
@@ -2032,6 +2240,14 @@
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter",
       "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.DumperOptions$FlowStyle",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.external.com.google.gdata.util.common.base.UnicodeEscaper",
@@ -2070,6 +2286,14 @@
       "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstFlowSequenceItem",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowMappingValue",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.representer.Representer",
       "to": "org.yaml.snakeyaml.DumperOptions"
     },
@@ -2080,6 +2304,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor",
       "to": "java.lang.Deprecated"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlOmap",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstFlowMappingKey",
@@ -2112,6 +2340,10 @@
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowSequenceItem",
       "to": "java.io.IOException"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject",
+      "to": "org.yaml.snakeyaml.nodes.NodeId"
     },
     {
       "from": "org.yaml.snakeyaml.comments.CommentEventsCollector",
@@ -2222,12 +2454,24 @@
       "to": "java.lang.String"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentString",
+      "to": "java.nio.charset.Charset"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentStart",
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentRoot",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlOmap",
       "to": "org.yaml.snakeyaml.nodes.NodeTuple"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.yaml.snakeyaml.scanner.ScannerImpl",
@@ -2250,8 +2494,16 @@
       "to": "java.lang.String"
     },
     {
+      "from": "org.yaml.snakeyaml.DumperOptions$LineBreak",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.scanner.ScannerImpl",
       "to": "java.lang.Integer"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentString",
+      "to": "java.lang.CharSequence"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.AbstractConstruct",
@@ -2302,6 +2554,10 @@
       "to": "org.yaml.snakeyaml.error.YAMLException"
     },
     {
+      "from": "org.yaml.snakeyaml.DumperOptions$NonPrintableStyle",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingValue",
       "to": "org.yaml.snakeyaml.events.Event"
     },
@@ -2332,6 +2588,10 @@
     {
       "from": "org.yaml.snakeyaml.introspector.MethodProperty",
       "to": "java.lang.annotation.Annotation"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.Yaml$3",
@@ -2394,6 +2654,14 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor",
+      "to": "java.lang.Throwable"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowMappingKey",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
       "to": "org.yaml.snakeyaml.tokens.TagToken"
     },
@@ -2404,6 +2672,10 @@
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "java.lang.Character"
+    },
+    {
+      "from": "org.yaml.snakeyaml.scanner.ScannerImpl",
+      "to": "java.nio.Buffer"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor",
@@ -2418,12 +2690,20 @@
       "to": "org.yaml.snakeyaml.parser.ParserImpl"
     },
     {
+      "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor$ConstructCompactObject",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.composer.Composer",
       "to": "org.yaml.snakeyaml.comments.CommentType"
     },
     {
       "from": "org.yaml.snakeyaml.util.ArrayUtils$CompositeUnmodifiableArrayList",
       "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingFirstKey",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentNull",
@@ -2468,6 +2748,10 @@
     {
       "from": "org.yaml.snakeyaml.events.DocumentStartEvent",
       "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlOmap",
+      "to": "org.yaml.snakeyaml.nodes.NodeId"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq",
@@ -2542,6 +2826,10 @@
       "to": "org.yaml.snakeyaml.representer.Represent"
     },
     {
+      "from": "org.yaml.snakeyaml.tokens.Token$ID",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.composer.Composer",
       "to": "org.yaml.snakeyaml.comments.CommentLine"
     },
@@ -2562,8 +2850,20 @@
       "to": "org.yaml.snakeyaml.events.Event"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntryValue",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "org.yaml.snakeyaml.util.ArrayStack"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowSequenceItem",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
+      "from": "org.yaml.snakeyaml.comments.CommentEventsCollector$1",
+      "to": "org.yaml.snakeyaml.comments.CommentType"
     },
     {
       "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor$ConstructCompactObject",
@@ -2576,6 +2876,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
       "to": "java.lang.Byte"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntryKey",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.parser.Production",
@@ -2618,12 +2922,20 @@
       "to": "org.yaml.snakeyaml.DumperOptions"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseStreamStart",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
       "to": "java.lang.Double"
     },
     {
       "from": "org.yaml.snakeyaml.representer.Representer",
       "to": "org.yaml.snakeyaml.TypeDescription"
+    },
+    {
+      "from": "org.yaml.snakeyaml.serializer.Serializer",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
@@ -2664,6 +2976,10 @@
     {
       "from": "org.yaml.snakeyaml.events.ImplicitTuple",
       "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry",
@@ -2754,6 +3070,10 @@
       "to": "org.yaml.snakeyaml.tokens.Token"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart",
+      "to": "java.util.Map"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
       "to": "org.yaml.snakeyaml.events.Event"
     },
@@ -2795,6 +3115,10 @@
     },
     {
       "from": "org.yaml.snakeyaml.serializer.AnchorGenerator",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.external.com.google.gdata.util.common.base.UnicodeEscaper$1",
       "to": "java.lang.String"
     },
     {
@@ -2886,6 +3210,10 @@
       "to": "java.util.ArrayList"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceFirstEntry",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.tokens.StreamStartToken",
       "to": "org.yaml.snakeyaml.error.Mark"
     },
@@ -2900,6 +3228,10 @@
     {
       "from": "org.yaml.snakeyaml.serializer.Serializer",
       "to": "org.yaml.snakeyaml.events.DocumentStartEvent"
+    },
+    {
+      "from": "org.yaml.snakeyaml.introspector.FieldProperty",
+      "to": "java.lang.reflect.Type"
     },
     {
       "from": "org.yaml.snakeyaml.nodes.NodeTuple",
@@ -2924,6 +3256,10 @@
     {
       "from": "org.yaml.snakeyaml.Yaml$3",
       "to": "org.yaml.snakeyaml.Yaml"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockSequenceItem",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
@@ -3038,12 +3374,24 @@
       "to": "org.yaml.snakeyaml.constructor.ConstructorException"
     },
     {
+      "from": "org.yaml.snakeyaml.nodes.AnchorNode",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor",
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
     {
       "from": "org.yaml.snakeyaml.events.ScalarEvent",
       "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.DumperOptions$FlowStyle",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.Representer$RepresentJavaBean",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.events.ScalarEvent",
@@ -3222,6 +3570,10 @@
       "to": "java.lang.UnsupportedOperationException"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentUuid",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentRoot",
       "to": "java.lang.Object"
     },
@@ -3252,6 +3604,10 @@
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingFirstKey",
       "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
+      "from": "org.yaml.snakeyaml.DumperOptions$LineBreak",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.yaml.snakeyaml.serializer.Serializer$1",
@@ -3314,6 +3670,14 @@
       "to": "java.lang.Double"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlTimestamp",
+      "to": "java.util.Date"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseStreamStart",
+      "to": "org.yaml.snakeyaml.tokens.Token"
+    },
+    {
       "from": "org.yaml.snakeyaml.Yaml$1",
       "to": "java.lang.UnsupportedOperationException"
     },
@@ -3356,6 +3720,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
       "to": "java.lang.reflect.Constructor"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter",
+      "to": "java.lang.CharSequence"
     },
     {
       "from": "org.yaml.snakeyaml.nodes.MappingNode",
@@ -3434,6 +3802,14 @@
       "to": "org.yaml.snakeyaml.representer.SafeRepresenter"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructUndefined",
+      "to": "org.yaml.snakeyaml.nodes.Tag"
+    },
+    {
+      "from": "org.yaml.snakeyaml.nodes.AnchorNode",
+      "to": "org.yaml.snakeyaml.nodes.Tag"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject",
       "to": "org.yaml.snakeyaml.constructor.Construct"
     },
@@ -3472,6 +3848,10 @@
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "org.yaml.snakeyaml.events.MappingEndEvent"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentDate",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.introspector.GenericProperty",
@@ -3598,6 +3978,10 @@
       "to": "org.yaml.snakeyaml.tokens.Token"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.representer.BaseRepresenter",
       "to": "java.util.Set"
     },
@@ -3646,8 +4030,16 @@
       "to": "java.lang.StringBuilder"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.DuplicateKeyException",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.nodes.Node",
       "to": "java.lang.NullPointerException"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.Representer$RepresentJavaBean",
+      "to": "java.util.Set"
     },
     {
       "from": "org.yaml.snakeyaml.serializer.Serializer",
@@ -3682,6 +4074,10 @@
       "to": "org.yaml.snakeyaml.nodes.ScalarNode"
     },
     {
+      "from": "com.example.demo.DemoApplication",
+      "to": "org.springframework.context.ConfigurableApplicationContext"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry",
       "to": "org.yaml.snakeyaml.tokens.CommentToken"
     },
@@ -3708,6 +4104,10 @@
     {
       "from": "org.yaml.snakeyaml.nodes.Tag",
       "to": "java.lang.Float"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntryMappingKey",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowMappingKey",
@@ -3774,6 +4174,10 @@
       "to": "org.yaml.snakeyaml.nodes.ScalarNode"
     },
     {
+      "from": "org.yaml.snakeyaml.nodes.NodeId",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.Yaml$SilentEmitter",
       "to": "java.lang.Object"
     },
@@ -3788,6 +4192,10 @@
     {
       "from": "org.yaml.snakeyaml.representer.Representer",
       "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentIterator",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.DumperOptions",
@@ -3860,6 +4268,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructScalar",
       "to": "java.math.BigInteger"
+    },
+    {
+      "from": "org.yaml.snakeyaml.Yaml$2",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.tokens.BlockEntryToken",
@@ -4034,8 +4446,16 @@
       "to": "java.lang.StringBuilder"
     },
     {
+      "from": "org.yaml.snakeyaml.Yaml$3",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentStart",
       "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.tokens.CommentToken",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.yaml.snakeyaml.scanner.ScannerImpl",
@@ -4058,6 +4478,10 @@
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructUndefined",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentStart",
       "to": "java.util.TreeSet"
     },
@@ -4072,6 +4496,10 @@
     {
       "from": "org.yaml.snakeyaml.Yaml$NodeIterable",
       "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlStr",
+      "to": "java.lang.String"
     },
     {
       "from": "com.example.demo.DemoApplication",
@@ -4118,8 +4546,16 @@
       "to": "org.yaml.snakeyaml.events.Event"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntryMappingEnd",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.events.MappingStartEvent",
       "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentSet",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.scanner.SimpleKey",
@@ -4146,8 +4582,16 @@
       "to": "org.yaml.snakeyaml.comments.CommentEventsCollector"
     },
     {
+      "from": "org.yaml.snakeyaml.nodes.CollectionNode",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "org.yaml.snakeyaml.comments.CommentEventsCollector"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentNull",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder",
@@ -4180,6 +4624,10 @@
     {
       "from": "org.yaml.snakeyaml.events.DocumentStartEvent",
       "to": "java.util.Map"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor",
+      "to": "java.lang.ClassLoader"
     },
     {
       "from": "org.yaml.snakeyaml.error.Mark",
@@ -4240,6 +4688,10 @@
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingKey",
       "to": "org.yaml.snakeyaml.comments.CommentEventsCollector"
+    },
+    {
+      "from": "org.yaml.snakeyaml.events.Event$ID",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.yaml.snakeyaml.representer.Representer",
@@ -4350,6 +4802,10 @@
       "to": "org.yaml.snakeyaml.events.ImplicitTuple"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowMappingValue",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentList",
       "to": "org.yaml.snakeyaml.representer.SafeRepresenter"
     },
@@ -4428,6 +4884,14 @@
     {
       "from": "org.yaml.snakeyaml.util.UriEncoder",
       "to": "java.nio.ByteBuffer"
+    },
+    {
+      "from": "org.yaml.snakeyaml.DumperOptions$NonPrintableStyle",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject",
+      "to": "org.yaml.snakeyaml.nodes.Tag"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlSeq",
@@ -4514,6 +4978,10 @@
       "to": "org.yaml.snakeyaml.util.ArrayStack"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructUndefined",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.DumperOptions$LineBreak",
       "to": "java.lang.StringBuilder"
     },
@@ -4546,12 +5014,20 @@
       "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.AbstractConstruct",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.error.Mark",
       "to": "java.lang.Character"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlBinary",
       "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlInt",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder",
@@ -4572,6 +5048,10 @@
     {
       "from": "org.yaml.snakeyaml.introspector.PropertySubstitute",
       "to": "java.lang.Exception"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentEnum",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter",
@@ -4626,12 +5106,20 @@
       "to": "org.yaml.snakeyaml.scanner.Scanner"
     },
     {
+      "from": "org.yaml.snakeyaml.resolver.Resolver",
+      "to": "java.lang.CharSequence"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstFlowSequenceItem",
       "to": "java.io.IOException"
     },
     {
       "from": "org.yaml.snakeyaml.nodes.SequenceNode",
       "to": "java.lang.Deprecated"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentArray",
+      "to": "java.lang.Iterable"
     },
     {
       "from": "org.yaml.snakeyaml.serializer.Serializer",
@@ -4666,6 +5154,14 @@
       "to": "org.yaml.snakeyaml.emitter.Emitter"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingSimpleValue",
+      "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingValue",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.events.CommentEvent",
       "to": "java.lang.NullPointerException"
     },
@@ -4678,6 +5174,10 @@
       "to": "org.yaml.snakeyaml.util.ArrayStack"
     },
     {
+      "from": "org.yaml.snakeyaml.serializer.Serializer",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue",
       "to": "org.yaml.snakeyaml.parser.Production"
     },
@@ -4688,6 +5188,10 @@
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntryKey",
       "to": "org.yaml.snakeyaml.parser.ParserImpl"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentList",
+      "to": "java.lang.Class"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart",
@@ -4738,6 +5242,10 @@
       "to": "java.util.List"
     },
     {
+      "from": "org.yaml.snakeyaml.env.EnvScalarConstructor$ConstructEnv",
+      "to": "java.lang.CharSequence"
+    },
+    {
       "from": "org.yaml.snakeyaml.serializer.Serializer",
       "to": "org.yaml.snakeyaml.events.SequenceStartEvent"
     },
@@ -4748,6 +5256,10 @@
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingFirstKey",
       "to": "org.yaml.snakeyaml.tokens.Token"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructSequence",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.events.MappingStartEvent",
@@ -4796,6 +5308,10 @@
     {
       "from": "org.yaml.snakeyaml.external.com.google.gdata.util.common.base.UnicodeEscaper",
       "to": "org.yaml.snakeyaml.external.com.google.gdata.util.common.base.Escaper"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlInt",
+      "to": "java.lang.Number"
     },
     {
       "from": "org.yaml.snakeyaml.nodes.AnchorNode",
@@ -4854,12 +5370,20 @@
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
     {
+      "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor$ConstructCompactObject",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor",
       "to": "java.lang.Boolean"
     },
     {
       "from": "org.yaml.snakeyaml.DumperOptions$Version",
       "to": "java.lang.Integer"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.introspector.FieldProperty",
@@ -4888,6 +5412,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructUndefined",
       "to": "java.lang.StringBuilder"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectNothing",
+      "to": "org.yaml.snakeyaml.events.Event"
     },
     {
       "from": "org.yaml.snakeyaml.events.CommentEvent",
@@ -4926,6 +5454,10 @@
       "to": "org.yaml.snakeyaml.tokens.CommentToken"
     },
     {
+      "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor",
+      "to": "java.lang.CharSequence"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntryMappingValue",
       "to": "org.yaml.snakeyaml.tokens.Token"
     },
@@ -4940,6 +5472,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
       "to": "java.lang.String"
+    },
+    {
+      "from": "org.yaml.snakeyaml.Yaml",
+      "to": "java.util.TimeZone"
     },
     {
       "from": "org.yaml.snakeyaml.extensions.compactnotation.CompactConstructor$ConstructCompactObject",
@@ -4992,6 +5528,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlPairs",
       "to": "org.yaml.snakeyaml.constructor.SafeConstructor"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowMappingSimpleValue",
+      "to": "org.yaml.snakeyaml.events.Event"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$1",
@@ -5098,6 +5638,10 @@
       "to": "org.yaml.snakeyaml.parser.ParserException"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowSequenceEntry",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
+    },
+    {
       "from": "org.yaml.snakeyaml.serializer.NumberAnchorGenerator",
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
@@ -5146,6 +5690,10 @@
       "to": "java.lang.String"
     },
     {
+      "from": "org.yaml.snakeyaml.serializer.Serializer",
+      "to": "org.yaml.snakeyaml.comments.CommentType"
+    },
+    {
       "from": "org.yaml.snakeyaml.serializer.AnchorGenerator",
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
@@ -5164,6 +5712,10 @@
     {
       "from": "org.yaml.snakeyaml.env.EnvScalarConstructor",
       "to": "java.util.regex.Pattern"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlTimestamp",
+      "to": "java.lang.CharSequence"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
@@ -5190,6 +5742,10 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentPrimitiveArray",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.events.ImplicitTuple",
       "to": "java.lang.StringBuilder"
     },
@@ -5202,12 +5758,20 @@
       "to": "java.lang.StringBuilder"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlFloat",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey",
       "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowSequenceItem",
       "to": "org.yaml.snakeyaml.emitter.EmitterState"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
@@ -5366,6 +5930,10 @@
       "to": "org.yaml.snakeyaml.nodes.NodeId"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectStreamStart",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
       "to": "org.yaml.snakeyaml.reader.StreamReader"
     },
@@ -5406,6 +5974,10 @@
       "to": "org.yaml.snakeyaml.nodes.Tag"
     },
     {
+      "from": "com.example.demo.DemoApplication",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFirstBlockMappingKey",
       "to": "org.yaml.snakeyaml.emitter.EmitterState"
     },
@@ -5434,6 +6006,10 @@
       "to": "java.io.IOException"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.Yaml",
       "to": "org.yaml.snakeyaml.constructor.Constructor"
     },
@@ -5448,6 +6024,10 @@
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowEndComment",
       "to": "org.yaml.snakeyaml.parser.ParserImpl"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.resolver.Resolver$1",
@@ -5504,6 +6084,10 @@
     {
       "from": "org.yaml.snakeyaml.external.com.google.gdata.util.common.base.UnicodeEscaper",
       "to": "java.lang.System"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingSimpleValue",
+      "to": "org.yaml.snakeyaml.events.Event"
     },
     {
       "from": "org.yaml.snakeyaml.tokens.TagTuple",
@@ -5594,6 +6178,10 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
+    },
+    {
       "from": "org.yaml.snakeyaml.introspector.PropertyUtils",
       "to": "java.lang.Object"
     },
@@ -5662,6 +6250,10 @@
       "to": "java.lang.Math"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.BaseRepresenter",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.DumperOptions",
       "to": "java.lang.Boolean"
     },
@@ -5670,8 +6262,16 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentContent",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
       "to": "org.yaml.snakeyaml.nodes.Tag"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockSequenceItem",
+      "to": "org.yaml.snakeyaml.events.Event"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingKey",
@@ -5798,6 +6398,10 @@
       "to": "org.yaml.snakeyaml.scanner.Scanner"
     },
     {
+      "from": "org.yaml.snakeyaml.Yaml$3",
+      "to": "java.io.Reader"
+    },
+    {
       "from": "org.yaml.snakeyaml.Yaml",
       "to": "java.util.regex.Pattern"
     },
@@ -5862,6 +6466,10 @@
       "to": "java.lang.String"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlOmap",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "java.lang.Object"
     },
@@ -5872,6 +6480,14 @@
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructMapping",
       "to": "org.yaml.snakeyaml.constructor.BaseConstructor"
+    },
+    {
+      "from": "org.yaml.snakeyaml.Yaml$2",
+      "to": "java.io.Reader"
+    },
+    {
+      "from": "org.yaml.snakeyaml.introspector.BeanAccess",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
@@ -5930,6 +6546,10 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.Representer$RepresentJavaBean",
+      "to": "org.yaml.snakeyaml.nodes.MappingNode"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
       "to": "org.yaml.snakeyaml.parser.Production"
     },
@@ -5964,6 +6584,10 @@
     {
       "from": "org.yaml.snakeyaml.DumperOptions",
       "to": "java.lang.NullPointerException"
+    },
+    {
+      "from": "org.yaml.snakeyaml.Yaml$1",
+      "to": "java.io.Reader"
     },
     {
       "from": "org.yaml.snakeyaml.nodes.SequenceNode",
@@ -6004,6 +6628,10 @@
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceFirstEntry",
       "to": "org.yaml.snakeyaml.scanner.Scanner"
+    },
+    {
+      "from": "org.yaml.snakeyaml.DumperOptions$Version",
+      "to": "java.lang.Object"
     },
     {
       "from": "org.yaml.snakeyaml.events.ScalarEvent",
@@ -6074,6 +6702,10 @@
       "to": "java.lang.Object"
     },
     {
+      "from": "org.yaml.snakeyaml.DumperOptions$ScalarStyle",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.AbstractConstruct",
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
@@ -6118,8 +6750,16 @@
       "to": "org.yaml.snakeyaml.introspector.PropertyUtils"
     },
     {
+      "from": "org.yaml.snakeyaml.scanner.ScannerImpl",
+      "to": "java.lang.CharSequence"
+    },
+    {
       "from": "org.yaml.snakeyaml.tokens.ScalarToken",
       "to": "org.yaml.snakeyaml.tokens.Token"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingValue",
+      "to": "org.yaml.snakeyaml.events.Event"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
@@ -6150,6 +6790,10 @@
       "to": "java.lang.Long"
     },
     {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentIterator",
+      "to": "java.lang.Iterable"
+    },
+    {
       "from": "org.yaml.snakeyaml.comments.CommentEventsCollector$1",
       "to": "java.lang.Object"
     },
@@ -6172,6 +6816,10 @@
     {
       "from": "org.yaml.snakeyaml.representer.Representer",
       "to": "java.util.HashMap"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowEndComment",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentPrimitiveArray",
@@ -6218,6 +6866,10 @@
       "to": "java.beans.BeanInfo"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentStart",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter",
       "to": "org.yaml.snakeyaml.emitter.Emitable"
     },
@@ -6242,6 +6894,10 @@
       "to": "java.lang.reflect.Method"
     },
     {
+      "from": "org.yaml.snakeyaml.introspector.PropertyUtils",
+      "to": "java.lang.Throwable"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap",
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
@@ -6256,6 +6912,10 @@
     {
       "from": "org.yaml.snakeyaml.nodes.CollectionNode",
       "to": "org.yaml.snakeyaml.nodes.Node"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseIndentlessSequenceEntryKey",
+      "to": "org.yaml.snakeyaml.events.CommentEvent"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingValue",
@@ -6366,8 +7026,16 @@
       "to": "java.lang.Character"
     },
     {
+      "from": "org.yaml.snakeyaml.events.CommentEvent",
+      "to": "java.lang.Object"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.Constructor",
       "to": "org.yaml.snakeyaml.nodes.NodeId"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart",
+      "to": "java.util.Map"
     },
     {
       "from": "org.yaml.snakeyaml.nodes.Node",
@@ -6402,6 +7070,10 @@
       "to": "org.yaml.snakeyaml.parser.ParserImpl"
     },
     {
+      "from": "org.yaml.snakeyaml.util.ArrayUtils$UnmodifiableArrayList",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlOmap",
       "to": "org.yaml.snakeyaml.constructor.ConstructorException"
     },
@@ -6430,6 +7102,10 @@
       "to": "org.yaml.snakeyaml.nodes.Tag"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectBlockMappingKey",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.extensions.compactnotation.PackageCompactConstructor",
       "to": "org.yaml.snakeyaml.LoaderOptions"
     },
@@ -6450,6 +7126,10 @@
       "to": "org.yaml.snakeyaml.tokens.CommentToken"
     },
     {
+      "from": "org.yaml.snakeyaml.Yaml$3",
+      "to": "java.lang.Iterable"
+    },
+    {
       "from": "org.yaml.snakeyaml.composer.Composer",
       "to": "java.util.ArrayList"
     },
@@ -6460,6 +7140,10 @@
     {
       "from": "org.yaml.snakeyaml.scanner.ScannerImpl",
       "to": "org.yaml.snakeyaml.scanner.Constant"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingFirstKey",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.introspector.Property",
@@ -6490,8 +7174,16 @@
       "to": "org.yaml.snakeyaml.nodes.ScalarNode"
     },
     {
+      "from": "org.yaml.snakeyaml.util.UriEncoder",
+      "to": "java.lang.Throwable"
+    },
+    {
       "from": "org.yaml.snakeyaml.composer.Composer",
       "to": "org.yaml.snakeyaml.nodes.ScalarNode"
+    },
+    {
+      "from": "org.yaml.snakeyaml.Yaml$2",
+      "to": "java.lang.Iterable"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$IteratorWrapper",
@@ -6520,6 +7212,10 @@
     {
       "from": "org.yaml.snakeyaml.events.SequenceStartEvent",
       "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructYamlObject",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentNumber",
@@ -6554,8 +7250,16 @@
       "to": "java.lang.reflect.Modifier"
     },
     {
+      "from": "org.yaml.snakeyaml.Yaml$1",
+      "to": "java.lang.Iterable"
+    },
+    {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentStart",
       "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlOmap",
@@ -6564,6 +7268,10 @@
     {
       "from": "org.yaml.snakeyaml.events.StreamStartEvent",
       "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentEnd",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor",
@@ -6738,6 +7446,10 @@
       "to": "java.lang.Character"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.BaseConstructor",
+      "to": "org.yaml.snakeyaml.error.Mark"
+    },
+    {
       "from": "org.yaml.snakeyaml.Yaml$EventIterable",
       "to": "java.util.Iterator"
     },
@@ -6791,6 +7503,10 @@
     },
     {
       "from": "org.yaml.snakeyaml.tokens.Token",
+      "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.error.MarkedYAMLException",
       "to": "java.lang.Object"
     },
     {
@@ -6860,6 +7576,10 @@
     {
       "from": "org.yaml.snakeyaml.nodes.Tag",
       "to": "java.lang.Class"
+    },
+    {
+      "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceFirstEntry",
+      "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
       "from": "org.yaml.snakeyaml.representer.BaseRepresenter",
@@ -6938,6 +7658,14 @@
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "org.yaml.snakeyaml.introspector.BeanAccess",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseFlowMappingKey",
       "to": "org.yaml.snakeyaml.error.Mark"
     },
@@ -6986,12 +7714,20 @@
       "to": "org.yaml.snakeyaml.error.Mark"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentEnd",
+      "to": "org.yaml.snakeyaml.events.Event"
+    },
+    {
       "from": "org.yaml.snakeyaml.external.com.google.gdata.util.common.base.PercentEscaper",
       "to": "java.lang.Math"
     },
     {
       "from": "org.yaml.snakeyaml.introspector.MissingProperty",
       "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlMap",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectFlowSequenceItem",
@@ -7050,6 +7786,10 @@
       "to": "java.util.Iterator"
     },
     {
+      "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlPairs",
+      "to": "org.yaml.snakeyaml.nodes.NodeId"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
       "to": "java.util.Iterator"
     },
@@ -7074,6 +7814,10 @@
       "to": "org.yaml.snakeyaml.representer.BaseRepresenter"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectDocumentStart",
+      "to": "java.util.Collection"
+    },
+    {
       "from": "org.yaml.snakeyaml.events.Event$ID",
       "to": "org.yaml.snakeyaml.events.Event"
     },
@@ -7084,6 +7828,10 @@
     {
       "from": "org.yaml.snakeyaml.introspector.MethodProperty",
       "to": "java.beans.PropertyDescriptor"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentPrimitiveArray",
+      "to": "java.lang.Iterable"
     },
     {
       "from": "org.yaml.snakeyaml.parser.ParserImpl",
@@ -7104,6 +7852,10 @@
     {
       "from": "org.yaml.snakeyaml.constructor.SafeConstructor$ConstructYamlPairs",
       "to": "java.util.Iterator"
+    },
+    {
+      "from": "org.yaml.snakeyaml.util.ArrayUtils$CompositeUnmodifiableArrayList",
+      "to": "java.lang.String"
     },
     {
       "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructScalar",
@@ -7162,8 +7914,16 @@
       "to": "org.yaml.snakeyaml.tokens.DirectiveToken"
     },
     {
+      "from": "org.yaml.snakeyaml.events.Event$ID",
+      "to": "java.lang.Class"
+    },
+    {
       "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentDate",
       "to": "java.util.TimeZone"
+    },
+    {
+      "from": "org.yaml.snakeyaml.representer.SafeRepresenter$RepresentList",
+      "to": "java.lang.Iterable"
     },
     {
       "from": "org.yaml.snakeyaml.DumperOptions$ScalarStyle",
@@ -7470,6 +8230,10 @@
       "to": "org.yaml.snakeyaml.nodes.Node"
     },
     {
+      "from": "org.yaml.snakeyaml.emitter.Emitter$ExpectNothing",
+      "to": "java.lang.String"
+    },
+    {
       "from": "org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingFirstKey",
       "to": "java.lang.Object"
     },
@@ -7548,6 +8312,10 @@
     {
       "from": "org.yaml.snakeyaml.DumperOptions",
       "to": "java.lang.Object"
+    },
+    {
+      "from": "org.yaml.snakeyaml.constructor.Constructor$ConstructSequence",
+      "to": "java.lang.Throwable"
     },
     {
       "from": "org.yaml.snakeyaml.serializer.Serializer",

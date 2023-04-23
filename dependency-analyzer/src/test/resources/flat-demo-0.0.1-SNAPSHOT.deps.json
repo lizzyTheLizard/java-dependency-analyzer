@@ -3,7 +3,15 @@
   "dependencies": [
     {
       "from": "com.example.demo.DemoApplication",
+      "to": "java.lang.Class"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
       "to": "java.lang.String"
+    },
+    {
+      "from": "com.example.demo.DemoApplication",
+      "to": "org.springframework.context.ConfigurableApplicationContext"
     },
     {
       "from": "com.example.demo.DemoApplication",
