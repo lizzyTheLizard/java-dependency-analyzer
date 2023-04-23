@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>site.gutschi</groupId>
     <artifactId>dependency-analyzer</artifactId>
     <name>Class Dependency Documentation Generator</name>
     <version>0.3.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
-    <description>A maven plugin to automatically generate a class dependency documentation for a java project
-    </description>
+    <description>A maven plugin to automatically generate a class dependency documentation for a java project</description>
     <url>https://github.com/lizzyTheLizard/java-dependency-analyzer</url>
-
     <licenses>
         <license>
             <name>MIT License</name>
             <url>https://www.opensource.org/licenses/mit-license.php</url>
         </license>
     </licenses>
-
     <developers>
         <developer>
             <name>Matthias Graf</name>
@@ -27,43 +23,38 @@
             <organizationUrl>https://github.com/lizzyTheLizard</organizationUrl>
         </developer>
     </developers>
-
     <scm>
         <connection>scm:git:git://github.com/lizzyTheLizard/java-dependency-analyzer.git</connection>
         <developerConnection>scm:git:ssh://github.com:lizzyTheLizard/java-dependency-analyzer.git</developerConnection>
         <url>https://github.com/lizzyTheLizard/java-dependency-analyzer/tree/main</url>
     </scm>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
-        <gson.version>2.10.1</gson.version>
-        <junit-jupiter.version>5.9.2</junit-jupiter.version>
-        <maven-dependency-analyzer.version>1.13.0</maven-dependency-analyzer.version>
-        <maven-plugin-api.version>3.9.0</maven-plugin-api.version>
-        <maven-plugin-tools.version>3.8.1</maven-plugin-tools.version>
-        <maven-plugin-plugin.version>3.8.1</maven-plugin-plugin.version>
-        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <maven-surfire-plugin.version>3.0.0-M7</maven-surfire-plugin.version>
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
-        <nexus-staging-plugin.version>1.6.13</nexus-staging-plugin.version>
-        <dokka-plugin.version>1.8.10</dokka-plugin.version>
         <java.version>11</java.version>
         <kotlin.version>1.8.10</kotlin.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.sourceDirectory>${project.basedir}/src/main/kotlin</project.build.sourceDirectory>
+        <project.build.testSourceDirectory>${project.basedir}/src/test/kotlin</project.build.testSourceDirectory>
+
+        <!--The maven version and the default plugin versions must be kept in sync
+        with the maven version used to build the plugin. For correct versions check
+        https://maven.apache.org/ref/3.9.0/maven-core/default-bindings.html#Plugin_bindings_for_maven-plugin_packaging-->
+        <maven.version>3.9.0</maven.version>
+        <maven-resources-plugin.version>3.3.0</maven-resources-plugin.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-plugin-plugin.version>3.7.1</maven-plugin-plugin.version>
+        <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <!--Must be in sync with the version maven uses-->
+        <plexus-utils.version>3.4.2</plexus-utils.version>
+
+        <!--Other dependencies-->
+        <gson.version>2.10.1</gson.version>
+        <dependency-analyzer.version>1.13.1</dependency-analyzer.version>
+        <itself.version>0.3.0</itself.version>
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     </properties>
 
     <dependencies>
@@ -72,11 +63,15 @@
             <artifactId>kotlin-stdlib</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
-        <!--suppress VulnerableLibrariesLocal -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.maven.shared</groupId>
             <artifactId>maven-dependency-analyzer</artifactId>
-            <version>${maven-dependency-analyzer.version}</version>
+            <version>${dependency-analyzer.version}</version>
             <!-- We need a compile-time dependency to the plugin
             as we need some classes. However, the maven core shall be used from the
             provided scope, so it needs to be excluded here-->
@@ -92,20 +87,26 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${gson.version}</version>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>${maven.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
-            <artifactId>maven-plugin-api</artifactId>
-            <version>${maven-plugin-api.version}</version>
+            <artifactId>maven-core</artifactId>
+            <version>${maven.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>${plexus-utils.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
-            <version>${maven-plugin-tools.version}</version>
+            <version>${maven-plugin-plugin.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -117,25 +118,21 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <version>${kotlin.version}</version>
-
                 <executions>
                     <execution>
-                        <id>compile</id>
+                        <id>compile-kotlin</id>
                         <phase>process-sources</phase>
                         <goals>
                             <goal>compile</goal>
                         </goals>
                     </execution>
-
                     <execution>
-                        <id>test-compile</id>
+                        <id>test-compile-kotlin</id>
                         <goals>
                             <goal>test-compile</goal>
                         </goals>
@@ -148,7 +145,7 @@
                 <version>${maven-resources-plugin.version}</version>
                 <executions>
                     <execution>
-                        <id>copy-resource-one</id>
+                        <id>copy-frontend</id>
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>copy-resources</goal>
@@ -164,44 +161,20 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- No java sources, so skip java compilation-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-plugin-plugin</artifactId>
-                <version>${maven-plugin-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>descriptor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surfire-plugin.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>${maven-deploy-plugin.version}</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <!-- Not sure why this is needed, but I had some problems using the default 3.12.1 in intellij -->
-                <version>3.3</version>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
+            <!--Use itself as a first check. Usually the last released version, but you can use a snapshot as well-->
             <plugin>
                 <groupId>site.gutschi</groupId>
                 <artifactId>dependency-analyzer</artifactId>
-                <version>0.3.0</version>
+                <version>${itself.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -211,6 +184,7 @@
                 </executions>
                 <configuration>
                     <basePackage>site.gutschi.dependency</basePackage>
+                    <dependencyMatchers>org.apache.maven.shared:maven-dependency-analyzer:.*</dependencyMatchers>
                 </configuration>
             </plugin>
         </plugins>
@@ -218,58 +192,15 @@
 
     <profiles>
         <profile>
-            <id>deploy</id>
+            <id>sign-jar</id>
+            <activation>
+                <property>
+                    <name>is.deploy</name>
+                    <value>true</value>
+                </property>
+            </activation>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>${maven-source-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <version>3.3.0</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>test-jar</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>dokka-jar</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <classifier>dokka</classifier>
-                                    <classesDirectory>${project.build.directory}/dokka</classesDirectory>
-                                    <skipIfEmpty>true</skipIfEmpty>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.jetbrains.dokka</groupId>
-                        <artifactId>dokka-maven-plugin</artifactId>
-                        <version>${dokka-plugin.version}</version>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>javadocJar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -288,10 +219,95 @@
                             </gpgArguments>
                         </configuration>
                     </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>code-documentation</id>
+            <activation>
+                <property>
+                    <name>is.deploy</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>${maven-source-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.jetbrains.dokka</groupId>
+                        <artifactId>dokka-maven-plugin</artifactId>
+                        <version>${kotlin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>javadocJar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>${maven-jar-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>dokka-jar</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <classifier>dokka</classifier>
+                                    <classesDirectory>${project.build.directory}/dokka</classesDirectory>
+                                    <skipIfEmpty>true</skipIfEmpty>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>deploy</id>
+            <properties>
+                <is.deploy>true</is.deploy>
+            </properties>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <version>${maven-deploy-plugin.version}</version>
+                        <configuration>
+                            <skip>true</skip>
+                        </configuration>
+                    </plugin>
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>${nexus-staging-plugin.version}</version>
+                        <version>${nexus-staging-maven-plugin.version}</version>
                         <executions>
                             <execution>
                                 <phase>deploy</phase>

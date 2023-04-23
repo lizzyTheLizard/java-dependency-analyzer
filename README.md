@@ -15,7 +15,7 @@ Integration as maven plugin
         <plugin>
             <groupId>site.gutschi.dependency</groupId>
             <artifactId>dependency-analyzer</artifactId>
-            <version>0.1.0</version>
+            <version>0.4.0</version>
             <executions>
                 <execution>
                     <goals>
@@ -37,18 +37,15 @@ This will generate a documentation under `target/doc`
 
 The following configuration options can be used. 
 
-| Parameter             | Description                                                                                                                                                                                                             | Example                           | Default               |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|-----------------------|
-| name                  | The name of the project, shown in the documentation                                                                                                                                                                     | projectName                       | ${project.name}       |
-| version               | The version of the project, shown in the documentation                                                                                                                                                                  | 0.0.1-SNAPSHOT                    | ${project.version}    |
-| inputs                | Input files to be considered. A list of folders or files, all ".class" and ".jar" files in this and all its sub-folders will be analyzed                                                                                | target/classes,target/project.jar | target/classes        |
-| fatJarMatchers        | If a SpringBoot-FatJar is within the input file, libraries in the FatJar are usually not analyzed. You can define a list of regex a fatJarMatchers, all libraries matching on of those regexes will be analyzed as well | guava-.*                          | -                     |
-| includeFatJarClasses  | If a SpringBoot-FatJar is within the input file, the SpringBoot-Code to load the Fat-Jar is not analyzed. If you set includeFatJarClasses to true, this code is analyzed as well                                        | true                              | false                 |
-| outputFolder          | The output-folder to write the documentation to                                                                                                                                                                         | target/dependency                 | ${basedir}/target/doc |
-| basePackage           | A preselected base-package within the generate documentation. If given, the documentation will zoom directly on this package                                                                                            | com.you.application               | -                     |
-| collapsePackages      | A list of packages who will be collapsed in the generated documentation. The plugin will try to automatically collapse external libraries, but you can overwrite this setting here.                                     | org.springframework,com.google    | -                     |
-| ignoredPackages       | A list of packages who will be ignored in the generated documentation. The plugin will try to automatically ignore JDK-classes, but you can overwrite this setting here.                                                | java,kotlin,sun                   | -                     |
-| splitPackages         | A list of packages who will be split in the generated documentation. The plugin will try to automatically split certain widely used prefixes (e.g "org"), but you can overwrite this setting here.                      | org,org.apache,com                | -                     |
+| Parameter            | Description                                                                                                                                                                                        | Example                                              | Default                          |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|----------------------------------|
+| inputs               | Input files to be considered. A list of folders or files, all ".class" and ".jar" files in this and all its sub-folders will be analyzed                                                           | target/classes,target/project.jar                    | ${project.build.outputDirectory} |
+| dependencyMatchers   | Matched dependency will be analyzed as well. A list of regexes matching the string "groupId:artifactId:versionId" of the dependency. If none given, no dependencies will be analyzed               | org.apache.maven.shared:maven-dependency-analyzer:.* | -                                |
+| outputFolder         | The output-folder to write the documentation to                                                                                                                                                    | target/dependency                                    | ${project.build.directory}/doc            |
+| basePackage          | A preselected base-package within the generate documentation. If given, the documentation will zoom directly on this package                                                                       | com.you.application                                  | -                                |
+| collapsePackages     | A list of packages who will be collapsed in the generated documentation. The plugin will try to automatically collapse external libraries, but you can overwrite this setting here.                | org.springframework,com.google                       | -                                |
+| ignoredPackages      | A list of packages who will be ignored in the generated documentation. The plugin will try to automatically ignore JDK-classes, but you can overwrite this setting here.                           | java,kotlin,sun                                      | -                                |
+| splitPackages        | A list of packages who will be split in the generated documentation. The plugin will try to automatically split certain widely used prefixes (e.g "org"), but you can overwrite this setting here. | org,org.apache,com                                   | -                                |
 
 List can either be given as comma-seperated lists or using multiple arguments
 
