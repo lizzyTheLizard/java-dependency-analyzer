@@ -33,8 +33,6 @@
         <java.version>11</java.version>
         <kotlin.version>1.8.10</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.sourceDirectory>${project.basedir}/src/main/kotlin</project.build.sourceDirectory>
-        <project.build.testSourceDirectory>${project.basedir}/src/test/kotlin</project.build.testSourceDirectory>
 
         <!--The maven version and the default plugin versions must be kept in sync
         with the maven version used to build the plugin. For correct versions check
@@ -118,6 +116,8 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
