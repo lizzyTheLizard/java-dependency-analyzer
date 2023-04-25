@@ -46,7 +46,7 @@ jobs:
           gpg --list-secret-keys --keyid-format LONG
       - name: Build Plugin
         working-directory: dependency-analyzer
-        run: ./mvnw --batch-mode deploy -P build-release-documentation, build-executable-jar
+        run: ./mvnw --batch-mode deploy -P build-release-documentation,build-executable-jar
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
