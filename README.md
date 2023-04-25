@@ -1,19 +1,46 @@
 # Dependency-Analyzer
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/lizzyTheLizard/java-dependency-analyzer/build.yml)
+![GitHub top language](https://img.shields.io/github/languages/top/lizzyTheLizard/java-dependency-analyzer)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/lizzyTheLizard/java-dependency-analyzer)
+![GitHub issues](https://img.shields.io/github/issues/lizzyTheLizard/java-dependency-analyzer)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/lizzyTheLizard/java-dependency-analyzer)
+![GitHub](https://img.shields.io/github/license/lizzyTheLizard/java-dependency-analyzer)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/lizzyTheLizard/java-dependency-analyzer)
+![Maven Central](https://img.shields.io/maven-central/v/site.gutschi/dependency-analyzer)
 
-A class level dependency analyzer for JVM programs. Can be integrated as a maven plugin and generates an interactive HTML documentation of the class dependencies.
+A class level dependency analyzer for JVM programs. It can be integrated as a maven plugin or run via command line, and it will generate an interactive HTML documentation of the class dependencies.
 
 ![](doc/Screenshot.png)
 Example dependency analysis for this plugin
 
-## Usage
 
-Integration as maven plugin
+## Usage (Command Line)
+The dependency-analyzer can be used via command line to analyze ```class``` or ```jar``` files directly. It can be started using
+```shell
+
+java -jar dependency-analyzer-0.4.1-SNAPSHOT-jar-with-dependencies.jar [arguments] inputs
+```
+
+### Configuration
+
+The following configuration options can be used.
+
+| Parameter              | Description                                                                                                    | Example                      | Default       |
+|------------------------|----------------------------------------------------------------------------------------------------------------|------------------------------|---------------|
+| --debug / -d           | Turn on debug mode (Boolean)                                                                                   | true                         | false         |
+| --outputFolder / -o    | Output folder name (String)                                                                                    | /home/user/test.jar          | "Working Dir" |
+| --includeFatJarClasses | When input is a SpringBoot FatJar, include the SpringBoot-Loader-Classes as well (Boolean)                     | true                         | false         |
+| --fatJarMatchers | When input is a SpringBoot FatJar, include all dependencies that matches on of those regexes (List of Strings) | maven-dependency-analyzer-.* | ""         |
+
+
+## Usage (Maven-Plugin)
+The dependency-analyzer offers a goal "create-documentation' that will analyze the generated output in the phase ``process-classes```. It can be integrated into the build process using
 
 ```xml
 <build>
     <plugins>
         <plugin>
-            <groupId>site.gutschi.dependency</groupId>
+            <groupId>site.gutschi</groupId>
             <artifactId>dependency-analyzer</artifactId>
             <version>0.4.0</version>
             <executions>
@@ -33,7 +60,7 @@ Integration as maven plugin
 
 This will generate a documentation under `target/doc`
 
-## Configuration
+### Configuration
 
 The following configuration options can be used. 
 
