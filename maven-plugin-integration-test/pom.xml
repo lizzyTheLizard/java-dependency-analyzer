@@ -25,15 +25,12 @@
       <plugin>
         <groupId>site.gutschi</groupId>
         <artifactId>dependency-analyzer</artifactId>
-        <version>0.0.5-SNAPSHOT</version>
+        <version>0.4.2-SNAPSHOT</version>
         <executions>
           <execution>
             <goals>
               <goal>create-documentation</goal>
             </goals>
-            <configuration>
-              <inputs>target/classes</inputs>
-            </configuration>
           </execution>
         </executions>
       </plugin>
