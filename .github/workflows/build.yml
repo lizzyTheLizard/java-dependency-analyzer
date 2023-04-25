@@ -50,7 +50,7 @@ jobs:
           name: Plugin Integration-Test Result
           path:  maven-plugin-integration-test/target/doc/index.html
       - name: CLI Smoke Test
-        run: java -jar .\dependency-analyzer\target\dependency-analyzer-.*-jar-with-dependencies.jar .\dependency-analyzer\target\classes
+        run: java -jar .\dependency-analyzer\target\dependency-analyzer-*-jar-with-dependencies.jar .\dependency-analyzer\target\classes
       - name: Upload CLI Smoke Test Result
         uses: actions/upload-artifact@v3
         with:
