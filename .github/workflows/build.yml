@@ -37,7 +37,7 @@ jobs:
         if: success() || failure()
         with:
           name: Unit Tests
-          path: /target/surefire-reports/*.xml
+          path: target/surefire-reports/*.xml
           reporter: java-junit
           fail-on-error: true
       - name: Upload Plugin Smoke Test Result
