@@ -15,9 +15,13 @@ import site.gutschi.dependency.frameworks.JavaBase
 import site.gutschi.dependency.frameworks.Spring
 import java.io.File
 
-@Mojo(name = "create-documentation", defaultPhase = LifecyclePhase.PROCESS_CLASSES, requiresDependencyResolution = ResolutionScope.COMPILE_PLUS_RUNTIME)
+@Mojo(
+    name = "create-documentation",
+    defaultPhase = LifecyclePhase.PROCESS_CLASSES,
+    requiresDependencyResolution = ResolutionScope.COMPILE_PLUS_RUNTIME
+)
 class DocumentationMojo : AbstractMojo() {
-    @Parameter(property = "version", required = true, readonly=true, defaultValue = "\${project}")
+    @Parameter(property = "version", required = true, readonly = true, defaultValue = "\${project}")
     var project: MavenProject = MavenProject()
 
     @Parameter(property = "inputs", required = true, defaultValue = "\${project.build.outputDirectory}")
@@ -66,11 +70,11 @@ class DocumentationMojo : AbstractMojo() {
     private fun getInputs(): Collection<File> {
         val regexDependencyMatcher = dependencyMatchers.map { Regex(it) }
         val filesFromDependencies = project.artifacts
-            .filter { a -> regexDependencyMatcher.any { it.matches(a.fullName) }}
+            .filter { a -> regexDependencyMatcher.any { it.matches(a.fullName) } }
             .map { it.file }
         val filesFromInputs = inputs.map { File(it) }
         println("Input files ${filesFromInputs.map { it.absolutePath }}, DependencyFiles: ${filesFromDependencies.map { it.absolutePath }}")
-        println("Dependencies: ${project.artifacts.map { it.fullName } }}")
+        println("Dependencies: ${project.artifacts.map { it.fullName }}}")
         return filesFromInputs.union(filesFromDependencies)
     }
 
@@ -84,4 +88,6 @@ class DocumentationMojo : AbstractMojo() {
 }
 
 private val Artifact.fullName: CharSequence
-    get() { return listOf(groupId, artifactId, version).joinToString(":")}
+    get() {
+        return listOf(groupId, artifactId, version).joinToString(":")
+    }

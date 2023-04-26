@@ -10,10 +10,12 @@ test('Add individual nodes', () => {
         {fullName: 'foo.bar', attributes: []},
         {fullName: 'bar.bar', attributes: []}
     ]);
-    expect(target).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodeDefinition: {fullName: 'foo.bar', attributes: []}, nodes: []},
-        {fullName: 'bar.bar', nodeDefinition: {fullName: 'bar.bar', attributes: []}, nodes: []},
-    ]});
+    expect(target).toEqual({
+        fullName: '', nodes: [
+            {fullName: 'foo.bar', nodeDefinition: {fullName: 'foo.bar', attributes: []}, nodes: []},
+            {fullName: 'bar.bar', nodeDefinition: {fullName: 'bar.bar', attributes: []}, nodes: []},
+        ]
+    });
 });
 
 test('Add individual nodes some prefix', () => {
@@ -21,10 +23,12 @@ test('Add individual nodes some prefix', () => {
         {fullName: 'foo.bar', attributes: []},
         {fullName: 'foo2.bar', attributes: []}
     ]);
-    expect(target).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodeDefinition: {fullName: 'foo.bar', attributes: []}, nodes: []},
-        {fullName: 'foo2.bar', nodeDefinition: {fullName: 'foo2.bar', attributes: []}, nodes: []},
-    ]});
+    expect(target).toEqual({
+        fullName: '', nodes: [
+            {fullName: 'foo.bar', nodeDefinition: {fullName: 'foo.bar', attributes: []}, nodes: []},
+            {fullName: 'foo2.bar', nodeDefinition: {fullName: 'foo2.bar', attributes: []}, nodes: []},
+        ]
+    });
 });
 
 test('Add child nodes', () => {
@@ -32,11 +36,15 @@ test('Add child nodes', () => {
         {fullName: 'foo.bar', attributes: []},
         {fullName: 'foo.bar.zip', attributes: []}
     ]);
-    expect(target).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodeDefinition: {fullName: 'foo.bar', attributes: []}, nodes: [
-            {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
-        ]},
-    ]});
+    expect(target).toEqual({
+        fullName: '', nodes: [
+            {
+                fullName: 'foo.bar', nodeDefinition: {fullName: 'foo.bar', attributes: []}, nodes: [
+                    {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
+                ]
+            },
+        ]
+    });
 });
 
 test('Add sibling nodes', () => {
@@ -44,12 +52,16 @@ test('Add sibling nodes', () => {
         {fullName: 'foo.bar.zip', attributes: []},
         {fullName: 'foo.bar.zap', attributes: []}
     ]);
-    expect(target).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodes: [
-            {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
-            {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []},
-        ]},
-    ]});
+    expect(target).toEqual({
+        fullName: '', nodes: [
+            {
+                fullName: 'foo.bar', nodes: [
+                    {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
+                    {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []},
+                ]
+            },
+        ]
+    });
 });
 
 test('Add sibling nodes inner classes', () => {
@@ -57,12 +69,20 @@ test('Add sibling nodes inner classes', () => {
         {fullName: 'foo.bar.zip', attributes: []},
         {fullName: 'foo.bar.zip$inner', attributes: []}
     ]);
-    expect(target).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodes: [
-            {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
-            {fullName: 'foo.bar.zip$inner', nodeDefinition: {fullName: 'foo.bar.zip$inner', attributes: []}, nodes: []},
-        ]},
-    ]});
+    expect(target).toEqual({
+        fullName: '', nodes: [
+            {
+                fullName: 'foo.bar', nodes: [
+                    {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
+                    {
+                        fullName: 'foo.bar.zip$inner',
+                        nodeDefinition: {fullName: 'foo.bar.zip$inner', attributes: []},
+                        nodes: []
+                    },
+                ]
+            },
+        ]
+    });
 });
 
 test('Show All Classses', () => {
@@ -72,13 +92,21 @@ test('Show All Classses', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.removeClasses('SHOW_ALL');
-    expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodes: [
-            {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
-            {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []},
-            {fullName: 'foo.bar.zap$inner', nodeDefinition: {fullName: 'foo.bar.zap$inner', attributes: []}, nodes: []},
-        ]},
-    ]});
+    expect(result).toEqual({
+        fullName: '', nodes: [
+            {
+                fullName: 'foo.bar', nodes: [
+                    {fullName: 'foo.bar.zip', nodeDefinition: {fullName: 'foo.bar.zip', attributes: []}, nodes: []},
+                    {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []},
+                    {
+                        fullName: 'foo.bar.zap$inner',
+                        nodeDefinition: {fullName: 'foo.bar.zap$inner', attributes: []},
+                        nodes: []
+                    },
+                ]
+            },
+        ]
+    });
 });
 
 test('Hide Inner Classses', () => {
@@ -87,9 +115,11 @@ test('Hide Inner Classses', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.removeClasses('HIDE_INNER');
-    expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []}
-    ]});
+    expect(result).toEqual({
+        fullName: '', nodes: [
+            {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []}
+        ]
+    });
 });
 
 test('Hide All Classses', () => {
@@ -99,9 +129,11 @@ test('Hide All Classses', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.removeClasses('HIDE_ALL');
-    expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodes: []},
-    ]});
+    expect(result).toEqual({
+        fullName: '', nodes: [
+            {fullName: 'foo.bar', nodes: []},
+        ]
+    });
 });
 
 test('Remove Ignored', () => {
@@ -112,9 +144,11 @@ test('Remove Ignored', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.removeIgnored(['foo.bar']);
-    expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.zip', nodeDefinition: {fullName: 'foo.zip', attributes: []}, nodes: []},
-    ]});
+    expect(result).toEqual({
+        fullName: '', nodes: [
+            {fullName: 'foo.zip', nodeDefinition: {fullName: 'foo.zip', attributes: []}, nodes: []},
+        ]
+    });
 });
 
 test('Collapse Collapsed', () => {
@@ -124,9 +158,11 @@ test('Collapse Collapsed', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.collapseCollapsed(['foo.bar']);
-    expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodes: []}
-    ]});
+    expect(result).toEqual({
+        fullName: '', nodes: [
+            {fullName: 'foo.bar', nodes: []}
+        ]
+    });
 });
 
 test('Take Base', () => {
@@ -136,12 +172,20 @@ test('Take Base', () => {
         {fullName: 'foo.bar.zap$inner', attributes: []}
     ]);
     const result = target.takeBase('foo.bar');
-    expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar', nodes: [
-            {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []},
-            {fullName: 'foo.bar.zap$inner', nodeDefinition: {fullName: 'foo.bar.zap$inner', attributes: []}, nodes: []},
-        ]},
-    ]});
+    expect(result).toEqual({
+        fullName: '', nodes: [
+            {
+                fullName: 'foo.bar', nodes: [
+                    {fullName: 'foo.bar.zap', nodeDefinition: {fullName: 'foo.bar.zap', attributes: []}, nodes: []},
+                    {
+                        fullName: 'foo.bar.zap$inner',
+                        nodeDefinition: {fullName: 'foo.bar.zap$inner', attributes: []},
+                        nodes: []
+                    },
+                ]
+            },
+        ]
+    });
 });
 
 test('Split', () => {
@@ -151,9 +195,19 @@ test('Split', () => {
         {fullName: 'foo.bar2.zip', attributes: []}
     ]);
     const result = target.splitSplitted(['foo', 'foo.bar1']);
-    expect(result).toEqual({fullName: '', nodes: [
-        {fullName: 'foo.bar1.test1.zap', nodeDefinition: {fullName: 'foo.bar1.test1.zap', attributes: []}, nodes: []},
-        {fullName: 'foo.bar1.test2.zep', nodeDefinition: {fullName: 'foo.bar1.test2.zep', attributes: []}, nodes: []},
-        {fullName: 'foo.bar2.zip', nodeDefinition: {fullName: 'foo.bar2.zip', attributes: []}, nodes: []},
-    ]});
+    expect(result).toEqual({
+        fullName: '', nodes: [
+            {
+                fullName: 'foo.bar1.test1.zap',
+                nodeDefinition: {fullName: 'foo.bar1.test1.zap', attributes: []},
+                nodes: []
+            },
+            {
+                fullName: 'foo.bar1.test2.zep',
+                nodeDefinition: {fullName: 'foo.bar1.test2.zep', attributes: []},
+                nodes: []
+            },
+            {fullName: 'foo.bar2.zip', nodeDefinition: {fullName: 'foo.bar2.zip', attributes: []}, nodes: []},
+        ]
+    });
 });

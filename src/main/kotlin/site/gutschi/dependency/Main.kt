@@ -44,7 +44,7 @@ class Main(private val properties: Properties) {
         return properties.attributeCollectors.flatMap { it.getIgnoredPackages(nodes) }
     }
 
-    fun getSplitPackages(nodes: Collection<Node>): Collection<String> {
+    private fun getSplitPackages(nodes: Collection<Node>): Collection<String> {
         if (properties.splitPackages.isNotEmpty()) {
             return properties.splitPackages
         }

@@ -10,7 +10,7 @@ export function writeSvg(graph: DependencyGraph): string {
 }
 
 function nodeToNomnoml(input: DependencyGraph, intend: string): string {
-    if(input.nodeDefinition) {
+    if (input.nodeDefinition) {
         //This is a class => draw it normally
         return `${intend}[${input.name}]\n`;
     }
@@ -18,7 +18,7 @@ function nodeToNomnoml(input: DependencyGraph, intend: string): string {
     const children = input.nodes.map(n => nodeToNomnoml(n, innerIntend)).join('');
     const dependencies = input.dependencies.map(d => dependencyToNomnoml(d, innerIntend)).join('');
     const content = children + dependencies;
-    if(content.length === 0) {
+    if (content.length === 0) {
         //This is a package without content => draw it simply
         return `${intend}[<package> ${input.name}]\n`;
     }

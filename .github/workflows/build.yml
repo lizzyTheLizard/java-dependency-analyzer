@@ -1,5 +1,5 @@
 name: Build
-on: [push]
+on: [ push ]
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: frontend/yarn.lock
+          cache-dependency-path: src/frontend/yarn.lock
       - name: Install Frontend Dependencies
         working-directory: src/frontend
         run: yarn install
@@ -44,11 +44,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Plugin Integration-Test Result
-          path:  maven-plugin-integration-test/target/doc/index.html
+          path: maven-plugin-integration-test/target/doc/index.html
       - name: CLI Smoke Test
         run: java -jar target/dependency-analyzer-*-jar-with-dependencies.jar dependency-analyzer/target/classes
       - name: Upload CLI Smoke Test Result
         uses: actions/upload-artifact@v3
         with:
           name: CLI Integration-Test Result
-          path:  maven-plugin-integration-test/target/doc/index.html
+          path: maven-plugin-integration-test/target/doc/index.html
