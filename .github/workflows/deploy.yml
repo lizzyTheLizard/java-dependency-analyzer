@@ -20,10 +20,10 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: frontend/yarn.lock
       - name: Install Frontend Dependencies
-        working-directory: frontend
+        working-directory: src/frontend
         run: yarn install
       - name: Build Frontend
-        working-directory: frontend
+        working-directory: src/frontend
         run: yarn build
       - name: Set up Java
         uses: actions/setup-java@v3
@@ -35,7 +35,6 @@ jobs:
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
       - name: Set Version
-        working-directory: dependency-analyzer
         run: ./mvnw versions:set -DnewVersion=${{ inputs.version }} -DgenerateBackupPoms=false
       - id: install-secret-key
         name: Install gpg secret key
@@ -45,7 +44,6 @@ jobs:
           # Verify gpg secret key
           gpg --list-secret-keys --keyid-format LONG
       - name: Build Plugin
-        working-directory: dependency-analyzer
         run: ./mvnw --batch-mode deploy -P build-release-documentation,build-executable-jar
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
@@ -62,9 +60,8 @@ jobs:
         with:
           tag_name: ${{ inputs.version }}
           fail_on_unmatched_files: true
-          files: dependency-analyzer/target/dependency-analyzer-${{ inputs.version }}*
+          files: target/dependency-analyzer-${{ inputs.version }}*
       - name: Set Version back to SNAPSHOT
-        working-directory: dependency-analyzer
         run: ./mvnw versions:set -DnewVersion=${{ inputs.version }}-SNAPSHOT -DgenerateBackupPoms=false
       - name: Commit updated version
         run: |
