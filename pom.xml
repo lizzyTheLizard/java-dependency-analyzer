@@ -6,7 +6,7 @@
     <groupId>site.gutschi</groupId>
     <artifactId>dependency-analyzer</artifactId>
     <name>Dependency Analyzer</name>
-    <version>0.4.2-SNAPSHOT</version>
+    <version>0.5.0</version>
     <packaging>maven-plugin</packaging>
     <description>A maven plugin to automatically generate a class dependency documentation for a java project
     </description>
